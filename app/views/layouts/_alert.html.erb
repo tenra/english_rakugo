@@ -1,0 +1,12 @@
+<% if message.keys[0] == 'alert' %>
+  <% color = 'danger' %>
+<% elsif message.keys[0] == 'notice' %>
+  <% color = 'info' %>
+<% end %>
+
+<% if message.present? %>
+  <div class="alert alert-dismissable alert-<%= color %>">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <p><%= message.values[0] %></p>
+  </div>
+<% end %>
