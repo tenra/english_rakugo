@@ -1,6 +1,13 @@
-<h2>Log in</h2>
+<%  @page_title = "Sign in" %>
+
+<center><h1><%= @page_title %></h1></center>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <% if @user.errors.present? %>
+      <div class="alert alert-danger"><%= devise_error_messages! %></div>
+  <% end %>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -19,7 +26,7 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Sign in" %>
   </div>
 <% end %>
 
