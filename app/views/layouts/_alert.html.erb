@@ -1,6 +1,10 @@
 <% if message.keys[0] == 'alert' %>
   <% color = 'danger' %>
 <% elsif message.keys[0] == 'notice' %>
+  <% color = 'success' %>
+<% elsif message.keys[0] == 'error' %>
+  <% color = 'warning' %>
+<% elsif message.keys[0] == 'success' %>
   <% color = 'info' %>
 <% end %>
 
@@ -10,3 +14,13 @@
     <p><%= message.values[0] %></p>
   </div>
 <% end %>
+
+<!--when :success-->
+<!--"alert-success"-->
+<!--when :error-->
+<!--"alert-danger"-->
+<!--when :alert-->
+<!--"alert-warning"-->
+<!--when :notice-->
+<!--"alert-info"-->
+<!--else-->
