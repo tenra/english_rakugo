@@ -3,14 +3,18 @@
 <center><h1><%= @page_title %></h1></center>
 
 <div class="row">
-  <aside class="col-md-4">
-     <section>
-        <h1>
-    <%= link_to 'Edit User', edit_user_registration_path %>
+  <div class="container">
+   　  <table class="type04">
+
+        <tr>
+          <th scope="row">user name</th>
+            <td><%= current_user.name %></td>
+        </tr>
   
-        </h1>
-      </section>
+　　  </table>
+  </div>
+
     <%= link_to 'Edit User', edit_user_registration_path %>
 
-  </aside>
+  
 </div>
