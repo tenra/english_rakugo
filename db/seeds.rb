@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.create(:name => 'tenra', :email => 'tenra@tenra.com', :password => 'fogefoge', :admin => true)
+
+50.times do
+  User.create!(name: Faker::Name.name,
+              email: Faker::Internet.email,
+              password: Faker::Internet.password
+            )
+end
