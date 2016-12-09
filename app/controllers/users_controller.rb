@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-    before_action :sign_in_required, only: [:show]
+    before_action :authenticate_user!
   
-  def show
+  def me
 
   end
 end
