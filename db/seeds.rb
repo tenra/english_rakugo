@@ -14,3 +14,9 @@ User.create(:name => 'tenra', :email => 'tenra@tenra.com', :password => 'fogefog
               password: Faker::Internet.password
             )
 end
+
+3.times do
+Event.create!(title: Faker::Lorem.sentence,
+                text: Faker::Lorem.paragraphs
+                )
+end

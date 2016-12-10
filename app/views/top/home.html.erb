@@ -1,2 +1,17 @@
 <h1>English Rakugo</h1>
-<p>Find me in app/views/top/home.html.erb</p>
+
+<% @events.each do |event| %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= event.title %>
+  </div>
+    
+  <div class="panel-body">
+      <p><%= event.text %>
+      <br>
+    
+  </div>
+</div>
+
+<% end %>
