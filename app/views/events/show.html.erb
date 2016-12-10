@@ -1,12 +1,17 @@
+<%  @page_title = "Event" %>
+
 <h1><%= @event.title %></h1>
 
-<div class="container">
-  <table class="table">
-      <tr>
-        <th><%= @event.text %></th>
-      
-      </tr>
-    
-    
-  </table>
+<div class='row'>
+    <div class="container">
+      <table class="table">
+          <tr>
+            <th><%= @event.text %></th>
+          
+          </tr>
+        
+        
+      </table>
+    </div>
+        <%= link_to "Edit", edit_event_path(@event) %>
 </div>
