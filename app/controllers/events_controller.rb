@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-    before_action :sign_in_required, only: [:edit, :update]
+    before_action :sign_in_required, only: [:edit, :update, :destroy]
 
   
   def show
@@ -18,6 +18,13 @@ class EventsController < ApplicationController
     else
       render action: 'edit'
     end
+  end
+  
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    flash[:success] = 'Your event has been successfully cancelled.'
+    redirect_to root_path
   end
   
 private
