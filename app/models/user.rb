@@ -14,12 +14,12 @@ has_many :joins, class_name: "Join", foreign_key: "user_id", dependent: :destroy
 has_many :join_events, through: :joins, source: :event
 
   def join(event)
-    joining_bookings.find_or_create_by(event_id: event.id)
+    bookings.find_or_create_by(event_id: event.id)
   end
 
   def unjoin(event)
-    joining_booking = joining_bookings.find_by(event_id: event.id)
-    joining_booking.destroy if joining_booking
+    booking = bookings.find_by(event_id: event.id)
+    booking.destroy if booking
   end
 
   def joining?(event)
