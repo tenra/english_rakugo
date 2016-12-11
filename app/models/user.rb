@@ -7,6 +7,25 @@ class User < ActiveRecord::Base
          
 validates :name, presence: true, length: { maximum: 50 }  
 
+has_many :bookings, foreign_key: "user_id", dependent: :destroy
+has_many :events, through: :bookings
+
+has_many :joins, class_name: "Join", foreign_key: "user_id", dependent: :destroy
+has_many :join_events, through: :joins, source: :event
+
+  def join(event)
+    joining_bookings.find_or_create_by(event_id: event.id)
+  end
+
+  def unjoin(event)
+    joining_booking = joining_bookings.find_by(event_id: event.id)
+    joining_booking.destroy if joining_booking
+  end
+
+  def joining?(event)
+    joining_users.include?(event)
+  end
+
     #http://ruby-rails.hatenadiary.com/entry/20140805/1407200400
   def self.from_omniauth(auth)
     # providerとuidでUserレコードを取得する
