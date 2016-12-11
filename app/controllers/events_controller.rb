@@ -12,12 +12,11 @@ class EventsController < ApplicationController
   
   def update
     @event = Event.find(params[:id])
-    @event.assign_attributes(event_params)
-    if @event.save
-      flash[:success] = "update completed!"
-      redirect_to @event
+    if @event.update(event_params)
+       flash[:success] = "update completed!"
+       redirect_to @event
     else
-      render 'edit'
+      render action: 'edit'
     end
   end
   

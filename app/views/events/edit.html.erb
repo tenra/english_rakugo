@@ -3,19 +3,23 @@
 <h1>Edit</h1>
 
 <div class="container">
-  <table class="table">
-
-      <%= form_for @event, url: :event do |f| %>
-          <div class="field">
-            <%= f.label :title %><br />
-            <%= f.text_field :title, autofocus: true %>
-          </div>
-          <div class="field">
-            <%= f.label :text %><br />
-            <%= f.text_field :text, autofocus: true %>
-          </div>
-      <% end %>
 
     
-  </table>
+          <%= form_for @event, url: :event do |f| %>
+              <div class="field">
+                <%= f.label :title %><br />
+                <%= f.text_field :title, autofocus: true %>
+              </div>
+              <div class="field">
+                <%= f.label :text %><br />
+                <%= f.text_field :text, autofocus: true %>
+              </div>
+              <div>
+                <%= f.submit 'Update', class: "btn btn-large btn-primary" %>
+              </div>
+          <% end %>
+
+    <div>
+    　<%= link_to "Back", :back %>
+　　</div>
 </div>
