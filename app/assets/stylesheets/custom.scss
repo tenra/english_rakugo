@@ -52,6 +52,12 @@ p {
 
 /* header */
 
+header, nav, ul, li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
 #logo {
   float: left;
   margin-right: 10px;
