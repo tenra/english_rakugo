@@ -7,23 +7,16 @@ class User < ActiveRecord::Base
          
 validates :name, presence: true, length: { maximum: 50 }  
 
-has_many :bookings, foreign_key: "user_id", dependent: :destroy
-has_many :events, through: :bookings
+  has_many :bookings, foreign_key: "user_id", dependent: :destroy
+  has_many :booking_events, through: :bookings, source: :event
 
-has_many :joins, class_name: "Join", foreign_key: "user_id", dependent: :destroy
-has_many :join_events, through: :joins, source: :event
-
-  def join(event)
+  def booking(event)
     bookings.find_or_create_by(event_id: event.id)
   end
 
-  def unjoin(event)
+  def unbooking(event)
     booking = bookings.find_by(event_id: event.id)
     booking.destroy if booking
-  end
-
-  def joining?(event)
-    joining_users.include?(event)
   end
 
     #http://ruby-rails.hatenadiary.com/entry/20140805/1407200400

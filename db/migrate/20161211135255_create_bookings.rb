@@ -5,6 +5,7 @@ class CreateBookings < ActiveRecord::Migration
       t.references :event, index: true, foreign_key: true
 
       t.timestamps null: false
+      t.index [:user_id, :event_id], unique: true
     end
   end
 end

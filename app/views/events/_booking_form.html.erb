@@ -1,0 +1,7 @@
+<span id="booking_form-<%= event.id %>">
+    <% if event.booking?(current_user) %>
+        <%= render 'events/unbooking', event: event %>
+    <% else %>
+        <%= render 'events/booking', event: event %>
+    <% end %>
+</span>
