@@ -1,4 +1,4 @@
-<%  @page_title = "Account" %>
+<%  @page_title = "My page" %>
 
 <center><h1><%= @page_title %></h1></center>
 
@@ -12,9 +12,13 @@
         </tr>
         <tr>
           <th>my event</th>
-          <td></td>
+            <td>
+              <% current_user.booking_events.each do |event| %>
+                <div><%= link_to event.title, event_path(event) %></div>
+              <% end %>
+            </td>
         </tr>
-
+　　　　
 　　  </table>
 
   </div>

@@ -18,7 +18,10 @@ class ApplicationController < ActionController::Base
   
   private
     def sign_in_required
-        redirect_to new_user_session_url unless user_signed_in?
+      unless user_signed_in?
+        redirect_to new_user_session_url
+        flash[:alert] = "you need to sign up before you booking"
+       end
     end
         
 end

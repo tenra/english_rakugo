@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
     current_user.booking(@event)
-    flash[:success] = "yuor booking is completed!"
+    flash[:success] = "your booking is completed!"
     redirect_to users_me_path
   end
 
