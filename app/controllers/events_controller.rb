@@ -1,11 +1,26 @@
 class EventsController < ApplicationController
     before_action :sign_in_required, only: [:edit, :update, :destroy]
+    before_action :admin_check, only: [:new, :create, :edit, :update, :destroy]
 
   
   def show
       @event = Event.find(params[:id])
   end
   
+  def new
+    @event = Event.new
+  end
+  
+  def create
+    @event = Event.new(event_params)
+    if @event.save
+       flash[:success] = "Create Event!"
+       redirect_to @event
+    else
+      render 'new'
+    end
+  end
+
   def edit
     @event = Event.find(params[:id])
   end
@@ -33,5 +48,5 @@ private
       :title, :text
         )
     end
-  
+
 end

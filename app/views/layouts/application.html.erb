@@ -10,6 +10,7 @@
     <body>
           <%= render 'layouts/header' %>
       　  <div class="container">
+      　  {admin:  <%= current_user.admin? if current_user %>}
             <%= render 'layouts/alert', message: flash.to_h %>
         <%= yield %>
             <%= render 'layouts/footer' %>

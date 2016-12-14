@@ -6,17 +6,26 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(:name => 'tenra', :email => 'tenra@tenra.com', :password => 'fogefoge', :admin => true)
+User.create!(:name => 'tenra', :email => 'tenra@tenra.com', :password => 'fogefoge', :admin => true)
+print '.'
+User.create!(name: 'mentor_admin', email: 'mentor@admin.com', password: 'password', admin: true)
+print '.'
+User.create!(name: 'mentor_user', email: 'mentor@user.com', password: 'password', admin: false)
+puts '.Admin'
 
 50.times do
   User.create!(name: Faker::Name.name,
               email: Faker::Internet.email,
-              password: Faker::Internet.password
+              password: "password"
             )
+  print '.'
 end
+puts 'User'
 
 5.times do
-Event.create!(title: Faker::Lorem.sentence,
+  Event.create!(title: Faker::Lorem.sentence,
                 text: Faker::Lorem.paragraphs
                 )
+  print '.'
 end
+puts 'Event'

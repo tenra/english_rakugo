@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include AdminsHelper
   before_action :configure_permitted_parameters, if: :devise_controller?
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -18,7 +19,7 @@ class ApplicationController < ActionController::Base
   
   private
     def sign_in_required
-      unless user_signed_in?
+       unless user_signed_in?
         redirect_to new_user_session_url
         flash[:alert] = "you need to sign up before you booking"
        end

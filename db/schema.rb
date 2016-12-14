@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20161211135255) do
   end
 
   add_index "bookings", ["event_id"], name: "index_bookings_on_event_id"
+  add_index "bookings", ["user_id", "event_id"], name: "index_bookings_on_user_id_and_event_id", unique: true
   add_index "bookings", ["user_id"], name: "index_bookings_on_user_id"
 
   create_table "events", force: :cascade do |t|
