@@ -4,12 +4,17 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <%= link_to event.title, event_path(event) %>
+     <div class="text-center">
+       <%= link_to event.title, event_path(event) %>
+     </div>
   </div>
     
   <div class="panel-body">
-      <p><%= event.text %></p>
-    <p>joining <%= event.booking_users.count %> people now!</p>
+    <div class="image_left"><%= image_tag event.image.thumb.url if event.image.thumb.present? %></div>
+    <p><%= simple_format event.text %></p>
+    <div class="clearfix"></div>
+    <hr>
+    <div align="right">joining <%= event.booking_users.count %> people now!</div>
   </div>
 </div>
 

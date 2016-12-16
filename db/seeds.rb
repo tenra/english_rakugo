@@ -22,9 +22,10 @@ puts '.Admin'
 end
 puts 'User'
 
-5.times do
+1.upto(5) do |n|
   Event.create!(title: Faker::Lorem.sentence,
-                text: Faker::Lorem.paragraphs
+                text: "#{Faker::Lorem.paragraph}\n#{Faker::Lorem.paragraph}\n#{Faker::Lorem.paragraph}",
+                image: open("#{Rails.root}/db/fixtures/img#{n}.jpg")
                 )
   print '.'
 end

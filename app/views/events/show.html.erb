@@ -5,8 +5,19 @@
 <div class='row'>
     <div class="container">
       <table class="table">
+        <tr>
+          <th>
+            <% if @event.image? %>
+                <div class="text-center">
+                  <%= image_tag @event.image.thumb.url %>
+                </div>
+            <% else %>
+              <%= image_tag 'noimage.gif' %>
+            <% end %>
+          </th>
+        </tr>
           <tr>
-            <th><%= @event.text %></th>
+            <th><%= simple_format @event.text %></th>
           </tr>
           <tr>
             <th>joining <%= @event.booking_users.count %> people now!

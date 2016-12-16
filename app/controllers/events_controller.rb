@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   
   def show
     @events = Event.all
-      @event = Event.find(params[:id])
+    @event = Event.find(params[:id])
   end
   
   def new
@@ -46,7 +46,7 @@ class EventsController < ApplicationController
 private
     def event_params
       params.require(:event).permit(
-      :title, :text
+      :title, :text, :image, :image_cache
         )
     end
 

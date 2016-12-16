@@ -2,15 +2,47 @@
 
 <h1>Edit</h1>
 
-<div class="container">
-
+  <div class="form-group">
     
           <%= form_for @event, url: :event do |f| %>
-              <div class="field">
+              
+              <div class="form-group">
+                <%= f.label :image %>
+                <%= image_tag @event.image.thumb.url, class: "event-present-image" if @event.image? %>
+                <%#= f.file_field :image, class: "none" %>
+                <%= f.hidden_field :image_cache %>
+                
+                  <img id="img_prev" width=200 height=200 src="#" class="img-thumbnail hidden"/>
+                  <%= f.file_field :image, :id => 'post_post_img' %>
+                  <script type="text/javascript">
+                    $(function() {
+                      function readURL(input) {
+                        if (input.files && input.files[0]) {
+                          var reader = new FileReader();
+                    
+                          reader.onload = function (e) {
+                            $('.event-present-image').remove();
+                            $('#img_prev').html("");
+                            $('#img_prev').attr('src', e.target.result);
+                          }
+                          reader.readAsDataURL(input.files[0]);
+                        }
+                      }
+                    
+                      $("#post_post_img").change(function(){
+                        $('#img_prev').removeClass('hidden');
+                        readURL(this);
+                      });
+                    });
+                  </script>
+                
+              </div>
+          
+              <div class="form-group">
                 <%= f.label :title %><br />
                 <%= f.text_field :title, autofocus: true %>
               </div>
-              <div class="field">
+              <div class="form-group">
                 <%= f.label :text %><br />
                 <%= f.text_field :text, autofocus: true %>
               </div>
@@ -19,7 +51,7 @@
               </div>
           <% end %>
 
-    <div>
-    　<%= link_to "Back", :back %>
-　　</div>
-</div>
+      <div>
+      　<%= link_to "Back", :back %>
+  　　</div>
+  </div>

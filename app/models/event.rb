@@ -5,4 +5,7 @@ class Event < ActiveRecord::Base
     def booking?(user)
         booking_users.include?(user)
     end
+    
+    mount_uploader :image, ImageUploader
+    
 end

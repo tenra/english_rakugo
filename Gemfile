@@ -19,6 +19,9 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'faker'
 gem 'rails-i18n'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'byebug'
