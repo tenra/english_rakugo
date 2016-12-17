@@ -137,4 +137,11 @@ input {
 .image_left {
   float: left;
   padding: 10px;
+  width: 420px;
+  height: 300px;
+  overflow: hidden;
+  img {
+    margin: auto;
+    width: 100%;
+  }
 }
