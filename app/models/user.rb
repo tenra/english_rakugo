@@ -9,6 +9,8 @@ validates :name, presence: true, length: { maximum: 50 }
 
   has_many :bookings, foreign_key: "user_id", dependent: :destroy
   has_many :booking_events, through: :bookings, source: :event
+  
+  has_one :profile, dependent: :destroy
 
   def booking(event)
     bookings.find_or_create_by(event_id: event.id)
