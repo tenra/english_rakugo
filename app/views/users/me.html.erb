@@ -4,34 +4,35 @@
 
 <div class='row'>
   <div class='col-sm-offset-3 col-sm-6'>
-   　  <table class="table">
-       　<tr>
-       　     <th>
-                  <% if !current_user.profile.nil? && current_user.profile.avatar? %>
-                  <div class="text-center">
-                  <%= image_tag(current_user.profile.avatar.thumb.url, :class => "img-circle") %>
-                  </div>
-                  <% else %>
-                  <%= image_tag 'noimage.gif' %>
-                  <% end %>
-               </th>
-            </tr>
-        <tr>
-          <th>user name</th>
-            <td><%= current_user.name %></td>
-        </tr>
-        <tr>
-          <th>my event</th>
-            <td>
-              <% current_user.booking_events.each do |event| %>
-                <div><%= link_to event.title, event_path(event) %></div>
-              <% end %>
-            </td>
-        </tr>
-　　　　
-　　  </table>
-
+ 　  <table class="table">
+      <tr>
+        <div class="text-center">
+          <% if !current_user.profile.nil? && current_user.profile.avatar? %>
+            <%= image_tag(current_user.profile.avatar.thumb.url, :class => "img-circle") %>
+          <% else %>
+            <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle"%>
+          <% end %>
+        </div>
+      </tr>
+      <tr>
+        <th>User name</th>
+        <td><%= current_user.name %></td>
+      </tr>
+      <tr>
+        <th>Email address</th>
+        <td><%= current_user.email %></td>
+      </tr>
+      <tr>
+        <th>My event</th>
+        <td>
+          <% current_user.booking_events.each do |event| %>
+            <div><%= link_to event.title, event_path(event) %></div>
+          <% end %>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
-    <%= link_to 'Edit Profile Image', new_profile_path %><br>
-　　<%= link_to 'Edit User', edit_user_registration_path %>
+
+<%= link_to 'Edit Profile Image', new_profile_path %><br>
+<%= link_to 'Edit User', edit_user_registration_path %>

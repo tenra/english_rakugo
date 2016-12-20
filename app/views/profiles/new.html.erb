@@ -4,8 +4,12 @@
 
 <%= form_for(@profile) do |f| %>
 <div class="text-center">
-    <%= f.label :Image %>
-    <%= image_tag @profile.avatar.thumb.url, class: "profile-present-avatar" if @profile.avatar? %>
+    <%#= f.label :Image %>
+      <% if @profile.avatar? %>
+         <%= image_tag @profile.avatar.thumb.url, class: "profile-present-avatar" %>
+      <% else %>
+         <%= image_tag 'no-avatar.png', width: 200, :class => "profile-present-avatar" %>
+      <% end %>
     <%= f.hidden_field :avatar_cache %>
                 
       <img id="img_prev" width=200 height=200 src="#" class="img-thumbnail hidden"/>
