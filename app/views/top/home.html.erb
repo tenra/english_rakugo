@@ -2,20 +2,77 @@
 
 <% @events.each do |event| %>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-     <div class="text-center">
-       <%= link_to event.title, event_path(event) %>
-     </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+       <div class="text-center">
+         <%= link_to event.title, event_path(event) %>
+       </div>
+    </div>
+      
+    <div class="panel-body">
+      <div class="image_left"><%= image_tag event.image.thumb.url if event.image.thumb.present? %></div>
+      　<p><%= simple_format event.text %></p>
+    　<div class="clearfix"></div>
+      　<hr>
+    　<div align="right" class="user_avatars">
+      　<% event.booking_users.order('updated_at desc').limit(40).each do |user| %>
+          <div>
+            <span>
+            <% if user.profile && user.profile.avatar? %>
+              <%= image_tag user.profile.avatar , :alt => user.name , :class => "img-circle_h"%>
+            <% else %>
+              <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle_h"%>
+            <% end %>
+            </span>
+            <p class="arrow_box"><%= user.name %></p>
+          </div>
+        <% end %>
+        &nbsp;
+        joining <%= event.booking_users.count %> people now!
+      </div>
+    </div>
   </div>
-    
-  <div class="panel-body">
-    <div class="image_left"><%= image_tag event.image.thumb.url if event.image.thumb.present? %></div>
-    <p><%= simple_format event.text %></p>
-    <div class="clearfix"></div>
-    <hr>
-    <div align="right">joining <%= event.booking_users.count %> people now!</div>
-  </div>
-</div>
-
 <% end %>
+
+<style>
+.user_avatars div {
+  position: relative;
+  display: inline-block;
+}
+.arrow_box {
+  margin: 15px 0 0 2px;
+  display: none;
+  position: absolute;
+  padding: 16px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;  
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+}
+
+.arrow_box:after {
+
+  position: absolute;
+  bottom: 100%;
+  left: 20px;
+  width: 0;
+  height: 0;
+  margin-left: -10px;
+  border: solid transparent;
+  border-color: rgba(51, 51, 51, 0);
+  border-bottom-color: #333;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+
+span:hover + p.arrow_box {
+  display: block;
+  z-index: 1;
+}
+
+.gravatar {
+  z-index: 0;
+}
+</style>
