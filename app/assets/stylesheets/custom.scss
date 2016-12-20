@@ -145,3 +145,34 @@ input {
     width: 100%;
   }
 }
+
+.img-circle {
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+    width:  200px;
+    height: 200px;
+    background-position: center center;
+}
+
+.img-circle_h {
+    border-radius: 50%;
+    width:  25px;
+    height: 25px;
+    background-position: center center;
+}
+
+.profile-present-avatar {
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+    width:  200px;
+    height: 200px;
+    background-position: center center;
+}
+
+.img-thumbnail {
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+    width:  200px;
+    height: 200px;
+    background-position: center center;
+}
