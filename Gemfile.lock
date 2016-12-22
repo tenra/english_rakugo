@@ -85,6 +85,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     hashie (3.4.6)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -230,6 +231,7 @@ DEPENDENCIES
   devise-i18n
   devise-i18n-views
   faker
+  gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-facebook

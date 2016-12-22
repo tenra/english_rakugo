@@ -22,6 +22,7 @@ gem 'rails-i18n'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'cloudinary'
+gem 'gmaps4rails'
 
 group :development, :test do
   gem 'byebug'
