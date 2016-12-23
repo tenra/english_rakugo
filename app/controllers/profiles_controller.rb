@@ -1,8 +1,8 @@
 class ProfilesController < ApplicationController
+  before_action :already_build, only: [:new]
 
   def new
-      @profile = Profile.new
-      @profile = current_user.profile if current_user.profile.present?
+    @profile = Profile.new
   end
 
   def create
@@ -17,22 +17,26 @@ class ProfilesController < ApplicationController
   end
   
   def edit
-      @profile = Profile.find(params[:id])
+    @profile = Profile.find(params[:id])
+    @profile.avatar.cache! if @profile.avatar.present?
   end
-  
+
   def update
     @profile = Profile.find(params[:id])
-    @profile.user = current_user
     if @profile.update(profile_params)
-       flash[:success] = "updated your profile image!"
-       redirect_to users_me_url
+      flash[:success] = "updated your profile image!"
+      redirect_to users_me_url
     else
-      render action: 'edit'
+      render 'edit'
     end
   end
 
   private
   def profile_params
-      params.require(:profile).permit(:avatar, :country, :user_id)
+      params.require(:profile).permit(:avatar, :country, :avatar_cache)
+  end
+  
+  def already_build
+    redirect_to edit_profile_path(current_user.profile) if current_user.profile
   end
 end
