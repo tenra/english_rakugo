@@ -23,6 +23,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'cloudinary'
 gem 'gmaps4rails'
+gem 'geocoder'
 
 group :development, :test do
   gem 'byebug'

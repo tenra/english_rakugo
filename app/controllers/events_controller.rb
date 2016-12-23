@@ -4,13 +4,14 @@ class EventsController < ApplicationController
 
   
   def show
-    @events = Event.all
+    @events = Event.where(id: Event.find(params[:id]))
     @event = Event.find(params[:id])
     
     @hash = Gmaps4rails.build_markers(@events) do |event, marker|
      marker.lat event.latitude
      marker.lng event.longitude
-     marker.infowindow event.name
+     marker.infowindow event.description
+     marker.json({name: event.name})
     end
   end
   
@@ -52,7 +53,7 @@ class EventsController < ApplicationController
 private
     def event_params
       params.require(:event).permit(
-      :title, :text, :image, :image_cache, :name, :description, :latitude, :longitude)
+      :title, :text, :image, :image_cache, :name, :description, :latitude, :longitude, :address)
     end
-
+    
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161221113105) do
+ActiveRecord::Schema.define(version: 20161222124223) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20161221113105) do
     t.string   "description"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "address"
   end
 
   create_table "profiles", force: :cascade do |t|
