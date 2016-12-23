@@ -12,7 +12,7 @@
                 <%#= f.file_field :image, class: "none" %>
                 <%= f.hidden_field :image_cache %>
                 
-                  <img id="img_prev" width=200 height=200 src="#" class="img-thumbnail hidden"/>
+                  <img id="img_prev" width=200 height=200 src="#" class="eimg-thumbnail hidden"/>
                   <%= f.file_field :image, :id => 'post_post_img' %>
                   <script type="text/javascript">
                     $(function() {
@@ -45,10 +45,6 @@
               <div class="form-group">
                 <%= f.label :text %><br />
                 <%= f.text_field :text, autofocus: true %>
-              </div>
-              <div class="form-group">
-                <%= f.label :name %><br />
-                <%= f.text_field :name, autofocus: true %>
               </div>
               <div class="form-group">
                 <%= f.label :address %><br />
