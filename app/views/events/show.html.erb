@@ -28,6 +28,10 @@
         <p><%= link_to "Edit", edit_event_path(@event) %></p>
         <p><%= link_to "Destroy", @event, method: :delete, data: { confirm: 'Are you sure？' } %></p>
 </div>
+
+        <%= @event.address %>
+        <%= @event.latitude %>
+        <%= @event.longitude %>
 <%#= @hash.inspect %>
 
 <div style='width: 800px; margin: 0 auto;'>
@@ -40,5 +44,6 @@
       markers = handler.addMarkers(<%=raw @hash.to_json %>);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
+      handler.getMap().setZoom(15);
     });
 </script>
