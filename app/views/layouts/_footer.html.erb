@@ -3,7 +3,12 @@
      <nav>
         <ul>
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "日本語" %></li>
+          <li>
+                <% subdomain = request.subdomains.first
+                lang = (subdomain == 'ja') ? 'English' : '日本語'
+                otherdomain = (subdomain == 'ja')? 'en': 'ja' %>
+                <%= link_to lang, "http://#{otherdomain}.techacademy-tenra.c9users.io#{request.path}" %>
+          </li>
           <li><%= link_to "About us", about_path %></li>
           <li><%= link_to "Contact", '#' %></li>
           

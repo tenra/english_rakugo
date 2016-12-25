@@ -1,3 +1,18 @@
 ja:
-   top:
-       Back: "戻る"
+  activerecord: &activerecord
+    models:
+      user: "ユーザー"
+  attributes:
+    user:
+  top:
+    home:
+      English_Rakugo: "英語落語"
+      participants: "人の参加者"
+  events:
+    show:
+      participants: "人の参加者"
+  users:
+    me:
+      User_name: "名前"
+      Email_address: "メールアドレス"
+      My_events: "参加イベント"

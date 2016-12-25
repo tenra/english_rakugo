@@ -15,15 +15,15 @@
         </div>
       </tr>
       <tr>
-        <th>User name</th>
+        <th><%= t '.User_name' %></th>
         <td><%= current_user.name %></td>
       </tr>
       <tr>
-        <th>Email address</th>
+        <th><%= t '.Email_address' %></th>
         <td><%= current_user.email %></td>
       </tr>
       <tr>
-        <th>My event</th>
+        <th><%= t '.My_events' %></th>
         <td>
           <% current_user.booking_events.each do |event| %>
             <div><%= link_to event.title, event_path(event) %></div>

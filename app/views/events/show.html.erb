@@ -19,11 +19,27 @@
           <tr>
             <th><%= simple_format @event.text %></th>
           </tr>
-          <tr>
-            <th>joining <%= @event.booking_users.count %> people now!
-            <%= render 'events/booking_form', event: @event %></th>
-          </tr>
       </table>
+
+      <div align="right" class="user_avatars">
+      　<% @event.booking_users.order('updated_at desc').limit(40).each do |user| %>
+          <div>
+            <span>
+              <% if user.profile && user.profile.avatar? %>
+                <%= image_tag user.profile.avatar , :alt => user.name , :class => "img-circle_h"%>
+              <% else %>
+                <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle_h"%>
+              <% end %>
+            </span>
+            <p class="arrow_box"><%= user.name %></p>
+          </div>
+        <% end %>
+        &nbsp;
+        <%= @event.booking_users.count %> <%= t '.participants' %>
+      </div>
+      <div class="text-center">
+            <%= render 'events/booking_form', event: @event %>
+      </div>
     </div>
         <p><%= link_to "Edit", edit_event_path(@event) %></p>
         <p><%= link_to "Destroy", @event, method: :delete, data: { confirm: 'Are you sure？' } %></p>

@@ -1,4 +1,10 @@
-<h1>English Rakugo</h1>
+<div id="title">
+   <h1><%= t '.English_Rakugo' %></h1>
+</div>
+<div class="title-text">
+   text_text_text_text_text_text_text_text_text_text</br>
+   text_text_text_text_text_text_text_text_text_text
+</div>
 
 <% @events.each do |event| %>
 
@@ -28,7 +34,7 @@
           </div>
         <% end %>
         &nbsp;
-        joining <%= event.booking_users.count %> people now!
+        <%= event.booking_users.count %> <%= t '.participants' %>
       </div>
     </div>
   </div>
