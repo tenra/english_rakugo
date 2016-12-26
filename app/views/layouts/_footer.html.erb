@@ -10,8 +10,7 @@
                 <%= link_to lang, "http://#{otherdomain}.techacademy-tenra.c9users.io#{request.path}" %>
           </li>
           <li><%= link_to "About us", about_path %></li>
-          <li><%= link_to "Contact", '#' %></li>
-          
+          <li><%= link_to "Contact", about_path(anchor: 'inquiry'), class: "inquiry" %></li>
         </ul>
     </nav>
   </div>
