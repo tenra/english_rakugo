@@ -1,9 +1,10 @@
 class TopMailer < ActionMailer::Base
-  default from: "11tenra@gmail.com"   # 送信元アドレス
-
+  default from: "11tenra@gmail.com"
+  default to: "11tenchi@ezweb.ne.jp"
+  
   def received_email(top)
     @top = top
-    mail(to: @top.email, :subject => 'お問い合わせを承りました')
+    mail(:subject => 'お問い合わせを承りました')
   end
  
 end

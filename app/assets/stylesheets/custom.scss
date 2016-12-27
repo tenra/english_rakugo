@@ -4,7 +4,7 @@
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 0;
 }
 
 section {
@@ -74,12 +74,18 @@ header, nav, ul, li {
   text-decoration: none;
 }
 
+li.dropdown > a > img.img-circle_h {
+  margin-top: -5px;
+}
+
 #title {
     color: #000;
     font-size: 25px;
     font-weight: bold;
     text-shadow: 5px 5px 1px #999999;
 }
+
+/* top */
 
 .title-text {
   font-size: 1.5em;
@@ -254,10 +260,20 @@ span:hover + p.arrow_box {
   background-size: cover;
 }
 
-#test {
+#test-msg {
     padding: 20px 0;
     text-align: center;
     letter-spacing: 0.15em;
     color: #fff;
     text-shadow: 1px 1px 0px #000;
+}
+
+.inquiry-header {
+  text-align: center;
+  font-size: 40px;
+  margin: 15px;
+}
+
+span.glyphicon-envelope {
+  top: 5px;
 }

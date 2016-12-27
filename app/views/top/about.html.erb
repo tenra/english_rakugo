@@ -5,14 +5,14 @@
 
 
     <div class="img-responsive top-image jumbotron">
-      <div id="test">
+      <div id="test-msg">
         <h1>this is test</h1>
       </div>
     </div>
 
 <%= form_for @top, :url => top_confirm_path do |f| %>
-  <div class="page-header">
-    <h1>お問い合わせ</h1>
+  <div class="inquiry-header">
+    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> お問い合わせ
   </div>
   
   <% if @top.errors.any? %>

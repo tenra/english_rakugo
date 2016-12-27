@@ -1,35 +1,39 @@
-<header class="navbar navbar-fixed-top navbar-default">
-    <div class="container">
-        
-        <nav>
-            <ul class="nav navbar-nav navbar-right">
-                <li><%= link_to "Home", root_path %></li>
-                <li>
-                     <% subdomain = request.subdomains.first
-                     lang = (subdomain == 'ja') ? 'English' : '日本語'
-                     otherdomain = (subdomain == 'ja')? 'en': 'ja' %>
-                     <%= link_to lang, "http://#{otherdomain}.techacademy-tenra.c9users.io#{request.path}" %>
-                </li>
-                    <% if user_signed_in? %>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <%= image_tag( current_user.profile.avatar.thumb.url, :class => "img-circle_h") if current_user.profile %> <%= current_user.name %>
-                        <span class="caret"></span></a>
-                          <ul class="dropdown-menu">
-                            <li><%= link_to "My page", users_me_path %></li>
-                            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-                          </ul>
-                </li>
-
-                    <% else %>
-                <li>
-                        <%= link_to new_user_session_path do %>
-                        <span class="glyphicon glyphicon-user"></span> Sign in
-                </li>
-                    <% end %>
-                  <% end %>
-                    
-            </ul>
-        </nav>
+<header>
+    <div class="navbar navbar-default">
+        <div class="container">
+            
+            <nav>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><%= link_to "Home", root_path %></li>
+                    <li>
+                        <% if I18n.locale != :ja %>
+                            <%= link_to_if params[:locale].present?, '日本語',  url_for(controller: controller.controller_name, action: controller.action_name, locale: '') %>
+                        <% end %>
+                        <% if I18n.locale != :en %>
+                            <%= link_to_if params[:locale] != 'en',  'English',  url_for(controller: controller.controller_name, action: controller.action_name, locale: 'en') %>
+                        <% end %>
+                    </li>
+                        <% if user_signed_in? %>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <%= image_tag( current_user.profile.avatar.thumb.url, :class => "img-circle_h") if current_user.profile %> <%= current_user.name %>
+                            <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><%= link_to "My page", users_me_path %></li>
+                                <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                              </ul>
+                    </li>
+    
+                        <% else %>
+                    <li>
+                            <%= link_to new_user_session_path do %>
+                            <span class="glyphicon glyphicon-user"></span> Sign in
+                    </li>
+                        <% end %>
+                      <% end %>
+                        
+                </ul>
+            </nav>
+        </div>
     </div>
-</header>
+</header>    
