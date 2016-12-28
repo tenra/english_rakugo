@@ -7,12 +7,20 @@ Rails.application.routes.draw do
       
       get 'users/me' => 'users#me'
       
-      resources :events do
+      get 'events/:event_id/show', to: 'events#show', as: 'show_event'
+      
+      scope :admin do
+        resources :events, except: [:show, :index]
+      end
+      
+      get 'admin/dashboard'
+      resources :events, only: [:show, :index] do
         resource :bookings, only: [:create, :destroy]
       end
       
       resources :profiles
   end
+  
     devise_for :users, path_names: { sign_in: "login", sign_out: "logout"},
     controllers: { omniauth_callbacks: "omniauth_callbacks", registrations: 'registrations' }
   

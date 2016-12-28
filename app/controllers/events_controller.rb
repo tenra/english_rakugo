@@ -4,8 +4,8 @@ class EventsController < ApplicationController
 
   
   def show
-    @events = Event.where(id: Event.find(params[:id]))
-    @event = Event.find(params[:id])
+    @events = Event.where(id: Event.find(params[:event_id]))
+    @event = Event.find(params[:event_id])
     
     @hash = Gmaps4rails.build_markers(@events) do |event, marker|
      marker.lat event.latitude
