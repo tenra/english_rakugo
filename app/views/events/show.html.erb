@@ -1,6 +1,8 @@
 <%  @page_title = "Event" %>
 
-<h1><%= @event.title %></h1>
+<div class="top-head">
+  <%= @event.title %>
+</div>
 
 <div class='row'>
     <div class="container">
@@ -8,9 +10,9 @@
         <tr>
           <th>
             <% if @event.image? %>
-                <div class="text-center">
+                <div class="event-image">
                   <%= image_tag @event.image.thumb.url %>
-                </div>
+                
             <% else %>
               <%= image_tag 'noimage.gif' %>
             <% end %>
@@ -35,7 +37,7 @@
           </div>
         <% end %>
         &nbsp;
-        <%= @event.booking_users.count %> <%= t '.participants' %>
+        <span class="badge"><%= @event.booking_users.count %></span>&nbsp;&nbsp;<%= t '.participants' %>
       </div>
       <div class="text-center">
             <%= render 'events/booking_form', event: @event %>

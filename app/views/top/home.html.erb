@@ -9,7 +9,7 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-       <div class="text-center">
+       <div class="top-head">
          <%= link_to event.title, show_event_path(event) %>
        </div>
     </div>
@@ -33,7 +33,7 @@
           </div>
         <% end %>
         &nbsp;
-        <%= event.booking_users.count %> <%= t '.participants' %>
+        <span class="badge"><%= event.booking_users.count %></span>&nbsp;<%= t '.participants' %>
       </div>
     </div>
   </div>
