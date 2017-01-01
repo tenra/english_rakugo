@@ -114,8 +114,6 @@ li.dropdown > a > img.img-circle_h {
 
 .event-image {
   text-align: center;
-  padding: 10px;
-  height: 300px;
 }
 
 #post_post_img {
@@ -288,17 +286,26 @@ span:hover + p.arrow_box {
 .inquiry-header {
   text-align: center;
   font-size: 40px;
-  margin: 15px;
+  margin: 5px;
 }
 
 span.glyphicon-envelope {
   top: 5px;
 }
 
+.text-code {
+  width: 400px
+}
+
+.area-code {
+  width: 400px;
+  height: 100px !important;
+}
+
 /* dashboard */
 
 aside {
-  margin-top: 20px;
+  margin-top: 60px;
   span {
     display: block;
     margin-bottom: 3px;

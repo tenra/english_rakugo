@@ -1,18 +1,12 @@
 <% @page_title = 'dashboard' %>
 
   <div class="row">
-    <aside class="col-md-2">
-        <h2><%= @page_title %></h2>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-              <h1><%= current_user.name %></h1>  
+
+    <%= render 'admin/sidemenu' %>
+
+    <div class="col-md-10">
+      <div class="page-header" style="margin-top:-30px;padding-bottom:0px;">
+            <h1><%= @page_title %></h1>
             </div>
-            <div class="panel-body">
-                  <ul>
-                    <li><%= link_to 'Events', "#", class: "glyphicon glyphicon-flag" %></li></br>
-                    <li><%= link_to 'Users', "#", class: "glyphicon glyphicon-list-alt" %></li>
-                  </ul> 
-            </div>
-        </div>
-    </aside>
+    </div>
   </div>

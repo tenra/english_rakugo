@@ -1,0 +1,14 @@
+    <aside class="col-md-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              <h1><%= current_user.name %></h1>  
+            </div>
+            <div class="panel-body">
+                  <ul>
+                    <li><%= link_to 'Dashboard', admin_dashboard_path, class: "glyphicon glyphicon-th" %></li></br>
+                    <li><%= link_to 'Events', "#", class: "glyphicon glyphicon-flag" %></li></br>
+                    <li><%= link_to 'Users', admin_users_path, class: "glyphicon glyphicon-list-alt" %></li>
+                  </ul> 
+            </div>
+        </div>
+    </aside>
