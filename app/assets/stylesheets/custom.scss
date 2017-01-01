@@ -283,6 +283,13 @@ span:hover + p.arrow_box {
     text-shadow: 1px 1px 0px #000;
 }
 
+.outline {
+  margin-bottom: 100px;
+  th {
+    width: 200px
+  }
+}
+
 .inquiry-header {
   text-align: center;
   font-size: 40px;
@@ -294,12 +301,15 @@ span.glyphicon-envelope {
 }
 
 .text-code {
-  width: 400px
+  /*width: 400px*/
 }
 
 .area-code {
-  width: 400px;
   height: 100px !important;
+}
+
+.actions {
+ text-align: center;
 }
 
 /* dashboard */

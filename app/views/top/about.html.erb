@@ -9,6 +9,47 @@
         <h1>this is test</h1>
       </div>
     </div>
+    
+    
+<div class='row outline'>
+  <div class="inquiry-header">Company Outline</div>
+    <div class='col-sm-offset-2 col-sm-8'>
+   　<table class="table">
+        <tr>
+          <th>Company Name</th>
+          <td>特定非営利活動法人　神戸トラベラーズ俱楽部</td>
+        </tr>
+        <tr>
+          <th>Headquarters</th>
+          <td>Morikitamachi 4-8-23 Higashinada Kobe 
+              Hyogo 658-0001 Japan
+          </td>
+        </tr>
+        <tr>
+          <th>Representative Director</th>
+          <td>Hisao Hirako</td>
+        </tr>
+        <tr>
+          <th>Our Vision</th>
+          <td>The communities that form through events support people both personally and professionally. 
+              We want to make it easier for event organizers to grow these communities, 
+              and encourage participants to get further involved in them.
+          </td>
+        </tr>
+        <tr>
+          <th>History</th>
+          <td>July 2010	&nbsp;First public release of Doorkeeper</br>
+              June 2013	&nbsp;Doorkeeper Inc established
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+</div>
+
 
 <%= form_for @top, :url => top_confirm_path do |f| %>
   <div class="inquiry-header">
@@ -16,33 +57,39 @@
   </div>
   
   <% if @top.errors.any? %>
-   <div class="alert alert=danger" role="alert">
-     <strong>入力内容にエラーがあります</strong>
-     <ul>
-       <% @top.errors.each do |attr, msg| %>
-        <li><%= msg %></li>
-        <% end %>
-     </ul>
-   </div>
+     <div class="alert alert=danger" role="alert">
+       <strong>入力内容にエラーがあります</strong>
+         <ul>
+           <% @top.errors.each do |attr, msg| %>
+            <li><%= msg %></li>
+            <% end %>
+         </ul>
+     </div>
   <% end %>
   
 <div class='row'>
-    <div class='col-sm-offset-3 col-sm-6'>
-        <table class="table">
-          <tr>
-            <th>名前<span class="text-danger">(必須)</span></th>
-            <td><%= f.text_field :name, placeholder: 'Name', class: "form-control text-code" %></td>
-          </tr>
-          <tr>
-            <th>メールアドレス<span class="text-danger">(必須)</span></th>
-            <td><%= f.text_field :email, placeholder: 'Email Address', class: "form-control text-code" %></td>
-          </tr>
-          <tr>
-            <th>お問い合わせ内容</th>
-            <td><%= f.text_area :message, placeholder: 'Message', class: "form-control area-code"  %></td>
-          </tr>
-        </table>
-      <%= f.submit '確認', class: 'btn btn-primary' %>
+    <div class='col-md-6 col-md-offset-3'>
+              <div class="form-group">
+                <%= f.label :name %><br />
+                <%= f.text_field :name, placeholder: 'Name', class: "form-control text-code", autofocus: true %>
+              </div>
+              <div class="form-group">
+                <%= f.label :email %><br />
+                <%= f.text_field :email, placeholder: 'Email Address', class: "form-control text-code", autofocus: true %>
+              </div>
+              <div class="form-group">
+                <%= f.label :message %><br />
+                <%= f.text_area :message, placeholder: 'Message', class: "form-control area-code", autofocus: true %>
+              </div>
+      
+    </div>
+</div>
+ 
+<div class="row">
+    <div class="col-md-3 col-md-offset-3">
+        <div class="actions">
+          <%= f.submit 'Confirm', class: 'btn btn-primary' %>
+        </div>
      <% end %>
     </div>
 </div>
