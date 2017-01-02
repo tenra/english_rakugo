@@ -3,7 +3,7 @@
 
 <div class='row'>
    <div class='col-md-6 col-md-offset-3'>
-      <%= form_for @event do |f| %>
+      <%= form_for @event, url: {action: 'confirm'} do |f| %>
               <div class="form-group">
                 <%= f.label :title %><br />
                 <%= f.text_field :title, placeholder: 'title', class: "form-control", autofocus: true %>
@@ -21,7 +21,7 @@
                 <%= f.text_field :description, placeholder: 'description', class: "form-control", autofocus: true %>
               </div>
               <div>
-                <%= f.submit 'Update', class: "btn btn-large btn-primary" %>
+                <%= f.submit 'Confirm', class: "btn btn-large btn-primary" %>
               </div>
       <% end %>
    </div>
