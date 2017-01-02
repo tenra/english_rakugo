@@ -20,7 +20,11 @@
                             <span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                 <li><%= link_to "My page", users_me_path %></li>
-                                <li><%= link_to "Dashboard", admin_dashboard_path %></li>
+                                <li>
+                                    <% if current_user.admin %>
+                                      <%= link_to "Dashboard", admin_dashboard_path %>
+                                    <% end %>
+                                </li>
                                 <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></li>
                               </ul>
                     </li>
