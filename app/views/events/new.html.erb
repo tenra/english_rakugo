@@ -1,0 +1,28 @@
+<% @page_title = "Create" %>
+<h1><%= @page_title %></h1>
+
+<div class='row'>
+   <div class='col-md-6 col-md-offset-3'>
+      <%= form_for @event do |f| %>
+              <div class="form-group">
+                <%= f.label :title %><br />
+                <%= f.text_field :title, placeholder: 'title', class: "form-control", autofocus: true %>
+              </div>
+              <div class="form-group">
+                <%= f.label :text %><br />
+                <%= f.text_area :text, placeholder: 'text', class: "form-control", rows: 10, cols: 45, autofocus: true %>
+              </div>
+              <div class="form-group">
+                <%= f.label :address %><br />
+                <%= f.text_field :address, placeholder: 'address', class: "form-control", autofocus: true %>
+              </div>
+              <div class="form-group">
+                <%= f.label :description %><br />
+                <%= f.text_field :description, placeholder: 'description', class: "form-control", autofocus: true %>
+              </div>
+              <div>
+                <%= f.submit 'Update', class: "btn btn-large btn-primary" %>
+              </div>
+      <% end %>
+   </div>
+</div>

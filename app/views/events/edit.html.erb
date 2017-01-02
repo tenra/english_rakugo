@@ -59,8 +59,8 @@
               </div>
           <% end %>
 
-      <div>
+        <%= link_to "Delete", @event, method: :delete, data: { confirm: 'Are you sure？' } %>
       　<%= link_to "Back", :back %>
-  　　</div>
+  　　
   </div>
   

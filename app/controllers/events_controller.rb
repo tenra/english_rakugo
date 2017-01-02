@@ -15,6 +15,8 @@ class EventsController < ApplicationController
     end
   end
   
+
+  
   def new
     @event = Event.new
   end
@@ -23,7 +25,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     if @event.save
        flash[:success] = "Create Event!"
-       redirect_to @event
+       redirect_to show_event_path(@event)
     else
       render 'new'
     end
@@ -48,7 +50,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
     flash[:success] = 'Your event has been successfully cancelled.'
-    redirect_to root_path
+    redirect_to admin_events_url
   end
   
 private
