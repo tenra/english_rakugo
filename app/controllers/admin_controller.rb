@@ -4,5 +4,8 @@ class AdminController < ApplicationController
        @users = User.all 
     end
     
+    def events
+        @events = Event.all
+    end
 
 end

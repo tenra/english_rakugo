@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       
       get 'admin/dashboard'
       get 'admin/users'
+      get 'admin/events'
       resources :events, only: [:show, :index] do
         resource :bookings, only: [:create, :destroy]
       end
