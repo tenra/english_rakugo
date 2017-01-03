@@ -7,7 +7,9 @@
    <div class="col-md-10">
        <center><h1><%= @page_title %></h1></center>
       
-      <div align="right"><%= link_to "Event Create", new_event_path %></div>
+      <%= button_tag(class: "btn btn-sm btn-default") do %>
+          <%= link_to "Event Create", new_event_path, class: "glyphicon glyphicon-chevron-left" %>
+      <% end %>
       
      <% if @events.present? %>
         <table class="table">

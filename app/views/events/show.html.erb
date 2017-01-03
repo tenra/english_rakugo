@@ -7,9 +7,9 @@
 <div class='row'>
       <div class="event-image">
         <% if @event.image? %>
-            <%= image_tag @event.image.thumb.url %>
+            <%= image_tag @event.image.thumb.url, class: "event-present-image" %>
         <% else %>
-            <%= image_tag 'noimage.gif' %>
+            <%= image_tag 'noimage.gif', width: 200, :class => "event-present-image" %>
         <% end %>
       </div>
         <%= simple_format @event.text %>
