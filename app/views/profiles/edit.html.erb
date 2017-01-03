@@ -2,8 +2,8 @@
 
 <h1><%= @page_title %></h1>
 
+
 <%= form_for(@profile) do |f| %>
-<div class="text-center">
     <%#= f.label :Image %>
       <% if @profile.avatar? %>
          <%= image_tag @profile.avatar.thumb.url, class: "profile-present-avatar" %>
@@ -43,7 +43,7 @@
           </div>
 
 <% end %>
-</div>
+
 <div>
 <%= link_to "Back", :back %>
 </div>

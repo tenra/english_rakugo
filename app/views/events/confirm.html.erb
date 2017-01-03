@@ -6,6 +6,13 @@
       <%= form_for @event do |f| %>
         <table class="table">
            <tr>
+             <th>Image</th><br /
+             <td>
+                <%= f.hidden_field :image_cache %>
+                <%= image_tag @event.image.thumb.url, class: "event-present-image" if @event.image? %>
+             </td>
+           </tr>
+           <tr>
              <th>Title</th>
                <td>
                  <%= f.hidden_field :title %>
