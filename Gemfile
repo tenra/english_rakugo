@@ -24,6 +24,7 @@ gem 'rmagick'
 gem 'cloudinary'
 gem 'gmaps4rails'
 gem 'geocoder'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'
