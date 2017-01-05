@@ -28,6 +28,10 @@ gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
 end
 
 group :development do

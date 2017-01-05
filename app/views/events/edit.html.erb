@@ -4,7 +4,7 @@
 
 <div class='row'>
    <div class='col-md-6 col-md-offset-3'>
-          <%= form_for @event, url: :event do |f| %>
+          <%= form_for @event, url: confirm2_event_path(@event), method: 'POST' do |f| %>
               
               <div class="form-group">
                 <%= f.label :image %>

@@ -10,8 +10,13 @@ Rails.application.routes.draw do
       get 'events/:event_id/show', to: 'events#show', as: 'show_event'
       
       scope :admin do
-        resources :events, except: [:show, :index]
+        resources :events, except: [:show, :index] do
+          member do
+            post 'confirm2'
+          end
+        end
         post 'events/confirm', to: 'events#confirm'
+        # post 'events/confirm2', to: 'events#confirm2'
       end
       
       get 'admin/dashboard'

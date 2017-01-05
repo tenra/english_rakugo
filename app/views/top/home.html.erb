@@ -8,42 +8,42 @@
 <% @events.each do |event| %>
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<div class="hvr-glow">
-   <div class="wrap" data-url="<%= show_event_path(event) %>">
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-       <div class="top-head">
-         <%= link_to event.title, show_event_path(event) %>
-       </div>
-    </div>
-      
-    <div class="panel-body">
-      <div class="image_left"><%= image_tag event.image.thumb.url if event.image.thumb.present? %></div>
-      　<p><%= simple_format event.text %></p>
-    　<div class="clearfix"></div>
-      　<hr>
-    　<div align="right" class="user_avatars">
-      　<% event.booking_users.order('updated_at desc').limit(40).each do |user| %>
-          <div>
-            <span>
-              <% if user.profile && user.profile.avatar? %>
-                <%= image_tag user.profile.avatar , :alt => user.name , :class => "img-circle_h"%>
-              <% else %>
-                <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle_h"%>
-              <% end %>
-            </span>
-            <p class="arrow_box"><%= user.name %></p>
+  <div class="hvr-glow">
+     <div class="wrap" data-url="<%= show_event_path(event) %>">
+  
+          <div class="panel panel-default">
+            <div class="panel-heading">
+               <div class="top-head">
+                 <%= link_to event.title, show_event_path(event) %>
+               </div>
+            </div>
+              
+              <div class="panel-body">
+                <div class="image_left"><%= image_tag event.image.thumb.url if event.image.thumb.present? %></div>
+                　<p><%= simple_format event.text %></p>
+              　<div class="clearfix"></div>
+                　<hr>
+              　<div align="right" class="user_avatars">
+                　<% event.booking_users.order('updated_at desc').limit(40).each do |user| %>
+                    <div>
+                      <span>
+                        <% if user.profile && user.profile.avatar? %>
+                          <%= image_tag user.profile.avatar , :alt => user.name , :class => "img-circle_h"%>
+                        <% else %>
+                          <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle_h"%>
+                        <% end %>
+                      </span>
+                      <p class="arrow_box"><%= user.name %></p>
+                    </div>
+                  <% end %>
+                  &nbsp;
+                  <span class="badge"><%= event.booking_users.count %></span>&nbsp;<%= t '.participants' %>
+                </div>
+              </div>
           </div>
-        <% end %>
-        &nbsp;
-        <span class="badge"><%= event.booking_users.count %></span>&nbsp;<%= t '.participants' %>
-      </div>
-    </div>
+  
+     </div>
   </div>
-
-</div>
-</div>
 <script>
     jQuery('.wrap').click(function() {
         location.href = jQuery(this).attr('data-url');

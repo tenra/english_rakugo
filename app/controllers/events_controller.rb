@@ -39,10 +39,20 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.image.cache! if @event.image.present?
   end
+
+  def confirm2
+    @event = Event.find(params[:id])
+    @event.assign_attributes(event_params)
+    render :edit if @event.invalid?
+    #binding.pry
+  end
   
   def update
     @event = Event.find(params[:id])
-    if @event.update(event_params)
+    @event.assign_attributes(event_params)
+    if params[:back]
+      render :edit
+    elsif @event.update(event_params)
        flash[:success] = "update completed!"
        redirect_to show_event_path(@event)
     else

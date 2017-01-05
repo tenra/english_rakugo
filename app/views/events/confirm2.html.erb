@@ -5,17 +5,17 @@
    <div class='col-md-6 col-md-offset-3'>
       <%= form_for @event do |f| %>
         <table class="table">
-            <tr>
-              <th>Image</th>
+           <tr>
+             <th>Image</th>
             </tr>
             <tr>
                <td style="border-style: none;">
                  <%= f.hidden_field :image_cache %>
                  <%= image_tag @event.image.thumb.url, class: "event-present-image" if @event.image? %>
                </td>
-            </tr>
-            <tr>
-              <th>Title</th>
+           </tr>
+           <tr>
+             <th>Title</th>
             </tr>
             <tr>
                <td style="border-style: none;">
@@ -56,7 +56,7 @@
           <%= f.submit 'Back', name: 'back' %>
         </div>
         <div>
-          <%= f.submit 'Create', class: "btn btn-large btn-primary" %>
+          <%= f.submit ' Update', class: "btn btn-large btn-primary" %>
         </div>
       <% end %>
    </div>
