@@ -16,7 +16,7 @@
         <div class="col-md-5">
           <h3><%= link_to event.title, show_event_path(event) %></h3>
             <h4>Subheading</h4>
-            <p><%= simple_format event.text %></p>
+            <div class="event-text"><%= simple_format event.text %></div>
             <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
           <div align="right" class="user_avatars">
@@ -34,7 +34,7 @@
                 <% end %>
                   &nbsp;
                 <span class="badge"><%= event.booking_users.count %></span>&nbsp;<%= t '.participants' %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
+      </div>
     </div>
   </div>
 <script>

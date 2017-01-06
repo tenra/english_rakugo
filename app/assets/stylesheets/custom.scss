@@ -111,10 +111,19 @@ li.dropdown > a > img.img-circle_h {
 }
 
 .wrap {
+  height: 400px;
   padding: 10px;
-  box-shadow:1px 2px 5px 0px #565e5d;
-  -moz-box-shadow:1px 2px 5px 0px #565e5d;
-  -webkit-box-shadow:1px 2px 5px 0px #565e5d;
+  box-shadow:0px 1px 5px 0px #565e5d;
+  -moz-box-shadow:0px 1px 5px 0px #565e5d;
+  -webkit-box-shadow:0px 1px 5px 0px #565e5d;
+}
+
+.event-text {           /* 行数管理 */
+ overflow : hidden;
+ text-overflow: ellipsis;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 8; 
 }
 
 .user_avatars div {
@@ -359,9 +368,7 @@ aside {
   padding: 10px;
 }
 
-.glyphicon-chevron-left {
-}
-
+/* sign in */
 .btn-twitter:hover{color:#FFB6C1;background-color:#2795e9;border-color:rgba(0,0,0,0.2)}
 
 a.link-social {               /* 不要な線を消す */
