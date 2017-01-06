@@ -5,5 +5,5 @@ class UsersController < ApplicationController
       @users = User.all
       @profiles = Profile.all
   end
-  
+ 
 end

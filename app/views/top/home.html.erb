@@ -11,10 +11,10 @@
   <div class="hvr-glow">
     <div class="wrap" data-url="<%= show_event_path(event) %>">
       <div class="col-md-7">
-       <%= image_tag event.image.thumb.url if event.image.thumb.present? %>
+       <div class="image_left"><%= image_tag event.image.thumb.url if event.image.thumb.present? %></div>
       </div>
         <div class="col-md-5">
-            <h3><%= link_to event.title, show_event_path(event) %></h3>
+          <h3><%= link_to event.title, show_event_path(event) %></h3>
             <h4>Subheading</h4>
             <p><%= simple_format event.text %></p>
             <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
