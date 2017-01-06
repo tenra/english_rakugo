@@ -1,5 +1,3 @@
-<% @page_title = 'Users' %>
-
  <div class="row">
 
     <%= render 'admin/sidemenu' %>
@@ -19,7 +17,7 @@
         <% @users.each do |user| %>
           <tr>
              <td><%= user.id %></td>
-             <td><%= link_to user.name, users_me_path(@user) %></td>
+             <td><%= link_to user.name, user %></td>
              <td><%= user.email %></td>
              <td>
                <%= link_to "delete", "#", method: :delete, data: { confirm: 'Are you sure?' } %>

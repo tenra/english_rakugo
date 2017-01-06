@@ -1,0 +1,36 @@
+<center><h1><%= @page_title %></h1></center>
+
+<div class='row'>
+  <div class='col-sm-offset-3 col-sm-6'>
+ 　  <table class="table">
+      <tr>
+        <div class="text-center">
+          <% if !@user.profile.nil? && @user.profile.avatar? %>
+            <%= image_tag(@user.profile.avatar.thumb.url, :class => "img-circle") %>
+          <% else %>
+            <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle"%>
+          <% end %>
+        </div>
+      </tr>
+      <tr>
+        <th><%= t '.User_name' %></th>
+        <td><%= @user.name %></td>
+      </tr>
+      <tr>
+        <th><%= t '.Email_address' %></th>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <th><%= t '.My_events' %></th>
+        <td>
+          <% @user.booking_events.each do |event| %>
+            <div><%= link_to event.title, show_event_path(event) %></div>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<%= link_to 'Edit Profile Image', new_profile_path %><br>
+<%= link_to 'Edit User', edit_user_registration_path %>

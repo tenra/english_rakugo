@@ -5,6 +5,6 @@ module AdminsHelper
   end
   
   def admin_check
-    redirect_to root_path if !current_user.admin?
+    redirect_to root_path if !current_user || !current_user.admin?
   end
 end

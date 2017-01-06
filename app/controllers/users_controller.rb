@@ -5,5 +5,8 @@ class UsersController < ApplicationController
       @users = User.all
       @profiles = Profile.all
   end
- 
+  
+  def show
+    @user = User.find(params[:id])
+  end
 end
