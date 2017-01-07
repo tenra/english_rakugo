@@ -1,9 +1,5 @@
 <%  @page_title = "Event" %>
 
-<div class="top-head">
-  <%= @event.title %>
-</div>
-
 <div class='row'>
       <div class="event-image">
         <% if @event.image? %>
@@ -12,6 +8,10 @@
             <%= image_tag 'noimage.gif', width: 200, :class => "event-present-image" %>
         <% end %>
       </div>
+      <div class="top-head">
+        <%= @event.title %>
+      </div>
+      <h1>Subheading</h1>
         <%= simple_format @event.text %>
         <hr>
 

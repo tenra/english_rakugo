@@ -6,7 +6,8 @@ Rails.application.routes.draw do
       post 'top/thanks' => 'top#thanks' #送信完了画面
       
       get 'users/me' => 'users#me'
-      resources :users, only: [:show]
+      get '/users/:user_id/show', to: 'users#show', as: 'show_user'
+      #resources :users, only: [:show]
       
       get 'events/:event_id/show', to: 'events#show', as: 'show_event'
       
