@@ -10,8 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  *= require devise_bootstrap_views
  *= require font-awesome
+ *= require custom.scss
+ *= require ice_code.css
+ *= require bootstrap-social.css
+ *= require_tree .
  */

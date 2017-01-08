@@ -1,58 +1,57 @@
 <%  @page_title = "Event" %>
 
-<div class='row'>
-      <div class="event-image">
-        <% if @event.image? %>
-            <%= image_tag @event.image.thumb.url, class: "event-present-image" %>
-        <% else %>
-            <%= image_tag 'noimage.gif', width: 200, :class => "event-present-image" %>
-        <% end %>
-      </div>
-      <div class="top-head">
-        <%= @event.title %>
-      </div>
-      <h1>Subheading</h1>
-        <%= simple_format @event.text %>
-        <hr>
-
-      <div align="right" class="user_avatars">
-      　<% @event.booking_users.order('updated_at desc').limit(40).each do |user| %>
-          <div>
-            <span>
-              <% if user.profile && user.profile.avatar? %>
-                <%= image_tag user.profile.avatar , :alt => user.name , :class => "img-circle_h"%>
-              <% else %>
-                <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle_h"%>
-              <% end %>
-            </span>
-            <p class="arrow_box"><%= user.name %></p>
+<div class="event-back">
+    <div class='row'>
+          <div class="event-image">
+            <% if @event.image? %>
+                <%= image_tag @event.image.thumb.url, class: "event-present-image" %>
+            <% else %>
+                <%= image_tag 'noimage.gif', width: 200, :class => "event-present-image" %>
+            <% end %>
           </div>
-        <% end %>
-        &nbsp;
-        <span class="badge"><%= @event.booking_users.count %></span>&nbsp;&nbsp;<%= t '.participants' %>
-      </div>
-      <div class="text-center">
-            <%= render 'events/booking_form', event: @event %>
-      </div>
+          <div class="top-head">
+            <%= @event.title %>
+          </div>
+          <h1><span style="color:#535353">Subheading</span></h1>
+            <div class="event-text2"><%= simple_format @event.text %></div>
+    
+          <div align="right" class="user_avatars">
+          　<% @event.booking_users.order('updated_at desc').limit(40).each do |user| %>
+              <div>
+                <span>
+                  <% if user.profile && user.profile.avatar? %>
+                    <%= image_tag user.profile.avatar , :alt => user.name , :class => "img-circle_h"%>
+                  <% else %>
+                    <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle_h"%>
+                  <% end %>
+                </span>
+                <p class="arrow_box"><%= user.name %></p>
+              </div>
+            <% end %>
+            &nbsp;
+            <span class="badge"><%= @event.booking_users.count %></span>&nbsp;&nbsp;<%= t '.participants' %>
+          </div>
+          <div class="text-center">
+                <%= render 'events/booking_form', event: @event %>
+          </div>
+    </div>
+    
+            <%= @event.address %>
+            <%= @event.latitude %>
+            <%= @event.longitude %>
+    <%#= @hash.inspect %>
+
+  <div id="map" style='width: 1010px; height: 500px; margin: 50px 50px 50px 20px;'></div>
+
+    <script type="text/javascript">
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+          markers = handler.addMarkers(<%=raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          handler.getMap().setZoom(15);
+        });
+    </script>
+    
+    <%= link_to "Back", :back %>
 </div>
-
-        <%= @event.address %>
-        <%= @event.latitude %>
-        <%= @event.longitude %>
-<%#= @hash.inspect %>
-
-<div style='width: 1000px; margin: 0 auto; padding: 50px;'>
-  <div id="map" style='width: 1000px; height: 500px;'></div>
-</div>
-
-<script type="text/javascript">
-    handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers(<%=raw @hash.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      handler.getMap().setZoom(15);
-    });
-</script>
-
-<%= link_to "Back", :back %>

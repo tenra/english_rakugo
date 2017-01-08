@@ -5,7 +5,6 @@
 /* universal */
 
 body {
-  padding-top: 0;
 }
 
 section {
@@ -25,7 +24,6 @@ textarea {
 }
 
 /* typography */
-
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
@@ -93,15 +91,18 @@ li.dropdown > a > img.img-circle_h {
 }
 
 .title-text {
-  font-size: 1.5em;
+  font-size: 2em;
   text-align: center;
-  color: #535353;
+  color: #fff;
   margin-bottom: 30px;
 }
 
 .top-head {
  text-align: center;
+ color: #4682B4;
  font-size: 3em;
+ font-weight: bold;
+ text-shadow: 1px 1px 0px #808080;
 }
 
 .trim {
@@ -183,6 +184,21 @@ span:hover + p.arrow_box {
 }
 
 /* event */
+.event-back {
+  padding: 50px;
+  background-color: #FFFFFF;
+  height: 100%;
+  width: 100%;
+  
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
 .event-image {
   text-align: center;
   .event-present-image {
@@ -210,6 +226,14 @@ span:hover + p.arrow_box {
   height: 300px;
   overflow: hidden;
   background-position: center center;
+}
+
+.event-text2 {
+  padding: 0px 50px;
+ font-family: "myriad-pro",sans-serif;
+ color: #808080;
+ font-style: normal;
+ font-weight: 100;
 }
 
 /* footer */
@@ -379,12 +403,3 @@ aside {
   text-align: right;
   padding: 10px;
 }
-
-/* sign in */
-.btn-twitter:hover{color:#FFB6C1;background-color:#2795e9;border-color:rgba(0,0,0,0.2)}
-
-a.link-social {               /* 不要な線を消す */
-    text-decoration: none;
-}
-
-.btn-facebook:hover{color:#FFB6C1;background-color:#3b5998;border-color:rgba(0,0,0,0.2)}
