@@ -46,6 +46,10 @@ h2 {
   color: #777;
 }
 
+h4 {
+  color: #535353;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -79,16 +83,19 @@ li.dropdown > a > img.img-circle_h {
 }
 
 /* top */
-#title {
-    color: #000;
-    font-size: 25px;
-    font-weight: bold;
-    text-shadow: 5px 5px 1px #999999;
+.white-msg {
+    font-size: 2.5em;
+    padding: 20px 0;
+    text-align: center;
+    letter-spacing: 0.15em;
+    color: #fff;
+    text-shadow: 1px 1px 0px #808080;
 }
 
 .title-text {
   font-size: 1.5em;
   text-align: center;
+  color: #535353;
   margin-bottom: 30px;
 }
 
@@ -109,19 +116,29 @@ img {
 }
 
 .wrap {
+  background-color: #FFFFFF;
   height: 400px;
   padding: 10px;
-  box-shadow:0px 1px 5px 0px #565e5d;
-  -moz-box-shadow:0px 1px 5px 0px #565e5d;
-  -webkit-box-shadow:0px 1px 5px 0px #565e5d;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .event-text {           /* 行数管理 */
+ font-family: "myriad-pro",sans-serif;
+ color: #808080;
+ font-style: normal;
+ font-weight: 100;
+ margin-bottom: 7px;
  overflow : hidden;
  text-overflow: ellipsis;
  display: -webkit-box;
  -webkit-box-orient: vertical;
- -webkit-line-clamp: 8; 
+ -webkit-line-clamp: 9; 
 }
 
 .user_avatars div {
@@ -297,14 +314,6 @@ input {
   height: 100vh;
   background: url("github.jpg") center center;
   background-size: cover;
-}
-
-#test-msg {
-    padding: 20px 0;
-    text-align: center;
-    letter-spacing: 0.15em;
-    color: #fff;
-    text-shadow: 1px 1px 0px #000;
 }
 
 .outline {

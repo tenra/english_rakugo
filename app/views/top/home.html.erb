@@ -1,4 +1,4 @@
-<div id="title">
+<div class="white-msg">
    <h1>English Rakugo</h1>
 </div>
 <div class="title-text">
@@ -17,7 +17,6 @@
           <h3><%= link_to event.title, show_event_path(event) %></h3>
             <h4>Subheading</h4>
             <div class="event-text"><%= simple_format event.text %></div>
-            <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
           <div align="right" class="user_avatars">
             　<% event.booking_users.order('updated_at desc').limit(40).each do |user| %>
