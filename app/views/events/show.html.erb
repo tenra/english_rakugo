@@ -13,6 +13,7 @@
             <%= @event.title %>
           </div>
           <h1><span style="color:#535353">Subheading</span></h1>
+            <div class="venue glyphicon glyphicon-flag">Venue:<%= @event.address %></div>
             <div class="event-text2"><%= simple_format @event.text %></div>
     
           <div align="right" class="user_avatars">
@@ -31,17 +32,14 @@
             &nbsp;
             <span class="badge"><%= @event.booking_users.count %></span>&nbsp;&nbsp;<%= t '.participants' %>
           </div>
-          <div class="text-center">
-                <%= render 'events/booking_form', event: @event %>
-          </div>
+        <div class="text-center"><%= render 'events/booking_form', event: @event %></div>
     </div>
     
-            <%= @event.address %>
-            <%= @event.latitude %>
-            <%= @event.longitude %>
+    <div class="venue glyphicon glyphicon-flag">Venue:<%= @event.address %></div>
+            
     <%#= @hash.inspect %>
-
-  <div id="map" style='width: 1010px; height: 500px; margin: 50px 50px 50px 20px;'></div>
+    
+  <div id="map" style='width: 1010px; height: 500px; text-align: center; '></div>
 
     <script type="text/javascript">
         handler = Gmaps.build('Google');
