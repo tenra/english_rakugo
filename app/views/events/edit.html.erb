@@ -42,18 +42,21 @@
                 <%= f.label :title %><br />
                 <%= f.text_field :title, class: "form-control", autofocus: true %>
               </div>
-              <div class="input-group date datepicker">
-                 <%= f.label :date %><br />
-                 <%= f.text_field :date, class: "form-control" %>
-                  <span class="input-group-addon">
-                    <span class="fa fa-calendar"></span>
-                  </span>
-              </div>
-              <div class="form-group form-inline">
-                  <%= f.label :time %><br />
-                  <%= f.select :time, (0..23).to_a.map { |v| "%02d" % v }, {}, class: 'form-control' %> :
-                  <%= f.select :time, (0..59).to_a.map { |v| "%02d" % v }, {}, class: 'form-control' %>
-              </div>
+            
+                  <div class="form-group form-inline">
+                    <%= f.label :date_time %><br />
+                      <div class="input-group date datepicker">
+                         <%= f.text_field :date, class: "form-control" %>
+                          <span class="input-group-addon">
+                            <span class="fa fa-calendar"></span>
+                          </span>
+                      </div>
+                      <id class="select">
+                          <%= f.select :time, (0..23).to_a.map { |v| "%02d" % v }, {}, class: 'form-control' %>：
+                          <%= f.select :time, (0..59).to_a.map { |v| "%02d" % v }, {}, class: 'form-control' %>
+                      </id>
+                  </div>
+            
               <div class="form-group">
                 <%= f.label :text %><br />
                 <%= f.text_area :text, class: "form-control", rows: 10, cols: 45, autofocus: true %>
