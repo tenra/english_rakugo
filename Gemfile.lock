@@ -46,6 +46,8 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap3-datetimepicker-rails (4.17.43)
+      momentjs-rails (>= 2.8.1)
     builder (3.2.2)
     byebug (9.0.6)
     carrierwave (0.11.2)
@@ -114,6 +116,8 @@ GEM
     mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
+    momentjs-rails (2.15.1)
+      railties (>= 3.1)
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
@@ -244,6 +248,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  bootstrap3-datetimepicker-rails (~> 4.17.43)
   byebug
   carrierwave
   cloudinary
@@ -258,6 +263,7 @@ DEPENDENCIES
   gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
+  momentjs-rails (>= 2.9.0)
   omniauth-facebook
   omniauth-twitter
   pry-byebug

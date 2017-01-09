@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'bootstrap-datetimepicker';
 
 
 /* universal */
@@ -236,19 +237,10 @@ span:hover + p.arrow_box {
   font-weight: bold;
 }
 
-.label{
-    display:inline-block;
-    padding:6px 12px;
-    margin-bottom:0;
-    font-size:14px;
-    font-weight:400;
-    line-height:1.42857143;
-    text-align:center;
-    white-space:nowrap;
-    vertical-align:middle;
-    background-image:none;
-    border:1px solid transparent;
-    border-radius:4px
+.datepicker {
+  width: 200px;
+
+  
 }
 
 .event-text2 {
