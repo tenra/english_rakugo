@@ -3,8 +3,7 @@
 @import 'bootstrap-datetimepicker';
 
 
-/* universal */
-
+/* universal */  
 body {
   padding-top: 0;
 }
@@ -291,7 +290,6 @@ footer ul li {
 }
 
 /* mixins */
- 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -299,7 +297,6 @@ footer ul li {
 }
  
 /* forms */
- 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -313,7 +310,6 @@ input {
 }
 
 /* profile */
-
 .img-circle {
     border-radius: 50%;
     border: 1px solid rgba(0,0,0,0.1);
@@ -363,6 +359,7 @@ input {
 }
 
 .inquiry-header {
+  color: #fff;
   text-align: center;
   font-size: 40px;
   margin: 5px;

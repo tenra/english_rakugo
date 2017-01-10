@@ -1,5 +1,5 @@
 <% @page_title = "Confirm" %>
-<h1><%= @page_title %></h1>
+<h1><span style="color:#fff;"><%= @page_title %></span></h1>
 
 <div class='row'>
    <div class='col-md-6 col-md-offset-3'>
@@ -21,6 +21,16 @@
                <td style="border-style: none;">
                  <%= f.hidden_field :title %>
                  <%= @event.title %>  
+               </td>
+            </tr>
+               <th>Date time</th>
+            </tr>
+            <tr>
+               <td style="border-style: none;">
+                 <%= f.hidden_field :date %>
+                 <%= @event.date %>
+                 <%= f.hidden_field :time %>
+                 <%= @event.time %>
                </td>
             </tr>
             <tr>

@@ -16,7 +16,7 @@
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
-//= require bootstrap
+
 //= require moment
 //= require bootstrap-datetimepicker
 //= require_tree .
