@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'timetables/index'
+
   scope "(:locale)" do
       root to: 'top#home'
       get "about" => "top#about", as: "about"
@@ -19,6 +21,7 @@ Rails.application.routes.draw do
         end
         post 'events/confirm', to: 'events#confirm'
         # post 'events/confirm2', to: 'events#confirm2'
+        resources :timetables
       end
       
       get 'admin/dashboard'
