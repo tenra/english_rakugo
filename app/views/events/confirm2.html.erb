@@ -20,17 +20,18 @@
             <tr>
                <td style="border-style: none;">
                  <%= f.hidden_field :title %>
-                 <%= @event.title %>  
+                 <%= @event.title %>
                </td>
             </tr>
                <th>Date time</th>
             </tr>
             <tr>
                <td style="border-style: none;">
-                 <%= f.hidden_field :date %>
-                 <%= @event.date %>
-                 <%= f.hidden_field :time %>
-                 <%= @event.time %>
+                <%= f.hidden_field :date %>
+                <%= @event.date %>,
+                <%= f.hidden_field :time %>
+                <%= @event.time.hour %>:
+                <%= @event.time.min %>
                </td>
             </tr>
             <tr>

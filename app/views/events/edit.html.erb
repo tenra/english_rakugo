@@ -51,8 +51,7 @@
                             <span class="fa fa-calendar"></span>
                           </span>
                       </div>
-                          <%= f.select :time, (0..23).to_a.map { |v| "%02d" % v }, {}, class: 'form-control' %>：
-                          <%= f.select :time, (0..59).to_a.map { |v| "%02d" % v }, {}, class: 'form-control' %>
+                        <%= f.time_select :time, {use_month_numbers: true}, {class: "form-control"} %>
                   </div>
             
               <div class="form-group">

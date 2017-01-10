@@ -12,7 +12,7 @@
           <div class="top-head">
             <%= @event.title %>
           </div>
-          <h1><span style="color:#535353">Subheading</span></h1>
+          <h1><span style="color:#535353"><%=  I18n.l @event.date, format: :full_date  %>, <%= @event.time.strftime("%H:%M") %></span></h1>
             <div class="venue glyphicon glyphicon-flag">Venue:<%= @event.address %></div>
             <div class="event-text2"><%= simple_format @event.text %></div>
     

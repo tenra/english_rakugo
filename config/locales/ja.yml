@@ -11,6 +11,9 @@ ja:
   events:
     show:
       participants: "人の参加者"
+  date:
+    formats:
+      full_date: "%Y-%m-%d (%a)"
   users:
     me:
       User_name: "名前"
