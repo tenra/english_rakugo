@@ -66,7 +66,7 @@ class EventsController < ApplicationController
     flash[:success] = 'Your event has been successfully cancelled.'
     redirect_to admin_events_url
   end
-  
+
 private
     def event_params
       params.require(:event).permit(

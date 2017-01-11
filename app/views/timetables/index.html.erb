@@ -1,3 +1,19 @@
-<h1>Timetables#index</h1>
-<p>Find me in app/views/timetables/index.html.erb</p>
-<%= debug params %>
+<%= render 'form' %>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+Timetable
+    </div>
+    
+    <div class="panel-body">
+<% @timetables.each do |timetable| %>
+    <span><%= timetable.time %></span>
+    <span><%= timetable.description %></span>
+    
+    <%= link_to "Edit", edit_timetable_path(timetable) %> /
+    <%= link_to "Delete", timetable_path(timetable), method: :delete, data: { confirm: 'Are you sure？' } %>
+    <br>
+    <% end %>
+   </div>
+ </div>
+ <%= debug params %>

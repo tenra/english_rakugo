@@ -20,7 +20,7 @@ Rails.application.routes.draw do
         end
         post 'events/confirm', to: 'events#confirm'
         # post 'events/confirm2', to: 'events#confirm2'
-        resources :timetables, only: [:index]
+        resources :timetables
       end
       
       get 'admin/dashboard'
