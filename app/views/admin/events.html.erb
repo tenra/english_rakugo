@@ -19,15 +19,15 @@
              <th>id</th>
              <th>title</th>
              <th>#</th>
+             <th>#</th>
           </tr>
 
         <% @events.each do |event| %>
           <tr>
              <td><%= event.id %></td>
              <td><%= link_to event.title, show_event_path(event) %></td>
-             <td>
-               <%= link_to "Edit", edit_event_path(event) %>
-             </td>
+             <td><%= link_to "Edit", edit_event_path(event) %></td>
+             <td><%= link_to 'Timetable', timetables_path(event_id: event.id) %></td>
           </tr>
         <% end %>
 
