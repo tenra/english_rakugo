@@ -1,5 +1,4 @@
-
-   <div class="form-group">
+<div class="form-group">
   <%= form_for(@timetable) do |f| %>
   　<input type="hidden" name="event_id" value="<%= @timetable.event_id %>">
      <% if @timetable.errors.present? %>
@@ -10,18 +9,23 @@
              <li>
                  <%= full_message %>
              </li>
-             <% end %>
+            <% end %>
          </ul>
-      </div>
+       </div>
      <% end %>
  
-<div class="form-group form-inline">
-   <%= f.label :Time %><br />
-       <%= f.text_field :time, style: "width:100px;", class: "form-control", placeholder: "00:00" %>
-   <%= f.label :Description %><br />
-       <%= f.text_field :description, style: "width:300px;", class: "form-control", placeholder: "less than 50 characters" %>
-       
-       <%= f.submit 'Create', class: "btn btn-sm btn-primary" %>
+    <div class="form-inline">
+        <div class="form-group">
+         <%= f.label :Time %><br />
+         <%= f.text_field :time, style: "width:90px;", class: "form-control", placeholder: "00:00" %>
+        </div>
+        <div class="form-group">
+         <%= f.label :Description %><br />
+         <%= f.text_field :description, style: "width:390px;", class: "form-control", placeholder: "less than 50 characters" %>
+        </div>
+        <div class="form-group"><br />
+         <%= f.submit 'Create', class: "btn btn-sm btn-primary" %>
+        </div>
+    </div>
+   <% end %>
 </div>
-
-<% end %>

@@ -11,18 +11,20 @@ class TimetablesController < ApplicationController
        redirect_to timetables_path(event_id: params[:event_id])
     else
       @timetables = Timetable.where(event_id: params[:event_id])
-      flash.now[:alert] = "メッセージの保存に失敗しました。"
+      flash.now[:alert] = "Your column is not created yet."
       render 'index'
     end
   end
   
   def edit
-    
+    @timetable = Timetable.find(params[:id])
   end
 
   def update
+      @timetable = Timetable.find(params[:id])
+      @timetable.assign_attributes(timetable_params)
     if @timetable.update(timetable_params)
-      redirect_to root_path, notice: 'edited your column'
+      redirect_to timetables_path(event_id: params[:event_id])
     else
       render 'edit'
     end
@@ -31,7 +33,7 @@ class TimetablesController < ApplicationController
   def destroy
     @timetable = Timetable.find(params[:id])
     @timetable.destroy
-    redirect_to timetables_path
+    redirect_to timetables_path(event_id: @timetable.event_id)
   end
   
   private

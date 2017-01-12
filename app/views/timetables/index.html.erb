@@ -1,19 +1,27 @@
-<%= render 'form' %>
+<div class='row'>
+  <div class='col-sm-offset-3 col-sm-6'>
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-Timetable
+    <%= render 'form' %>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+    　　　Timetable
+        </div>
+        
+       <div class="panel-body">
+      　　<% @timetables.each do |timetable| %>
+        <span><%= timetable.time %></span>
+        <span><%= timetable.description %></span>
+        
+        <%= link_to "Edit", edit_timetable_path(timetable) %> /
+        <%= link_to "Delete", timetable_path(timetable), method: :delete, data: { confirm: 'Are you sure？' } %>
+        <br>
+        <% end %>
+       </div>
     </div>
-    
-    <div class="panel-body">
-<% @timetables.each do |timetable| %>
-    <span><%= timetable.time %></span>
-    <span><%= timetable.description %></span>
-    
-    <%= link_to "Edit", edit_timetable_path(timetable) %> /
-    <%= link_to "Delete", timetable_path(timetable), method: :delete, data: { confirm: 'Are you sure？' } %>
-    <br>
-    <% end %>
-   </div>
- </div>
- <%= debug params %>
+     <%#= debug params %>
+     
+     <%= link_to "All Events", admin_events_path %>
+     
+  </div>
+</div>
