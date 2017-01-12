@@ -8,7 +8,7 @@ class TimetablesController < ApplicationController
     @timetable = Timetable.new(timetable_params)
     @timetable[:event_id] = params[:event_id]
     if @timetable.save
-       redirect_to timetables_path(timetable_params)
+       redirect_to timetables_path(event_id: params[:event_id])
     else
       @timetables = Timetable.where(event_id: params[:event_id])
       flash.now[:alert] = "メッセージの保存に失敗しました。"
