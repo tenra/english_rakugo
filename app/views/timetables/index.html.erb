@@ -1,6 +1,6 @@
 <% @page_title = 'timetable' %>
 
-       <h1><span style="color:#fff;">Create your Timetable</span></h1>
+<h1><span style="color:#fff;">Create your Timetable</span></h1>
 
 <div class='row'>
   <div class='col-sm-offset-2 col-sm-8'>
@@ -20,13 +20,14 @@
                     <tr>
                        <th><%= timetable.time %></th>
                        <th><%= timetable.description %></th>
-                       <th class="col-xs-1 col-ms-1 col-md-1 col-lg-1"><%= link_to "Edit", edit_timetable_path(timetable) %></th>
-                       <th class="col-xs-1 col-ms-1 col-md-1 col-lg-1"><%= link_to "Delete", timetable_path(timetable), method: :delete, data: { confirm: 'Are you sure？' } %></th>
+                       <th class="col-xs-1 col-ms-1 col-md-1 col-lg-1 hidden1"><%= link_to "Edit", edit_timetable_path(timetable) %></th>
+                       <th class="col-xs-1 col-ms-1 col-md-1 col-lg-1 hidden2"><%= link_to "Delete", timetable_path(timetable), method: :delete, data: { confirm: 'Are you sure？' } %></th>
                     </tr>
                 </tbody>
               <% end %>
             </table>
         
+         <%= link_to "Show Event", show_event_path(@event) %><br />
          <%= link_to "All Events", admin_events_path %>
       
     </div>

@@ -5,6 +5,8 @@ class EventsController < ApplicationController
   def show
     @events = Event.where(id: Event.find(params[:event_id]))
     @event = Event.find(params[:event_id])
+    @timetable = Timetable.find_by(event_id: params[:event_id])
+    @timetables = Timetable.where(event_id: params[:event_id])
     
     @hash = Gmaps4rails.build_markers(@events) do |event, marker|
      marker.lat event.latitude
@@ -73,5 +75,5 @@ private
       :title, :text, :image, :image_cache, :name, :description, :latitude, :longitude, :address,
       :date, :time, :price, :capacity)
     end
-    
+
 end

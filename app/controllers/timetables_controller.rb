@@ -2,6 +2,7 @@ class TimetablesController < ApplicationController
   def index
     @timetable = Timetable.new(event_id: params[:event_id]) 
     @timetables = Timetable.where(event_id: params[:event_id])
+    @event = Event.find(params[:event_id])
   end
   
   def create

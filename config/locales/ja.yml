@@ -12,6 +12,8 @@ ja:
     show:
       participants: "人の参加者"
       Venue: "会場"
+      Time: "時間"
+      Description: "内容"
   date:
     formats:
       full_date: "%Y-%m-%d (%a)"
