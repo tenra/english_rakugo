@@ -1,27 +1,34 @@
-<div class='row'>
-  <div class='col-sm-offset-3 col-sm-6'>
+<% @page_title = 'timetable' %>
 
-    <%= render 'form' %>
+       <h1><span style="color:#fff;">Create your Timetable</span></h1>
+
+<div class='row'>
+  <div class='col-sm-offset-2 col-sm-8'>
+    <div class="timetable-back">
     
-    <div class="panel panel-default">
-        <div class="panel-heading">
-    　　　Timetable
-        </div>
+        <%= render 'form' %>
+          <span style="font-weight:bold">&nbsp;Timetable</span>
+            <table class="table table-bordered">
+                <thead>
+            　　　<tr class="active">
+            　　　     <th class="col-xs-1 col-ms-1 col-md-1 col-lg-1">Time</th>
+            　　  　  <th class="col-xs-3 col-ms-3 col-md-4 col-lg-4">Description</th>
+            　　　</tr>
+                </thead>
+              <% @timetables.each do |timetable| %>
+                <tbody>
+                    <tr>
+                       <th><%= timetable.time %></th>
+                       <th><%= timetable.description %></th>
+                       <th class="col-xs-1 col-ms-1 col-md-1 col-lg-1"><%= link_to "Edit", edit_timetable_path(timetable) %></th>
+                       <th class="col-xs-1 col-ms-1 col-md-1 col-lg-1"><%= link_to "Delete", timetable_path(timetable), method: :delete, data: { confirm: 'Are you sure？' } %></th>
+                    </tr>
+                </tbody>
+              <% end %>
+            </table>
         
-       <div class="panel-body">
-      　　<% @timetables.each do |timetable| %>
-        <span><%= timetable.time %></span>
-        <span><%= timetable.description %></span>
-        
-        <%= link_to "Edit", edit_timetable_path(timetable) %> /
-        <%= link_to "Delete", timetable_path(timetable), method: :delete, data: { confirm: 'Are you sure？' } %>
-        <br>
-        <% end %>
-       </div>
+         <%= link_to "All Events", admin_events_path %>
+      
     </div>
-     <%#= debug params %>
-     
-     <%= link_to "All Events", admin_events_path %>
-     
   </div>
 </div>

@@ -13,7 +13,7 @@
             <%= @event.title %>
           </div>
           <h1><span style="color:#535353"><% if @event.time.present? %><%= I18n.l @event.date, format: :full_date %>, <%= @event.time.strftime("%H:%M") %><% end %></span></h1>
-            <div class="venue glyphicon glyphicon-flag">Venue:<%= @event.address %></div>
+            <div class="venue glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>
             <div class="event-text2"><%= simple_format @event.text %></div>
     
           <div align="right" class="user_avatars">
@@ -35,7 +35,7 @@
         <div class="text-center"><%= render 'events/booking_form', event: @event %></div>
     </div>
     
-    <div class="venue glyphicon glyphicon-flag">Venue:<%= @event.address %></div>
+    <div class="venue glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>
             
     <%#= @hash.inspect %>
     
