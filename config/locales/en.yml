@@ -23,3 +23,6 @@ en:
   date:
     formats:
       full_date: "%a, %d %b %Y"
+  end_date:
+    formats:
+      full_date: "%a, %d %b %Y"

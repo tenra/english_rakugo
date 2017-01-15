@@ -6,61 +6,68 @@
       <%= form_for @event do |f| %>
         <table class="table">
            <tr>
-             <th>Image</th>
-            </tr>
-            <tr>
+               <th>Image</th>
+           </tr>
+           <tr>
                <td style="border-style: none;">
                  <%= f.hidden_field :image_cache %>
                  <%= image_tag @event.image.thumb.url, class: "event-present-image" if @event.image? %>
                </td>
            </tr>
            <tr>
-             <th>Title</th>
-            </tr>
-            <tr>
+               <th>Title</th>
+           </tr>
+           <tr>
                <td style="border-style: none;">
                  <%= f.hidden_field :title %>
                  <%= @event.title %>
                </td>
-            </tr>
-               <th>Date time</th>
-            </tr>
-            <tr>
+           </tr>
+           <tr>
+               <th>Start date time  End date time</th>
+           </tr>
+           <tr>
                <td style="border-style: none;">
-                <%= f.hidden_field :date %>
-                <%= @event.date %>,
-                <%= f.hidden_field :time %>
-                <%= @event.time.hour %>:
-                <%= @event.time.min %>
+                 <%= f.hidden_field :date %>
+                 <%= @event.date %>,
+                 <%= f.hidden_field :time %>
+                 <%= @event.time.hour %>:
+                 <%= @event.time.min %>
+               ~
+                 <%= f.hidden_field :end_date %>
+                 <%= @event.end_date %>,
+                 <%= f.hidden_field :end_time %>
+                 <%= @event.end_time.hour %>:
+                 <%= @event.end_time.min %>
                </td>
-            </tr>
-            <tr>
+           </tr>
+           <tr>
                <th>Text</th>
-            </tr>
-            <tr>
+           </tr>
+           <tr>
                <td style="border-style: none;">
                   <%= f.hidden_field :text %>
                   <%= simple_format(@event.text) %>
                </td>
-            </tr>
-            <tr>
-                <th>Address</th>
-            </tr>
-            <tr>
-                <td style="border-style: none;">
+           </tr>
+           <tr>
+               <th>Address</th>
+           </tr>
+           <tr>
+               <td style="border-style: none;">
                   <%= f.hidden_field :address %>
                   <%= @event.address %>    
-                </td>
-            </tr>
-            <tr>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td style="border-style: none;">
+               </td>
+           </tr>
+           <tr>
+               <th>Description</th>
+           </tr>
+           <tr>
+               <td style="border-style: none;">
                   <%= f.hidden_field :description %>    
                   <%= @event.description %>
-                </td>
-            </tr>
+               </td>
+           </tr>
         </table>                
 
         <div class="actions">

@@ -12,6 +12,7 @@ ja:
     show:
       participants: "人の参加者"
       Venue: "会場"
+      Timetable: "タイムテーブル"
       Time: "時間"
       Description: "内容"
   date:
