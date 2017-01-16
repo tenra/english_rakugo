@@ -16,7 +16,8 @@
       　  {admin:  <%= current_user.admin? if current_user %>}
             <%= render 'layouts/alert', message: flash.to_h %>
         <%= yield %>
-            <%= render 'layouts/footer' %>
+            
      　　</div>
+     　　<%= render 'layouts/footer' %>
     </body>
 </html>
