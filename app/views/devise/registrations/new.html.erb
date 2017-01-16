@@ -1,53 +1,51 @@
 <%  @page_title = "Sign up" %>
-
-<center><h1><%= @page_title %></h1></center>
  
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
   <% if @user.errors.present? %>
       <div class="alert alert-danger"><%= devise_error_messages! %></div>
   <% end %>
-
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      
-        <div class="field">
-          <%= f.label :name, class: "control-label" %>
-          <%= f.text_field :name, autofocus: true, class: "form-control" %>
-        </div>
- 
-        <div class="field">
-          <%= f.label :email, class: "control-label" %>
-          <%= f.email_field :email, autofocus: true, class: "form-control" %>
-        </div>
- 
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+      <div class="card card-container">
+        <h1 class='login_title text-center'>Sign up</h1>
+        <hr>
+          <form class="form-signin">
+            <span id="reauth-email" class="reauth-email"></span>
+              <p class="input_title">Name</p>
+              <%= f.text_field :name, autofocus: true, class: "login_box", placeholder: "UserName" %>
+              <p class="input_title">Email</p>
+              <%= f.email_field :email, autofocus: true, class: "login_box", placeholder: "user01@example.com" %>
            <% if f.object.password_required? %>
- 
-        <div class="field">
-          <%= f.label :password, class: "control-label" %>
-          <% if @validatable %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %>
-          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-        </div>
- 
-        <div class="field">
-          <%= f.label :password_confirmation, class: "control-label" %>
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-        </div>
-        
-          <% end %>
-        
+              <p class="input_title">Password</p>
+               <% if @validatable %>
+                 <em>(<%= @minimum_password_length %> characters minimum)</em>
+               <% end %>
+              <%= f.password_field :password, autocomplete: "off", class: "login_box", placeholder: "*********︎" %>
+              <p class="input_title">Password Confirmation</p>
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: "login_box", placeholder: "*********︎" %>
+           <% end %>
+             <div id="remember" class="checkbox">
+               <label>
+                 
+               </label>
+             </div>
+            <%= f.submit "Create my account", class: "btn btn-lg btn-primary" %>
+          </form>
+      </div><!-- /card-container -->
+    <% end %>
+    <div class="text-center">
+        <%= link_to user_twitter_omniauth_authorize_path, { :class => "link-social" } do %>
+           <div class="btn btn-lg btn-social btn-twitter">
+                <i class="fa fa-twitter"></i>Sign in with Twitter
+           </div>
+        <% end %>
+        <%= link_to user_facebook_omniauth_authorize_path do %>
+           <div class="btn btn-lg btn-social btn-facebook">
+                <i class="fa fa-facebook"></i>Sign in with Facebook
+           </div><br />
+        <% end %>
     </div>
+   <span style="text-align:left; font-size: 1.2em;"><%= render "devise/shared/links" %></span>
   </div>
- 
-  <div class="row">
-    <div class="col-md-3 col-md-offset-3">
-        <div class="actions">
-          <%= f.submit "Create my account", class: "btn btn-lg btn-primary" %>
-        </div>
-    </div>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

@@ -4,10 +4,15 @@
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
+      <% if @user.errors.present? %>
+      　<div class="alert alert-danger"><%= devise_error_messages! %></div>
+  　　<% end %>
+    
 <div class="container">
     <h1 class="welcome text-center">Welcome to <br><span style="font-weight:bold">English Rakugo</span></h1>
         <div class="card card-container">
-        <h2 class='login_title text-center'>Sign in</h2>
+        <h1 class='login_title text-center'>Sign in</h1>
         <hr>
 
             <form class="form-signin">
@@ -26,21 +31,19 @@
         </div><!-- /card-container -->
     <% end %>
         
-  <div class="text-center">
-    <div class="col-md-6 col-md-offset-3">
-        <%= link_to user_twitter_omniauth_authorize_path, { :class => "link-social" } do%>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="text-center">
+        <%= link_to user_twitter_omniauth_authorize_path, { :class => "link-social" } do %>
            <div class="btn btn-lg btn-social btn-twitter">
                 <i class="fa fa-twitter"></i>Sign in with Twitter
            </div>
         <% end %>
-      <br>
-        <%= link_to user_facebook_omniauth_authorize_path do%>
+        <%= link_to user_facebook_omniauth_authorize_path do %>
            <div class="btn btn-lg btn-social btn-facebook">
                 <i class="fa fa-facebook"></i>Sign in with Facebook
-           </div>
+           </div><br />
         <% end %>
     </div>
-  </div>      
+   <span style="text-align:left; font-size: 1.2em;"><%= render "devise/shared/links" %></span>
+  </div>
 </div><!-- /container -->
-    
-    <%= render "devise/shared/links" %>
