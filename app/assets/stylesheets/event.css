@@ -13,14 +13,13 @@
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-.event-image {
-  text-align: center;
-  .event-present-image {
-    width: 800px;
-    height: 500px;
-    overflow: hidden;
-  }
-}
+.event-image .event-show-image {
+  margin: 0 auto;
+  width: 800px;
+  height: auto;
+  overflow: hidden;
+  background-position: center center;
+ }
 
 #post_post_img {
   border-style: none;
