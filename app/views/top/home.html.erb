@@ -15,8 +15,20 @@
       </div>
         <div class="col-md-5">
           <h3><%= link_to event.title, show_event_path(event) %></h3>
-            <h4>Subheading</h4>
-            <div class="event-text"><%= simple_format event.text %></div>
+            <h4>
+             <span style="color:#535353">
+              <% if event.time || event.end_time.present? %>
+                 <%= I18n.l event.date, format: :full_date if event.date.present? %>
+                 ,&nbsp;<%= event.time.strftime("%H:%M") %>
+                 &nbsp;~&nbsp;
+                   <% if (event.date.present? && event.end_date.present?) && (event.date != event.end_date) %>
+                      <%= I18n.l event.end_date, format: :full_date %>,
+                   <% end %>
+                  <%= event.end_time.strftime("%H:%M") if event.end_time.present? %>
+              <% end %>
+             </span>
+            </h4>
+          <div class="event-text"><%= simple_format event.text %></div>
         </div>
           <div align="right" class="user_avatars">
             　<% event.booking_users.order('updated_at desc').limit(40).each do |user| %>
