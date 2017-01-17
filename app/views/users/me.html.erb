@@ -28,7 +28,7 @@
           <span style="font-weight:bold"><%= t '.My_events' %></span><br />
             <% current_user.booking_events.each do |event| %>
               <% if (event.date.present? && event.time.present?) %>
-                <span style="margin-left:30px"><%= I18n.l event.date, format: :full_date %></span>
+                <span style="margin-left:20px"><%= I18n.l event.date, format: :full_date %></span>
                  ,&nbsp;<%= event.time.strftime("%H:%M") %>~
               <% end %><br />
               <div class="me-event"><%= image_tag event.image.thumb.url, :class => "e-img-mini" if event.image %>
