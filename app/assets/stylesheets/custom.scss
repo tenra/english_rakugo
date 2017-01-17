@@ -133,16 +133,16 @@ img {
 }
 
 .event-text {           /* 行数管理 */
- font-family: "myriad-pro",sans-serif;
- color: #808080;
- font-style: normal;
- font-weight: 100;
- margin-bottom: 7px;
- overflow : hidden;
- text-overflow: ellipsis;
- display: -webkit-box;
- -webkit-box-orient: vertical;
- -webkit-line-clamp: 9; 
+   font-family: "myriad-pro",sans-serif;
+   color: #808080;
+   font-style: normal;
+   font-weight: 100;
+   margin-bottom: 7px;
+   overflow : hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 9; 
 }
 
 .user_avatars div {

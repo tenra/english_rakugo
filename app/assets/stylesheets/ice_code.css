@@ -1,12 +1,11 @@
 body, html {
-    height: 100%;
-    background-repeat: no-repeat;
+height: 100%;
+background-repeat: no-repeat;
 background: rgb(185,210,224); /* Old browsers */
 background: -moz-radial-gradient(center, ellipse cover,  rgba(185,210,224,1) 0%, rgba(187,214,228,1) 0%, rgba(186,211,225,1) 15%, rgba(186,211,225,1) 38%, rgba(169,199,215,1) 68%, rgba(169,199,215,1) 68%, rgba(169,199,215,1) 82%, rgba(158,191,208,1) 100%); /* FF3.6-15 */
 background: -webkit-radial-gradient(center, ellipse cover,  rgba(185,210,224,1) 0%,rgba(187,214,228,1) 0%,rgba(186,211,225,1) 15%,rgba(186,211,225,1) 38%,rgba(169,199,215,1) 68%,rgba(169,199,215,1) 68%,rgba(169,199,215,1) 82%,rgba(158,191,208,1) 100%); /* Chrome10-25,Safari5.1-6 */
 background: radial-gradient(ellipse at center,  rgba(185,210,224,1) 0%,rgba(187,214,228,1) 0%,rgba(186,211,225,1) 15%,rgba(186,211,225,1) 38%,rgba(169,199,215,1) 68%,rgba(169,199,215,1) 68%,rgba(169,199,215,1) 82%,rgba(158,191,208,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b9d2e0', endColorstr='#9ebfd0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
 }
 
 .login_box{
@@ -18,7 +17,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b9d2e0', end
 .input_title{
     color:rgba(164, 164, 164, 0.9);
     padding-left:3px;
-        margin-bottom: 2px;
+    margin-bottom: 2px;
     }
 
 hr{
@@ -55,6 +54,67 @@ hr{
     cursor: default;
     border-radius:0;
     background:#43A6EB;
+    height: 55px;
+    margin-bottom:10px;
+}
+.btn.btn-booking {
+  color:#FFFFFF;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    vertical-align: middle;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius: 5px;
+    background:#1db7f4;
+    height: 55px;
+    margin-bottom:10px;
+}
+.btn-booking:hover {
+    color:#1db7f4;
+    background-color:#FFFFFF;
+    border-color: #1db7f4;
+    border-width: 2px;
+}
+
+.btn.btn-unbooking {
+  color:#FFFFFF;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    vertical-align: middle;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius: 5px;
+    background:#f44253;
+    height: 55px;
+    margin-bottom:10px;
+}
+.btn-unbooking:hover {
+    color:#f44253;
+    background-color:#FFFFFF;
+    border-color: #f44253;
+    border-width: 2px;
+}
+
+.btn.btn-closed {
+    color:#FFFFFF;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius: 5px;
+    background:#cccccc;
     height: 55px;
     margin-bottom:10px;
 }
