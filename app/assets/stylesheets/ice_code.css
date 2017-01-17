@@ -58,6 +58,7 @@ hr{
     margin-bottom:10px;
 }
 .btn.btn-booking {
+    transition: 1.0s ;
   color:#FFFFFF;
     font-size: 1.2em;
     letter-spacing: 1px;
@@ -81,6 +82,7 @@ hr{
 }
 
 .btn.btn-unbooking {
+    transition: 1.0s ;
   color:#FFFFFF;
     font-size: 1.2em;
     letter-spacing: 1px;

@@ -1,6 +1,8 @@
 <span id="booking_form-<%= event.id %>">
-    <% if event.booking?(current_user) %>
-        <%= render 'events/unbooking', event: event %>
+    <% if event.date.present? && event.date <= Time.now %>
+      <button type="button" class="btn btn-closed">closed</button>
+    <% elsif %>
+        <%= render 'events/unbooking', event: event if event.booking?(current_user) %>
     <% else %>
         <%= render 'events/booking', event: event %>
     <% end %>
