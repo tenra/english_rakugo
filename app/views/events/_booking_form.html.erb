@@ -1,9 +1,11 @@
 <span id="booking_form-<%= event.id %>">
     <% if event.date.present? && event.date <= Time.now %>
-      <button type="button" class="btn btn-closed">closed</button>
+        <button type="button" class="btn btn-closed">closed</button>
+    <% elsif event.capacity == event.booking_users.count %>
+        <button type="button" class="btn btn-fullbook">full booking now</button>
     <% elsif event.booking?(current_user) %>
-        <%= render 'events/unbooking', event: event %>
+        <%= link_to "unbooking", event_bookings_path(event), method: :delete, data: { confirm: 'Will you really cancel this event？' }, class: "btn btn-unbooking" %>
     <% else %>
-        <%= render 'events/booking', event: event %>
+        <%= link_to "booking", event_bookings_path(event), method: :post, class: "btn btn-booking" %>
     <% end %>
 </span>

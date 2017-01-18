@@ -121,6 +121,28 @@ hr{
     margin-bottom:10px;
 }
 
+.btn.btn-fullbook {
+    transition: 1.0s;
+    color:#FFFFFF;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius: 5px;
+    background:#008B8B;
+    height: 55px;
+    margin-bottom:10px;
+}
+
+.btn-fullbook:hover {
+    color:#FFFFFF;
+    background-color:#2F4F4F;
+}
+
 /*
  * Card component
  */
