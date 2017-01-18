@@ -1,6 +1,6 @@
 /* event */
 .event-back {
-  padding: 50px;
+  padding: 30px;
   background-color: #FFFFFF;
   height: 100%;
   width: 100%;
@@ -78,4 +78,20 @@
 .me-event {
   margin-left:20px;
   font-size:1.5em;
+}
+
+.datepicker.inline {
+  display: inline;
+}
+
+.price {
+  text-align: right;
+  margin-right: 150px;
+  font-size: 1.8em;
+}
+
+.right {
+  text-align: right;
+  margin-right: 50px;
+  font-size: 1.1em;
 }

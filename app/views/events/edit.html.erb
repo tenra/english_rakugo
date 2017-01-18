@@ -43,7 +43,7 @@
                 <%= f.text_field :title, class: "form-control", autofocus: true %>
               </div>
             
-                  <div class="form-inline">
+              <div class="form-inline">
                     <div class="form-group picker">
                        <%= f.label :Start_date_time %><br />
                       <div class="input-group date datepicker">
@@ -65,14 +65,23 @@
                       </div>
                         <%= f.time_select :end_time, {use_month_numbers: true}, {class: "form-control"} %>
                     </div>
-                  </div>
+              </div>
+             
+              <div class="form-group">
+                <%= f.label :price %><br />
+                <div class="inline"><%= f.text_field :price, class: "form-control" %></div>
+              </div>
+              <div class="form-group">
+                <%= f.label :capacity %><br />
+                <%= f.text_field :capacity, class: "form-control" %>
+              </div>
             
               <div class="form-group">
                 <%= f.label :text %><br />
                 <%= f.text_area :text, class: "form-control", rows: 10, cols: 45, autofocus: true %>
               </div>
               <div class="form-group">
-                <%= f.label :address %><br />
+                <%= f.label :Address_of_Venue%><br />
                 <%= f.text_field :address, class: "form-control", autofocus: true %>
               </div>
               <div class="form-group">

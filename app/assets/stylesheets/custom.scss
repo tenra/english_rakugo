@@ -2,8 +2,7 @@
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
 
-
-/* universal */  
+/* universal */ 
 body {
   padding-top: 0;
 }
@@ -57,7 +56,6 @@ p {
 }
 
 /* header */
-
 header, nav, ul, li {
   display: inline;
   margin: 0;
@@ -86,7 +84,6 @@ li.dropdown > a > img.img-circle_h {
 
 /* footer */
 footer {
-  bottom: 0;
   position: absolute;
   width: 100%;
   margin-top: 45px;

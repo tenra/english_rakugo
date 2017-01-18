@@ -25,10 +25,18 @@
              <% end %>
           </span></h1>
           
+          <div class="price">
+            <% if @event.price.nil? %>
+             Admission free
+            <% else %>
+             ¥<%= @event.price %>&nbsp;at the door
+            <% end %>
+          </div>
+          
             <div class="venue glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>
             <div class="event-text2"><%= simple_format @event.text %></div>
     
-          <div align="right" class="user_avatars">
+          <div class="right user_avatars">
             　<% @event.booking_users.order('updated_at desc').limit(40).each do |user| %>
                 <div>
                   <span>
