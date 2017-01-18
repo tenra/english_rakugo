@@ -26,10 +26,10 @@
           </span></h1>
           
           <div class="price">
-            <% if @event.price.nil? %>
+            <% if @event.price.blank? || @event.price == 0 %>
              Admission free
             <% else %>
-             ¥<%= @event.price %>&nbsp;at the door
+             <%= number_to_currency(@event.price, :precision => 0, :unit => "¥") %>&nbsp;at the door
             <% end %>
           </div>
           
