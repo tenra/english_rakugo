@@ -58,7 +58,7 @@ hr{
     margin-bottom:10px;
 }
 .btn.btn-booking {
-    transition: 1.0s ;
+    transition: 0.5s ;
   color:#FFFFFF;
     font-size: 1.2em;
     letter-spacing: 1px;
@@ -76,13 +76,13 @@ hr{
 }
 .btn-booking:hover {
     color:#1db7f4;
-    background-color:#FFFFFF;
+    background-color:#E0FFFF;
     border-color: #1db7f4;
     border-width: 2px;
 }
 
 .btn.btn-unbooking {
-    transition: 1.0s ;
+    transition: 0.5s ;
   color:#FFFFFF;
     font-size: 1.2em;
     letter-spacing: 1px;
@@ -100,7 +100,7 @@ hr{
 }
 .btn-unbooking:hover {
     color:#f44253;
-    background-color:#FFFFFF;
+    background-color:#FFE4E1;
     border-color: #f44253;
     border-width: 2px;
 }
@@ -122,7 +122,7 @@ hr{
 }
 
 .btn.btn-fullbook {
-    transition: 1.0s;
+    transition: 0.5s;
     color:#FFFFFF;
     font-size: 1.2em;
     letter-spacing: 1px;
@@ -140,7 +140,7 @@ hr{
 
 .btn-fullbook:hover {
     color:#FFFFFF;
-    background-color:#2F4F4F;
+    background-color:#5F9EA0;
 }
 
 /*
