@@ -11,6 +11,6 @@ class BookingsController < ApplicationController
   def destroy
     @event = Event.find(params[:event_id])
     current_user.unbooking(@event)
-    #redirect_to @event
+    redirect_to show_event_path(@event)
   end
 end
