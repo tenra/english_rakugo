@@ -73,6 +73,7 @@
 .user_avatars div {
   position: relative;
   display: inline-block;
+  bottom: 0;
 }
 
 .arrow_box {

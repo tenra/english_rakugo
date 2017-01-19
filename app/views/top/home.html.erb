@@ -18,8 +18,8 @@
             <h4>
              <span style="color:#535353">
               <% if event.time || event.end_time.present? %>
-                 <%= I18n.l event.date, format: :full_date if event.date.present? %>
-                 ,&nbsp;<%= event.time.strftime("%H:%M") %>
+                 <%= I18n.l event.date, format: :full_date if event.date.present? %>,
+                 &nbsp;<%= event.time.strftime("%H:%M") %>
                  &nbsp;~&nbsp;
                    <% if (event.date.present? && event.end_date.present?) && (event.date != event.end_date) %>
                       <%= I18n.l event.end_date, format: :full_date %>,
