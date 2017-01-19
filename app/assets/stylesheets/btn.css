@@ -1,0 +1,142 @@
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius:0;
+    background:#43A6EB;
+    height: 55px;
+    margin-bottom:10px;
+}
+.btn.btn-booking {
+    transition: 0.5s ;
+  color:#FFFFFF;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    vertical-align: middle;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius: 5px;
+    background:#1db7f4;
+    height: 55px;
+    margin-bottom:10px;
+}
+.btn-booking:hover {
+    color:#1db7f4;
+    background-color:#E0FFFF;
+    border-color: #1db7f4;
+    border-width: 2px;
+}
+
+.btn.btn-unbooking {
+    transition: 0.5s ;
+  color:#FFFFFF;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    vertical-align: middle;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius: 5px;
+    background:#f44253;
+    height: 55px;
+    margin-bottom:10px;
+}
+.btn-unbooking:hover {
+    color:#f44253;
+    background-color:#FFE4E1;
+    border-color: #f44253;
+    border-width: 2px;
+}
+
+.btn.btn-closed {
+    color:#FFFFFF;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius: 5px;
+    background:#cccccc;
+    height: 55px;
+    margin-bottom:10px;
+}
+
+.btn.btn-fullbook {
+    transition: 0.5s;
+    color:#FFFFFF;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius: 5px;
+    background:#008B8B;
+    height: 55px;
+    margin-bottom:10px;
+}
+
+.btn-fullbook:hover {
+    color:#FFFFFF;
+    background-color:#5F9EA0;
+}
+
+.btn.btn-eventcreate {
+    color:#FFFFFF;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius: 5px;
+    background:#008B8B;
+    height: 55px;
+    margin-bottom:10px;
+}
+
+.btn-eventcreate:hover {
+    color:#FFFFFF;
+    background-color:#5F9EA0;
+}
+
+.btn.btn-signin {
+    /*background-color: #4d90fe; */
+    background-color: rgb(104, 145, 162);
+    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}

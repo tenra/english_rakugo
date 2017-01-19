@@ -15,6 +15,7 @@ ja:
       Timetable: "タイムテーブル"
       Time: "時間"
       Description: "内容"
+      at_the_door: "会場払い"
   date:
     formats:
       full_date: "%Y-%m-%d (%a)"
@@ -23,3 +24,7 @@ ja:
       User_name: "名前"
       Email_address: "メールアドレス"
       My_events: "参加イベント"
+  number:
+    currency:
+      format:
+        unit: "円"

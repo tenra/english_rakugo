@@ -26,3 +26,7 @@ en:
   end_date:
     formats:
       full_date: "%a, %d %b %Y"
+  number:
+    currency:
+      format:
+        unit: "¥"
