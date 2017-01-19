@@ -15,6 +15,8 @@
             <% end %>
           </div>
         </tr>
+      <div align="right"><%= link_to 'Edit Profile Image', new_profile_path %></div>
+      <div align="right"><%= link_to 'Edit User', edit_user_registration_path %></div>
         <tr>
           <th><%= t '.User_name' %></th>
           <td><%= current_user.name %></td>
@@ -23,7 +25,7 @@
           <th><%= t '.Email_address' %></th>
           <td><%= current_user.email %></td>
         </tr>
-        <tr><th><td></td></th></tr>
+        <tr><th><td></td></th></tr> 
       </table>
           <span style="font-weight:bold"><%= t '.My_events' %></span><br />
             <% current_user.booking_events.each do |event| %>
@@ -44,6 +46,4 @@
         
     </div>
   </div>
-   <%= link_to 'Edit Profile Image', new_profile_path %><br>
- <%= link_to 'Edit User', edit_user_registration_path %>
 </div>
