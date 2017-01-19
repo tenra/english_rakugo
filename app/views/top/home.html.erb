@@ -31,7 +31,7 @@
           <div class="event-text"><%= simple_format event.text %></div>
         </div>
           <div align="right" class="user_avatars">
-            　<% event.booking_users.order('updated_at desc').limit(40).each do |user| %>
+            　<% event.booking_users.order('updated_at desc').limit(10).each do |user| %>
             <div>
               <span>
                 <% if user.profile && user.profile.avatar? %>

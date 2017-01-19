@@ -37,7 +37,7 @@
 .wrap {   /* shadows and rounded borders */
   background-color: #FFFFFF;
   height: 400px;
-  padding: 10px;
+  padding: 10px 5px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
