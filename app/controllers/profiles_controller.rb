@@ -33,7 +33,7 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-      params.require(:profile).permit(:avatar, :country, :avatar_cache)
+      params.require(:profile).permit(:avatar, :country, :avatar_cache, :private)
   end
   
   def already_build
