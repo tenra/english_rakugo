@@ -143,6 +143,27 @@ hr{
     background-color:#5F9EA0;
 }
 
+.btn.btn-eventcreate {
+    color:#FFFFFF;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius: 5px;
+    background:#008B8B;
+    height: 55px;
+    margin-bottom:10px;
+}
+
+.btn-eventcreate:hover {
+    color:#FA8072;
+    background-color:#5F9EA0;
+}
+
 /*
  * Card component
  */
