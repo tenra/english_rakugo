@@ -41,6 +41,42 @@
                 <%= f.label :title %><br />
                 <%= f.text_field :title, placeholder: 'title', class: "form-control", autofocus: true %>
               </div>
+              
+              <div class="form-inline">
+                    <div class="form-group picker">
+                       <%= f.label :Start_date_time %><br />
+                      <div class="input-group date datepicker">
+                         <%= f.text_field :date, class: "form-control" %>
+                          <span class="input-group-addon">
+                            <span class="fa fa-calendar"></span>
+                          </span>
+                      </div>
+                        <%= f.time_select :time, {use_month_numbers: true}, {class: "form-control"} %>&nbsp;&nbsp;~
+                    </div>
+                  
+                    <div class="form-group picker">
+                       <%= f.label :End_date_time %><br />
+                      <div class="input-group date datepicker">
+                         <%= f.text_field :end_date, class: "form-control" %>
+                          <span class="input-group-addon">
+                            <span class="fa fa-calendar"></span>
+                          </span>
+                      </div>
+                        <%= f.time_select :end_time, {use_month_numbers: true}, {class: "form-control"} %>
+                    </div>
+              </div>
+              
+              <div class="form-inline">
+                  <div class="form-group">
+                    <%= f.label :price %><br />
+                    <div class="inline"><%= f.text_field :price, placeholder: '¥', class: "form-control" %></div>
+                  </div>
+                  <div class="form-group">
+                    <%= f.label :capacity %><br />
+                    <%= f.text_field :capacity, class: "form-control" %>
+                  </div>
+              </div>
+              
               <div class="form-group">
                 <%= f.label :text %><br />
                 <%= f.text_area :text, placeholder: 'text', class: "form-control", rows: 10, cols: 45, autofocus: true %>

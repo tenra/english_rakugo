@@ -17,7 +17,15 @@
         </tr>
       <div align="right"><%= link_to 'Edit Profile Image', new_profile_path %></div>
       <div align="right"><%= link_to 'Edit User', edit_user_registration_path %></div>
-        
+      
+          <input id="toggle-event" type="checkbox" data-toggle="toggle">
+          <div id="console-event"></div>
+          <script>
+            $(document).on('ready page:change', function() {
+  $('input[type="checkbox"].toggle').bootstrapToggle(); // assumes the checkboxes have the class "toggle"
+});
+          </script>
+      
         <tr>
           <th><%= t '.User_name' %></th>
           <td><%= current_user.name %></td>
