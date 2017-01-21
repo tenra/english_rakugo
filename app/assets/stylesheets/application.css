@@ -17,6 +17,6 @@
  *= require ice_code.css
  *= require bootstrap-social.css
  *= require bootstrap-datetimepicker
- *= require bootstrap2-toggle
+ *= require bootstrap-toggle
  *= require_tree .
  */

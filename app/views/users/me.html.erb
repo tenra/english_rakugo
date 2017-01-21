@@ -6,7 +6,6 @@
   <div class='row'>
     <div class='col-sm-offset-3 col-sm-6'>
    　  <table class="table">
-        <tr>
           <div class="text-center">
             <% if !current_user.profile.nil? && current_user.profile.avatar? %>
               <%= image_tag(current_user.profile.avatar.thumb.url, :class => "img-circle") %>
@@ -14,17 +13,8 @@
               <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle"%>
             <% end %>
           </div>
-        </tr>
       <div align="right"><%= link_to 'Edit Profile Image', new_profile_path %></div>
       <div align="right"><%= link_to 'Edit User', edit_user_registration_path %></div>
-      
-          <input id="toggle-event" type="checkbox" data-toggle="toggle">
-          <div id="console-event"></div>
-          <script>
-            $(document).on('ready page:change', function() {
-  $('input[type="checkbox"].toggle').bootstrapToggle(); // assumes the checkboxes have the class "toggle"
-});
-          </script>
       
         <tr>
           <th><%= t '.User_name' %></th>

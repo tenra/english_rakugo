@@ -1,48 +1,54 @@
 <%  @page_title = "Edit your profile image" %>
 
-<h1><%= @page_title %></h1>
 
-<%= form_for(@profile) do |f| %>
-<div class="text-center">
-    <%#= f.label :Image %>
-      <% if @profile.avatar? %>
-         <%= image_tag @profile.avatar.thumb.url, class: "profile-present-avatar" %>
-      <% else %>
-         <%= image_tag 'no-avatar.png', width: 200, :class => "profile-present-avatar" %>
-      <% end %>
-    <%= f.hidden_field :avatar_cache %>
-                
-      <img id="img_prev" width=200 height=200 src="#" class="img-thumbnail hidden"/>
-          <%= f.file_field :avatar, :id => 'post_post_img' %>
-          <script type="text/javascript">
-            $(function() {
-              function readURL(input) {
-            if (input.files && input.files[0]) {
-                  var reader = new FileReader();
-                    
-                  reader.onload = function (e) {
-                    $('.profile-present-avatar').remove();
-                    $('#img_prev').html("");
-                    $('#img_prev').attr('src', e.target.result);
-                          }
-                      reader.readAsDataURL(input.files[0]);
-                        }
-                      }
-                    
-                      $("#post_post_img").change(function(){
-                        $('#img_prev').removeClass('hidden');
-                        readURL(this);
-                      });
-                   });
-          </script>
-                
-          
-          <div>
-            <%= f.submit 'Update', class: "btn btn-large btn-primary" %>
-          </div>
+<h1><span style="color:#fff;"><%= @page_title %></span></h1>
 
- <% end %>
-</div>
-<div>
-<%= link_to "Back", :back %>
+<div class="event-back">
+  <div class='row'>
+    <div class='col-sm-offset-3 col-sm-6'>
+
+        <%= form_for(@profile) do |f| %>
+            <%#= f.label :Image %>
+            <div class="text-center">
+              <% if @profile.avatar? %>
+                 <%= image_tag @profile.avatar.thumb.url, class: "profile-present-avatar" %>
+              <% else %>
+                 <%= image_tag 'no-avatar.png', width: 200, :class => "profile-present-avatar" %>
+              <% end %>
+            </div>
+            <%= f.hidden_field :avatar_cache %>
+            <%= f.hidden_field :avatar %>
+                        
+              <img id="img_prev" width=200 height=200 src="#" class="img-thumbnail hidden"/>
+                  <%= f.file_field :avatar, :id => 'post_post_img' %>
+                  <script type="text/javascript">
+                    $(function() {
+                      function readURL(input) {
+                    if (input.files && input.files[0]) {
+                          var reader = new FileReader();
+                          reader.onload = function (e) {
+                            $('.profile-present-avatar').remove();
+                            $('#img_prev').html("");
+                            $('#img_prev').attr('src', e.target.result);
+                                  }
+                              reader.readAsDataURL(input.files[0]);
+                                }
+                              }
+                              $("#post_post_img").change(function(){
+                                $('#img_prev').removeClass('hidden');
+                                readURL(this);
+                              });
+                           });
+                  </script>
+                        
+            <div class="text-center">
+              <%= f.submit 'Create', class: "btn btn-update" %>
+            </div>
+        <% end %>
+      <div>
+        <%= link_to "Back", :back %>
+      </div>
+
+    </div>
+  </div>
 </div>

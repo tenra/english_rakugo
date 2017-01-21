@@ -18,5 +18,5 @@
 //= require gmaps/google
 //= require moment
 //= require bootstrap-datetimepicker
-//= require bootstrap2-toggle
+//= require bootstrap-toggle
 //= require_tree .

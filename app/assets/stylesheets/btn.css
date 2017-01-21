@@ -11,31 +11,33 @@
     margin-bottom:10px;
 }
 .btn.btn-booking {
-    transition: 0.5s ;
-  color:#FFFFFF;
+    transition: 0.2s;
+    color:#FFFFFF;
     font-size: 1.2em;
     letter-spacing: 1px;
     font-weight: 400;
     vertical-align: middle;
     height: 36px;
+    width: 200px;
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
     cursor: default;
     border-radius: 5px;
-    background:#1db7f4;
+    background:#0e83b2;
     height: 55px;
     margin-bottom:10px;
+    box-shadow:1px 1px 1px #555;
 }
 .btn-booking:hover {
-    color:#1db7f4;
-    background-color:#E0FFFF;
-    border-color: #1db7f4;
+    color:#0e83b2;
+    background-color:#FFFFFF;
+    border-color: #0e83b2;
     border-width: 2px;
 }
 
 .btn.btn-unbooking {
-    transition: 0.5s ;
+    transition: 0.2s ;
   color:#FFFFFF;
     font-size: 1.2em;
     letter-spacing: 1px;
@@ -47,14 +49,14 @@
     user-select: none;
     cursor: default;
     border-radius: 5px;
-    background:#f44253;
+    background:#db4150;
     height: 55px;
     margin-bottom:10px;
 }
 .btn-unbooking:hover {
-    color:#f44253;
-    background-color:#FFE4E1;
-    border-color: #f44253;
+    color:#db4150;
+    background-color:#FFFFFF;
+    border-color: #db4150;
     border-width: 2px;
 }
 
