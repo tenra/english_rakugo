@@ -24,6 +24,16 @@
           <th><%= t '.Email_address' %></th>
           <td><%= current_user.email %></td>
         </tr>
+        <tr>
+          <th>Privacy</th>
+          <td>
+            <% if current_user.profile.private %>
+              Private
+            <% else %>
+              Public
+            <% end %>
+          </td>
+        </tr>
         <tr><th><td></td></th></tr> 
       </table>
           <span style="font-weight:bold"><%= t '.My_events' %></span><br />
