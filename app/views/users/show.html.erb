@@ -1,36 +1,56 @@
-<center><h1><%= @page_title %></h1></center>
+<%  @page_title = "User page" %>
 
-<div class='row'>
-  <div class='col-sm-offset-3 col-sm-6'>
- 　  <table class="table">
-      <tr>
-        <div class="text-center">
-          <% if !@user.profile.nil? && @user.profile.avatar? %>
-            <%= image_tag(@user.profile.avatar.thumb.url, :class => "img-circle") %>
-          <% else %>
-            <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle"%>
-          <% end %>
-        </div>
-      </tr>
-      <tr>
-        <th><%= t '.User_name' %></th>
-        <td><%= @user.name %></td>
-      </tr>
-      <tr>
-        <th><%= t '.Email_address' %></th>
-        <td><%= @user.email %></td>
-      </tr>
-      <tr>
-        <th><%= t '.My_events' %></th>
-        <td>
-          <% @user.booking_events.each do |event| %>
-            <div><%= link_to event.title, show_event_path(event) %></div>
-          <% end %>
-        </td>
-      </tr>
-    </table>
+<h1><span style="color:#fff;"><%= @page_title %></span></h1>
+
+<div class="event-back">
+  <div class='row'>
+    <div class='col-sm-offset-3 col-sm-6'>
+   　  <table class="table">
+          <div class="text-center">
+            <% if !@user.profile.nil? && @user.profile.avatar? %>
+              <%= image_tag(@user.profile.avatar.thumb.url, :class => "img-circle") %>
+            <% else %>
+              <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle"%>
+            <% end %>
+          </div>
+      
+        <tr>
+          <th><%= t '.User_name' %></th>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
+          <th><%= t '.Email_address' %></th>
+          <td><%= @user.email %></td>
+        </tr>
+        <tr>
+          <th>Profile-Image status</th>
+          <td>
+            <% if @user.profile.present? && @user.profile.private %>
+              Public
+            <% else %>
+              Private
+            <% end %>
+          </td>
+        </tr>
+        <tr><th><td></td></th></tr>
+      </table>
+          <span style="font-weight:bold"><%= t '.My_events' %></span><br />
+            <% @user.booking_events.each do |event| %>
+              <% if (event.date.present? && event.time.present?) %>
+                <span style="margin-left:20px"><%= I18n.l event.date, format: :full_date %></span>
+                 ,&nbsp;<%= event.time.strftime("%H:%M") %>~
+              <% end %><br />
+              <div class="me-event">
+                <% if event.image? %>
+                    <%= image_tag event.image.thumb.url, :class => "e-img-mini" %>
+                <% else %>
+                    <%= image_tag 'noimage.gif', :class => "e-img-mini" %>
+                <% end %>
+                <%= link_to event.title, show_event_path(event) %>
+              </div>
+              <hr>
+            <% end %>
+       <div class="back"><%= link_to "Back", :back %></div>
+    </div>
   </div>
 </div>
-
-<%= link_to 'Edit Profile Image', new_profile_path %><br>
-<%= link_to 'Edit User', edit_user_registration_path %>

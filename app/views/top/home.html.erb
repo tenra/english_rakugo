@@ -34,7 +34,7 @@
             　<% event.booking_users.order('updated_at desc').limit(10).each do |user| %>
             <div>
               <span>
-                <% if user.profile && user.profile.avatar && !user.profile.private? %>
+                <% if user.profile && user.profile.avatar && user.profile.private %>
                   <%= image_tag user.profile.avatar , :alt => user.name , :class => "img-circle_h"%>
                 <% end %>
               </span>

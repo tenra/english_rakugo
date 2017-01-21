@@ -13,7 +13,7 @@
               <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle"%>
             <% end %>
           </div>
-      <div align="right"><%= link_to 'Edit Profile Image', new_profile_path %></div>
+      <div align="right"><%= link_to 'Edit Profile-Image', new_profile_path %></div>
       <div align="right"><%= link_to 'Edit User', edit_user_registration_path %></div>
       
         <tr>
@@ -28,9 +28,9 @@
           <th>Profile-Image status</th>
           <td>
             <% if current_user.profile.present? && current_user.profile.private %>
-              Private
-            <% else %>
               Public
+            <% else %>
+              Private
             <% end %>
           </td>
         </tr>
