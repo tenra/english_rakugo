@@ -41,6 +41,16 @@
                            });
                   </script>
                         
+            <%= f.check_box :private %>
+            <script>
+              $(function() {
+                $('#profile_private').bootstrapToggle({
+                  on: 'Private',
+                  off: 'Public'
+                });
+              })
+            </script>
+                        
             <div class="text-center">
               <%= f.submit 'Create', class: "btn btn-update" %>
             </div>

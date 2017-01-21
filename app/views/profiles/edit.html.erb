@@ -41,10 +41,13 @@
                            });
                   </script>
                         
-            <%= f.check_box :private %>
+            <%= f.check_box :private, { :'data-height' => '40px' } %> <span style="font-size:1.2em">Choose your Profile-Image status</span>
             <script>
               $(function() {
-                $('#profile_private').bootstrapToggle();
+                $('#profile_private').bootstrapToggle({
+                  on: 'Private',
+                  off: 'Public'
+                });
               })
             </script>
                         

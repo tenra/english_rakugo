@@ -13,7 +13,7 @@
 .btn.btn-booking {
     transition: 0.2s;
     color:#FFFFFF;
-    font-size: 1.2em;
+    font-size: 1.8em;
     letter-spacing: 1px;
     font-weight: 400;
     vertical-align: middle;
@@ -27,7 +27,7 @@
     background:#0e83b2;
     height: 55px;
     margin-bottom:10px;
-    box-shadow:1px 1px 1px #555;
+    box-shadow:1px 1px 1px #054c68;
 }
 .btn-booking:hover {
     color:#0e83b2;
@@ -39,7 +39,7 @@
 .btn.btn-unbooking {
     transition: 0.2s ;
   color:#FFFFFF;
-    font-size: 1.2em;
+    font-size: 1.8em;
     letter-spacing: 1px;
     font-weight: 400;
     vertical-align: middle;
@@ -52,6 +52,7 @@
     background:#db4150;
     height: 55px;
     margin-bottom:10px;
+    box-shadow:1px 1px 1px #a02e39;
 }
 .btn-unbooking:hover {
     color:#db4150;
@@ -62,7 +63,7 @@
 
 .btn.btn-closed {
     color:#FFFFFF;
-    font-size: 1.2em;
+    font-size: 1.8em;
     letter-spacing: 1px;
     font-weight: 400;
     height: 36px;
@@ -74,12 +75,14 @@
     background:#cccccc;
     height: 55px;
     margin-bottom:10px;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.3);
+    box-shadow:1px 1px 1px #919191;
 }
 
 .btn.btn-fullbook {
     transition: 0.5s;
     color:#FFFFFF;
-    font-size: 1.2em;
+    font-size: 1.3em;
     letter-spacing: 1px;
     font-weight: 400;
     height: 36px;
@@ -91,6 +94,7 @@
     background:#008B8B;
     height: 55px;
     margin-bottom:10px;
+    box-shadow:1px 1px 1px #056363;
 }
 
 .btn-fullbook:hover {
@@ -140,6 +144,21 @@
 .btn-update:hover {
     color:#FFFFFF;
     background-color:#165a75;
+}
+
+.toggle.btn.btn-primary {
+    border-radius: 20px;
+}
+
+.toggle.btn.btn-default {
+    border-radius: 20px;
+}
+
+.btn.toggle-on, .btn.toggle-off {
+  padding-bottom: 21px;
+  font-weight: 400;
+  font-size: 1.1em;
+  letter-spacing: 1px;
 }
 
 .btn.btn-signin {
