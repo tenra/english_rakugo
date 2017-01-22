@@ -32,7 +32,7 @@
              <%= number_to_currency(@event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
             <% end %>
           </div>
-          
+            <div class="text-center"><%= render 'events/booking_form', event: @event %></div>
             <div class="venue glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>
             <div class="event-text2"><%= simple_format @event.text %></div>
     
@@ -73,8 +73,6 @@
               </div>
             </div>
           <% end %>
-          
-        <div class="text-center"><%= render 'events/booking_form', event: @event %></div>
     </div>
     
   <div class="venue glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>

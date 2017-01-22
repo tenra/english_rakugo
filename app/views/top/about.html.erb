@@ -35,7 +35,7 @@
         </tr>
         <tr>
           <th>History</th>
-          <td>July 2010	&nbsp;First public release of _____</br>
+          <td>July 2010	&nbsp;First public release of _____<br />
               June 2013	&nbsp;_____ Inc established
           </td>
         </tr>
@@ -47,7 +47,6 @@
     </div>
 </div>
 
-      <%= form_for @top, :url => top_confirm_path do |f| %>
   <div class="inquiry-header">
     <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> お問い合わせ
   </div>
@@ -65,19 +64,20 @@
   
 <div class='row'>
     <div class='col-md-6 col-md-offset-3'>
+      <%= form_for @top, :url => top_confirm_path do |f| %>
               <div class="form-group">
                 <%= f.label :name %><br />
                 <%= f.text_field :name, placeholder: 'Name', class: "form-control text-code", autofocus: true %>
               </div>
               <div class="form-group">
                 <%= f.label :email %><br />
-                <%= f.text_field :email, placeholder: 'Email Address', class: "form-control text-code", autofocus: true %>
+                <%= f.text_field :email, placeholder: 'Email Address', class: "form-control text-code" %>
               </div>
               <div class="form-group">
                 <%= f.label :message %><br />
-                <%= f.text_area :message, placeholder: 'Message', class: "form-control area-code", autofocus: true %>
+                <%= f.text_area :message, placeholder: 'Message', class: "form-control area-code" %>
               </div>
-          <center><%= f.submit 'Confirm', class: 'btn btn-update' %></center>
+          <div class="text-center"><%= f.submit 'Confirm', class: 'btn btn-update' %></div>
       <% end %>
      <%= link_to "Back", :back %>
     </div>

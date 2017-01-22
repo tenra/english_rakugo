@@ -93,9 +93,16 @@ footer {
   
 .footer-left {
   float: left;
-  padding: 15px;
+  font-size: 1.5em;
+  padding: 12px;
   margin-bottom: 50px;
-  }
+}
+
+.powered_by {
+  font-size: 1em;
+  text-align: center;
+  padding-bottom: 50px;
+}
 
 footer a {
   color: #F4F4F4;

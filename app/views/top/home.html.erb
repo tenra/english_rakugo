@@ -30,7 +30,7 @@
             </h4>
           <div class="event-text"><%= simple_format event.text %></div>
         </div>
-          <div align="right" class="user_avatars">
+          <div class="user_avatars">
             　<% event.booking_users.order('updated_at desc').limit(10).each do |user| %>
             <div>
               <span>

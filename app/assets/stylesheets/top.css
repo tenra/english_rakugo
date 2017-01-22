@@ -71,6 +71,7 @@
 }
 
 .user_avatars div {
+  text-align: right;
   position: relative;
   display: inline-block;
   bottom: 0;

@@ -161,6 +161,29 @@
   letter-spacing: 1px;
 }
 
+.btn-timetable {
+    transition: 0.2s;
+    color:#FFFFFF;
+    font-size: 1em;
+    letter-spacing: 1px;
+    font-weight: 400;
+    vertical-align: middle;
+    height: 3px;
+    width: 100px; 
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius: 5px;
+    background:#0e83b2;
+    height: 55px;
+    margin-bottom:10px; 
+}
+.btn-timetable:hover {
+    color:#FFFFFF;
+    background-color:#165a75;
+}
+
 .btn.btn-signin {
     /*background-color: #4d90fe; */
     background-color: rgb(104, 145, 162);
