@@ -10,9 +10,9 @@
             <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
             <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
     </head>
-    <body>
+    <body id="wrap">
           <%= render 'layouts/header' %>
-      　  <div class="container">
+      　  <div id="content" class="container">
           <%= render 'layouts/alert', message: flash.to_h %>
         <%= yield %>
             

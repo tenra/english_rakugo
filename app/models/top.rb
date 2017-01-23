@@ -2,7 +2,7 @@ class Top include ActiveModel::Model
  
   attr_accessor :name, :email, :message
  
-  validates :name, :presence => {:message => '名前を入力してください'}
-  validates :email, :presence => {:message => 'メールアドレスを入力してください'}
-  validates :message, :presence => {:message => 'お問い合わせ内容を記載して下さい'}
+  validates :name, length: { maximum: 20 } , presence: true
+  validates :email, length: { maximum: 20 } , presence: true
+  validates :message , length: { minimum: 2, maximum: 30 } , presence: true
 end

@@ -6,6 +6,7 @@ class TopController < ApplicationController
   def about
     @top = Top.new
     render :action => 'about'
+    @tops = Top.all
   end
   
   def confirm
