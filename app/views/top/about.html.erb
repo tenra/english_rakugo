@@ -52,7 +52,7 @@
       <%= form_for @top, :url => top_confirm_path do |f| %>
   
           <div class="inquiry-header">
-            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> お問い合わせ
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contact Us
           </div>
 
                 <% if @top.errors.present? %>
@@ -68,16 +68,19 @@
                 <% end %>
   
               <div class="form-group">
-                <%= f.label :name, class: "control-label" %>
-                <%= f.text_field :name, placeholder: 'Name', class: "form-control text-code", autofocus: true %>
+                <%= f.label :name, class: "control-label" %><span class="glyphicon glyphicon-star"></span>
+                <%= f.text_field :name, placeholder: 'Your name, please', class: "form-control text-code", autofocus: true %>
               </div>
               <div class="form-group">
-                <%= f.label :email, class: "control-label" %>
-                <%= f.text_field :email, placeholder: 'Email Address', class: "form-control text-code" %>
+                <%= f.label :email, class: "control-label" %><span class="glyphicon glyphicon-star"></span>
+                <%= f.text_field :email, placeholder: 'youremail@example.com', class: "form-control text-code" %>
               </div>
               <div class="form-group">
-                <%= f.label :message, class: "control-label" %>
-                <%= f.text_area :message, placeholder: 'Message', class: "form-control area-code" %>
+                <%= f.label :message, class: "control-label" %><span class="glyphicon glyphicon-star"></span>
+                <%= f.text_area :message, placeholder: "less than 50 characters", class: "form-control area-code" %>
+              </div>
+              <div class="blank">
+                  <span class="glyphicon glyphicon-star"></span>there are can't be blank
               </div>
           <div class="text-center"><%= f.submit 'Confirm', class: 'btn btn-update' %></div>
       <% end %>
