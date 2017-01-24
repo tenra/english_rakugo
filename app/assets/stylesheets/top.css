@@ -78,10 +78,10 @@
 }
 
 .arrow_box {
-  margin: 15px 0 0 2px;
+  margin: 8px 0 0 2px;
   display: none;
   position: absolute;
-  padding: 16px;
+  padding: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;  
   border-radius: 8px;
