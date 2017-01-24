@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
     @event = Event.find(params[:event_id])
     current_user.booking(@event)
     flash[:success] = "your booking is completed!"
+    EventMailer.received_email(@event).deliver
     redirect_to users_me_path
   end
 
