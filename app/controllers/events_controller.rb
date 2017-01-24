@@ -16,6 +16,11 @@ class EventsController < ApplicationController
     end
   end
   
+  def ticket
+    @event = Event.new
+    @event = Event.find(params[:id])
+  end
+  
   def new
     @event = Event.new
   end

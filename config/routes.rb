@@ -28,6 +28,9 @@ Rails.application.routes.draw do
       get 'admin/events'
       
       resources :events, only: [:show, :index] do
+        member do
+          get "ticket" => "events#ticket"
+        end
         resource :bookings, only: [:create, :destroy]
       end
       
