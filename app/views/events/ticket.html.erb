@@ -1,3 +1,14 @@
-ticket
-<%= @event.time.strftime("%H:%M") %>
-<%= link_to "booking", event_bookings_path(@event), method: :post, class: "btn btn-booking" %>
+<%  @page_title = "confirm" %>
+
+<h1><span style="color:#fff;">Confirm to Booking</span></h1>
+
+<div class="event-back">
+  <div class='row'>
+    <div class='col-sm-offset-3 col-sm-6'>
+    
+    <%= @event.time.strftime("%H:%M") %>
+    <%= link_to "booking", event_bookings_path(@event), method: :post, class: "btn btn-booking" %>
+    
+    </div>
+  </div>
+</div>
