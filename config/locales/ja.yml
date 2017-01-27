@@ -15,6 +15,11 @@ ja:
       Timetable: "タイムテーブル"
       Time: "時間"
       Description: "内容"
+      Admission_free: "入場無料"
+      at_the_door: "会場払い"
+    ticket:
+      Venue: "会場"
+      Admission_free: "入場無料"
       at_the_door: "会場払い"
   date:
     formats:

@@ -89,9 +89,29 @@
   margin-right: 150px;
   font-size: 1.8em;
 }
-
 .right {
   text-align: right;
   margin-right: 50px;
   font-size: 1.1em;
+}
+
+/* ticket */
+.ticket-image {
+  margin: 0 auto;
+  border-radius: 8px;
+}
+.ticket-title {
+ text-align: center;
+ color: #4682B4;
+ font-size: 2em;
+ text-shadow: 1px 1px 0px #808080;
+}
+.ticket-time {
+  color: #535353;
+  font-size: 1.5em;
+}
+.ticket-price {
+  color: #535353;
+  text-align: right;
+  font-size: 1.4em;
 }

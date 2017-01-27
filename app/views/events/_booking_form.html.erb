@@ -4,7 +4,7 @@
     <% elsif event.capacity == event.booking_users.count %>
         <button type="button" class="btn btn-fullbook">full booking now</button>
     <% elsif event.booking?(current_user) %>
-        <%= link_to "unbooking", event_bookings_path(event), method: :delete, data: { confirm: 'Will you really cancel this event？' }, class: "btn btn-unbooking" %>
+        <%= link_to "unbooking", event_bookings_path(event), method: :delete, data: { confirm: 'Are you really cancel this event？' }, class: "btn btn-unbooking" %>
     <% else %>
         <%= link_to "to booking", ticket_event_path(event), class: "btn btn-booking" %>
     <% end %>

@@ -4,7 +4,7 @@ class EventMailer < ActionMailer::Base
   
   def received_email(event)
     @event = event
-    mail(:subject => 'お問い合わせを承りました')
+    mail(:subject => 'Thanks to booking our event!!')
   end
  
 end

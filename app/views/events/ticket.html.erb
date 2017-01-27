@@ -5,10 +5,41 @@
 <div class="event-back">
   <div class='row'>
     <div class='col-sm-offset-3 col-sm-6'>
+      <div align="center">
+        <% if @event.image? %>
+              <%= image_tag @event.image.thumb.url, class: "ticket-image img-responsive" %>
+        <% else %>
+              <%= image_tag 'noimage.gif', width: 200, :class => "ticket-image img-responsive" %>
+        <% end %>
+      <div class="ticket-title">
+        <%= @event.title %>
+      </div>
+      
+      <div class="ticket-time">
+          <% if @event.time || @event.end_time.present? %>
+             <%= I18n.l @event.date, format: :full_date if @event.date.present? %>
+             ,&nbsp;<%= @event.time.strftime("%H:%M") %>
+             &nbsp;~&nbsp;
+          <% if (@event.date.present? && @event.end_date.present?) && (@event.date != @event.end_date) %>
+             <%= I18n.l @event.end_date, format: :full_date %>,
+          <% end %>
+             <%= @event.end_time.strftime("%H:%M") if @event.end_time.present? %>
+          <% end %>
+      </div>
+      <div class="ticket-price">
+          <% if @event.price.blank? || @event.price == 0 %>
+             <%= t '.Admission_free' %>
+          <% else %>
+             <%= number_to_currency(@event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
+          <% end %><br />
+          <div class="glyphicon glyphicon-flag"></div><%= t '.Venue' %>:<%= @event.address %>&nbsp;
+      </div>
     
-    <%= @event.time.strftime("%H:%M") %>
-    <%= link_to "booking", event_bookings_path(@event), method: :post, class: "btn btn-booking" %>
+
+      <div style="margin:10px"><%= link_to "booking", event_bookings_path(@event), method: :post, class: "btn btn-booking" %></div>
     
+      </div>    
+        <div class="back"><%= link_to "Back", :back %></div>
     </div>
   </div>
 </div>
