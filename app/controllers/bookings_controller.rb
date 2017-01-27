@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking.number = @event.created_at.strftime('%Y%m%d%H%M').to_s + @event.id.to_s + @user.id.to_s
     @booking.save
     flash[:success] = "your booking is completed!"
-    EventMailer.received_email(@event).deliver
+    EventMailer.received_email(@event, current_user).deliver
     redirect_to users_me_path
   end
 
