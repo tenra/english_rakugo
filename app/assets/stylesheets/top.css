@@ -24,7 +24,6 @@
 
 .trim {
   overflow: hidden;
-  width: 640px;
   height: 380px;
   position: relative;
 }
@@ -35,7 +34,7 @@
 
 .wrap {   /* shadows and rounded borders */
   background-color: #FFFFFF;
-  height: 400px;
+  min-height: 400px;
   padding: 10px 5px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -56,6 +55,10 @@
   color: #FA8072;
 }
 
+.hvr-glow {
+  display: block;
+}
+
 .event-text {           /* 行数管理 */
    font-family: "myriad-pro",sans-serif;
    color: #808080;
@@ -69,11 +72,10 @@
    -webkit-line-clamp: 9; 
 }
 
-.user_avatars div {
-  text-align: right;
-  position: relative;
-  display: inline-block;
-  bottom: 0;
+.user_avatars {
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
 }
 
 .arrow_box {
