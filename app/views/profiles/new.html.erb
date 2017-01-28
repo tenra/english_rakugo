@@ -9,15 +9,15 @@
 
         <%= form_for(@profile) do |f| %>
             <%#= f.label :Image %>
-            <div class="text-center">
+            <div align="center">
               <% if @profile.avatar? %>
-                 <%= image_tag @profile.avatar.thumb.url, class: "profile-present-avatar" %>
+                 <%= image_tag @profile.avatar.thumb.url, class: "profile-present-avatar img-responsive" %>
               <% else %>
-                 <%= image_tag 'no-avatar.png', width: 200, :class => "profile-present-avatar" %>
+                 <%= image_tag 'no-avatar.png', width: 200, :class => "profile-present-avatar img-responsive" %>
               <% end %>
-            </div>
-            <%= f.hidden_field :avatar_cache %>
-            <%= f.hidden_field :avatar %>
+            
+              <%= f.hidden_field :avatar_cache %>
+              <%= f.hidden_field :avatar %>
                         
               <img id="img_prev" width=200 height=200 src="#" class="img-thumbnail hidden"/>
                   <%= f.file_field :avatar, :id => 'post_post_img' %>
@@ -40,13 +40,13 @@
                               });
                            });
                   </script>
-                        
+            </div>            
             <%= f.check_box :private %>
             <script>
               $(function() {
                 $('#profile_private').bootstrapToggle({
-                  on: 'Private',
-                  off: 'Public'
+                  on: 'Public',
+                  off: 'Private'
                 });
               })
             </script>
