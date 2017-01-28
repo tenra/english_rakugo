@@ -54,6 +54,9 @@
           <div class="inquiry-header">
             <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contact Us
           </div>
+          <div class="blank">
+            <span class="glyphicon glyphicon-star"></span>there are can't be blank
+          </div>
 
                 <% if @top.errors.present? %>
                    <div class="alert alert-danger">
@@ -79,9 +82,7 @@
                 <%= f.label :message, class: "control-label" %><span class="glyphicon glyphicon-star"></span>
                 <%= f.text_area :message, placeholder: "less than 50 characters", class: "form-control area-code" %>
               </div>
-              <div class="blank">
-                  <span class="glyphicon glyphicon-star"></span>there are can't be blank
-              </div>
+              
           <div class="text-center"><%= f.submit 'Confirm', class: 'btn btn-update' %></div>
       <% end %>
      <%= link_to "Back", :back %>
