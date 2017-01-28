@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       
       get 'users/me' => 'users#me'
       get '/users/:user_id/show', to: 'users#show', as: 'show_user'
-      #resources :users, only: [:show]
+      resources :users, only: [:destroy]
       
       get 'events/:event_id/show', to: 'events#show', as: 'show_event'
       
