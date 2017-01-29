@@ -36,10 +36,33 @@
     border-width: 2px;
 }
 
+.btn.btn-checkbooking {
+    transition: 0.2s;
+    color:#FFFFFF;
+    font-size: 1.7em;
+    letter-spacing: 1px;
+    font-weight: 400;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius: 5px;
+    background:#008B8B;
+    height: 55px;
+    margin-bottom:10px;
+    box-shadow:1px 1px 1px #056363;
+}
+
+.btn-checkbooking:hover {
+    color:#FFFFFF;
+    background-color:#346e70;
+}
+
 .btn.btn-unbooking {
     transition: 0.2s ;
   color:#FFFFFF;
-    font-size: 1.8em;
+    font-size: 1.2em;
     letter-spacing: 1px;
     font-weight: 400;
     vertical-align: middle;

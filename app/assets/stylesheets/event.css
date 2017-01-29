@@ -50,6 +50,16 @@
   font-weight: bold;
 }
 
+.show_avatars div {
+   position: relative;
+   display: inline-block;
+}
+.right {
+  text-align: right;
+  margin: 0px 50px 5px 0px;
+  font-size: 1.1em;
+}
+
 .datepicker {
   width: 150px;
   margin-bottom: 14px;
@@ -88,11 +98,6 @@
   text-align: right;
   margin-right: 80px;
   font-size: 1.8em;
-}
-.right {
-  text-align: right;
-  margin-right: 50px;
-  font-size: 1.1em;
 }
 
 /* ticket */

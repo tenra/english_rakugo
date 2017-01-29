@@ -50,6 +50,7 @@
                 <% end %>
                 <%= link_to event.title, show_event_path(event) %>
                 <%= current_user.bookings[i].number if current_user.bookings[i].number.present? %>
+                <%= link_to "unbooking", event_bookings_path(event), method: :delete, data: { confirm: 'Are you really cancel this event？' }, class: "btn btn-unbooking" %>
               </div>
               <hr>
             <% end %>
