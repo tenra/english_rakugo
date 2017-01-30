@@ -27,18 +27,35 @@
           <% end %>
       </div>
       <div class="ticket-price">
+        <div class="glyphicon glyphicon-flag"></div><%= t '.Venue' %>:<%= @event.address %>&nbsp;<br />
           <% if @event.price.blank? || @event.price == 0 %>
              <%= t '.Admission_free' %>
           <% else %>
              <%= number_to_currency(@event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
-          <% end %><br />
-          <div class="glyphicon glyphicon-flag"></div><%= t '.Venue' %>:<%= @event.address %>&nbsp;
+          <% end %>
       </div>
     
-
+<input type="hidden" name="tax_1" value="<%= @event.price %>">
+<%= select_tag :people, options_for_select((1..5).to_a), class: "people_select_tag" %>
+people
+<div id="total"><%= @event.price %></div>total
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("select#people").change(function(){
+			$("select#people option:selected").each(function(){
+ 				var tax_1= $('[name=tax_1]').val();
+ 				var people= $('[name=people]').val();
+				var result = tax_1 * people;
+ 
+				$("#total").html(Math.ceil(result));
+			});
+		});
+	});
+</script>
+    
       <div style="margin:10px"><%= link_to "booking", event_bookings_path(@event), method: :post, class: "btn btn-booking" %></div>
     
-      </div>    
+      </div>
         <div class="back"><%= link_to "Back", :back %></div>
     </div>
   </div>

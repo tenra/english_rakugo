@@ -1,5 +1,6 @@
 <% @page_title = "Create Event" %>
-<h1><%= @page_title %></h1>
+
+<h1><span style="color:#fff;"><%= @page_title %></span></h1>
 
 <div class='row'>
    <div class='col-md-6 col-md-offset-3'>
@@ -79,15 +80,15 @@
               
               <div class="form-group">
                 <%= f.label :text %><br />
-                <%= f.text_area :text, placeholder: 'text', class: "form-control", rows: 10, cols: 45, autofocus: true %>
+                <%= f.text_area :text, placeholder: 'text', class: "form-control", rows: 10, cols: 45 %>
               </div>
               <div class="form-group">
                 <%= f.label :address %><br />
-                <%= f.text_field :address, placeholder: 'address', class: "form-control", autofocus: true %>
+                <%= f.text_field :address, placeholder: 'address', class: "form-control" %>
               </div>
               <div class="form-group">
                 <%= f.label :description %><br />
-                <%= f.text_field :description, placeholder: 'description', class: "form-control", autofocus: true %>
+                <%= f.text_field :description, placeholder: 'description', class: "form-control" %>
               </div>
               <div>
                 <%= f.submit 'Confirm', class: "btn btn-large btn-primary" %>
