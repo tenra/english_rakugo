@@ -35,7 +35,7 @@
         <tr><th><td></td></th></tr>
       </table>
           <span style="font-weight:bold"><%= t '.My_events' %></span><br />
-            <% @user.booking_events.each do |event| %>
+            <% current_user.booking_events.each_with_index do |event, i| %>
               <% if (event.date.present? && event.time.present?) %>
                 <span style="margin-left:20px"><%= I18n.l event.date, format: :full_date %></span>
                  ,&nbsp;<%= event.time.strftime("%H:%M") %>~
@@ -46,7 +46,10 @@
                 <% else %>
                     <%= image_tag 'noimage.gif', :class => "e-img-mini" %>
                 <% end %>
-                <%= link_to event.title, show_event_path(event) %>
+                <%= link_to event.title, show_event_path(event) %><br />
+                <span style="font-weight:bold"><%= t '.Confirmatin_number' %></span><%= current_user.bookings[i].number if current_user.bookings[i].number.present? %><br />
+                <span style="font-weight:bold"><%= t '.Booking_people' %></span><%= current_user.bookings[i].people if current_user.bookings[i].people.present? %><br />
+
               </div>
               <hr>
             <% end %>
