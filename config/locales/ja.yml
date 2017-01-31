@@ -29,6 +29,11 @@ ja:
       User_name: "名前"
       Email_address: "メールアドレス"
       My_events: "参加イベント"
+      Profile-Image_status: "ユーザー画像表示"
+      Public: "公開"
+      Private: "非公開"
+      Confirmatin_number: "予約番号"
+      Booking_people: "予約人数"
   number:
     currency:
       format:

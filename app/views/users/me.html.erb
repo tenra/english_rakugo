@@ -25,12 +25,12 @@
           <td><%= current_user.email %></td>
         </tr>
         <tr>
-          <th>Profile-Image status</th>
+          <th><%= t '.Profile-Image_status' %></th>
           <td>
             <% if current_user.profile.present? && current_user.profile.private %>
-              Public
+              <%= t '.Public' %>
             <% else %>
-              Private
+              <%= t '.Private' %>
             <% end %>
           </td>
         </tr>
@@ -48,8 +48,9 @@
                 <% else %>
                     <%= image_tag 'noimage.gif', :class => "e-img-mini" %>
                 <% end %>
-                <%= link_to event.title, show_event_path(event) %>
-                <%= current_user.bookings[i].number if current_user.bookings[i].number.present? %>
+                <%= link_to event.title, show_event_path(event) %><br />
+                <span style="font-weight:bold"><%= t '.Confirmatin_number' %></span><%= current_user.bookings[i].number if current_user.bookings[i].number.present? %><br />
+                <span style="font-weight:bold"><%= t '.Booking_people' %></span><%= current_user.bookings[i].people if current_user.bookings[i].people.present? %><br />
                 <%= link_to "unbooking", event_bookings_path(event), method: :delete, data: { confirm: 'Are you really cancel this event？' }, class: "btn btn-unbooking" %>
               </div>
               <hr>

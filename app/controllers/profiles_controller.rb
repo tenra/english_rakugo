@@ -24,7 +24,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
-      flash[:success] = "updated your profile image!"
+      flash[:notice] = "updated your profile image!"
       redirect_to users_me_url
     else
       render 'edit'
