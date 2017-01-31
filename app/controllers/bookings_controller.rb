@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :store_booking_people, only: [:create]
   before_action :sign_in_required
   
   def create
@@ -15,7 +16,7 @@ class BookingsController < ApplicationController
         @booking.number = @event.created_at.strftime('%Y%m%d%H%M').to_s + @event.id.to_s + @user.id.to_s
         @booking.save
         flash[:notice] = "your booking is completed!"
-        EventMailer.received_email(@event, current_user).deliver
+        EventMailer.received_email(@event, current_user).deliver_now
         redirect_to users_me_path
       end
     end
@@ -32,4 +33,10 @@ class BookingsController < ApplicationController
     def booking_params
       params.require(:booking).permit(:people)
     end
+    
+  def store_booking_people
+    if !user_signed_in? && params[:booking] && params[:booking][:people]#ここは params[:booking] のnilチェックが必要かも
+      session[:booking_people] = params[:booking][:people]
+    end
+  end
 end

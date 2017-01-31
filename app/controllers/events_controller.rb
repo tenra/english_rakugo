@@ -18,6 +18,10 @@ class EventsController < ApplicationController
   
   def ticket
     @event = Event.find(params[:id])
+    if session[:booking_people]
+      @booking_people = session[:booking_people].to_i
+      session[:booking_people] = nil
+    end
   end
   
   def new

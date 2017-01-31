@@ -4,9 +4,24 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+
+  after_filter :store_location
+  
+  def store_location
+    if (request.fullpath != new_user_registration_path &&
+        request.fullpath != new_user_session_path &&
+        request.fullpath !~ Regexp.new("\\A/users/password.*\\z") &&
+        !request.xhr?)
+      session[:previous_url] = request.fullpath
+    end
+  end
   
     def after_sign_in_path_for(resource)
-        users_me_path
+      if (session[:previous_url] == users_me_path)
+        super
+      else
+        session[:previous_url] || users_me_path
+      end
     end
 
   before_action :set_locale

@@ -49,7 +49,6 @@
                 <%= link_to event.title, show_event_path(event) %><br />
                 <span style="font-weight:bold"><%= t '.Confirmatin_number' %></span><%= current_user.bookings[i].number if current_user.bookings[i].number.present? %><br />
                 <span style="font-weight:bold"><%= t '.Booking_people' %></span><%= current_user.bookings[i].people if current_user.bookings[i].people.present? %><br />
-
               </div>
               <hr>
             <% end %>
