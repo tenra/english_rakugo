@@ -13,23 +13,29 @@
     top: -100px;
     width: 100%;
     margin: 0 auto;
-    padding: 30px 0 0;
+    padding: 10px 0 0;
     line-height: 1;
     z-index: 999;
-    
+    background: #fff;
+    -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
 }
 #top-head a,
 #top-head {
-    color: #fff;
+    color: #4682B4;
     text-decoration: none;
 }
+#top-head:hover a {
+  color: #FA8072;
+}
+
 #top-head .inner {
     position: relative;
     bottom: 15px;
 }
 #top-head .logo {
     float: left;
-    font-size: 36px;
+    font-size: 30px;
 }
 #global-nav ul {
     list-style: none;
@@ -65,6 +71,9 @@
 #top-head.fixed #global-nav ul li a {
     color: #666666;
     padding: 0 20px;
+}
+#top-head.fixed #global-nav ul li:hover a {
+  color: #FA8072;
 }
  
 /* Toggle Button */
@@ -138,7 +147,8 @@
         position: absolute;
         /* 開いてないときは画面外に配置 */
         top: -500px;
-        background: #333;
+        background: #fff;
+        background: rgba(255,255,255,.7);
         width: 100%;
         text-align: center;
         padding: 10px 0;
@@ -161,7 +171,7 @@
     #top-head.fixed #global-nav ul li a {
         width: 100%;
         display: block;
-        color: #fff;
+        color: #666666;
         padding: 18px 0;
     }
     #nav-toggle {
