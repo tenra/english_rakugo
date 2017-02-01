@@ -1,9 +1,17 @@
-<header>
-    <div class="navbar navbar-default">
-        <div class="container">
-            
-            <nav>
-                <ul class="nav navbar-nav navbar-right">
+<header id="top-head">
+    <div class="inner">
+        <div id="mobile-head">
+            <h1 class="logo">Logo</h1>
+            <div id="nav-toggle">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <nav id="global-nav">
+            <ul>
                     <li><%= link_to "Home", root_path %></li>
                     <li>
                         <% if I18n.locale != :en %>
@@ -36,9 +44,27 @@
                          <% end %>
                     </li>
                       <% end %>
-                       
-                </ul>
-            </nav>
-        </div>
+            </ul>
+        </nav>
     </div>
 </header>
+
+<script>
+(function($) {
+    $(function() {
+        var $header = $('#top-head');
+        // Nav Fixed
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 350) {
+                $header.addClass('fixed');
+            } else {
+                $header.removeClass('fixed');
+            }
+        });
+        // Nav Toggle Button
+        $('#nav-toggle').click(function(){
+            $header.toggleClass('open');
+        });
+    });
+})(jQuery);
+</script>
