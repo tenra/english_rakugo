@@ -114,46 +114,25 @@
     background-color:#5F9EA0;
 }
 
-.btn.btn-eventcreate {
-    color:#FFFFFF;
-    font-size: 1.2em;
-    letter-spacing: 1px;
-    font-weight: 400;
-    height: 36px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: default;
-    border-radius: 5px;
-    background:#008B8B;
-    height: 55px;
-    margin-bottom:10px;
-}
-
-.btn-eventcreate:hover {
-    color:#FFFFFF;
-    background-color:#5F9EA0;
-}
-
-.btn-update {
+.btn-eventcreate {
     transition: 0.2s;
     color:#FFFFFF;
-    font-size: 1.8em;
+    font-size: 1.5em;
     letter-spacing: 1px;
     font-weight: 400;
     vertical-align: middle;
     height: 36px;
-    width: 200px;
+    width: 155px;
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
     cursor: default;
     border-radius: 5px;
     background:#0e83b2;
-    height: 55px;
+    height: 48px;
     margin:10px; 
 }
-.btn-update:hover {
+.btn-eventcreate:hover {
     color:#FFFFFF;
     background-color:#165a75;
 }
