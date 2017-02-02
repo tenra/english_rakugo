@@ -28,6 +28,7 @@ gem 'font-awesome-rails'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
 gem 'bootstrap-toggle-rails'
+gem 'data-confirm-modal'
 
 group :development, :test do
   gem 'byebug'
