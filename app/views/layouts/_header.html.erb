@@ -21,7 +21,7 @@
                             <%= link_to_if params[:locale] != 'ja',  '日本語',  url_for(controller: controller.controller_name, action: controller.action_name, locale: 'ja') %>
                         <% end %>
                     </li>
-                        <% if user_signed_in? %>
+                <% if user_signed_in? %>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <%= image_tag( current_user.profile.avatar.thumb.url, :class => "img-circle_h") if current_user.profile %> <%= current_user.name %>
@@ -33,17 +33,19 @@
                                       <%= link_to "Dashboard", admin_dashboard_path %>
                                     <% end %>
                                 </li>
-                                <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                                <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: "Are you sure you want to Sign out?",
+                                                                                                                cancel: "Cancel",
+                                                                                                                commit: "Sign out"}, title: "Confirmation" %>
+                                </li>
                               </ul>
                     </li>
-    
-                        <% else %>
+                <% else %>
                     <li>
                          <%= link_to new_user_session_path do %>
                             <span class="glyphicon glyphicon-user"></span> Sign in
                          <% end %>
                     </li>
-                      <% end %>
+                <% end %>
             </ul>
         </nav>
     </div>
