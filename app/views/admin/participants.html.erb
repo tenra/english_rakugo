@@ -18,17 +18,17 @@
              <th></th>
           </tr>
 
-         <% @events.each do |booking_user| %>
+         <% @booking_users.each do |user| %>
           <tr>
-             <td><%= booking_users.id %></td>
-             <td><%= link_to booking_users.name, show_user_path(user) %></td>
-             <td><%= booking_users.email %></td>
-             <td><%= booking_users.bookings.people %></td>
+             <td><%= user.id %></td>
+             <td><%= link_to user.name, show_user_path(user) %></td>
+             <td><%= user.email %></td>
+             <td><%= user.bookings.find_by(event_id: @event.id).people %></td>
              <td></td>
              <td>
-               <%= link_to "Delete", delete_user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete the User <strong>#{booking_users.name}</strong>?",
+               <%= link_to "Unbooking", event_bookings_path(@event, user_id: user.id), method: :delete, data: { confirm: "Are you sure you want to unbooking the User <strong>#{user.name}</strong>?",
                cancel: "Cancel",
-               commit: "Delete"}, title: "Confirmation" %>
+               commit: "Unbooking"}, title: "Confirmation" %>
              </td>
           </tr>
          <% end %>
@@ -40,5 +40,6 @@
         
         
     </div>
+    <div class="back"><%= link_to "Back", :back %></div>
   </div>
 </div>

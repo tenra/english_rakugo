@@ -23,10 +23,17 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:event_id])
-    current_user.unbooking(@event)
-    flash[:notice] = "Your event has been successfully cancelled!"
-    redirect_to users_me_path
+     @event = Event.find(params[:event_id])
+    if current_user.admin == true
+      @user = User.find(params[:user_id])
+      @user.unbooking(@event)
+      flash[:notice] = "Successfully unbooked!"
+      redirect_to admin_participants_path(@event)
+    else
+      current_user.unbooking(@event)
+      flash[:notice] = "Your event has been successfully cancelled!"
+      redirect_to users_me_path
+    end
   end
   
   private

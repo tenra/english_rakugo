@@ -11,8 +11,7 @@ class AdminController < ApplicationController
   end
   
   def participants
-    @events = User.find(:all, :confitions => {:user_id => params[:event_id]})
-    @events = Event.find(:all, :confitions => {:event_id => params[:event_id]})
     @event = Event.find(params[:event_id])
+    @booking_users =  @event.booking_users
   end
 end
