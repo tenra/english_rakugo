@@ -41,7 +41,7 @@
     list-style: none;
     position: absolute;
     right: 0;
-    bottom: 18px;
+    top: 42px;
     font-size: 14px;
 }
 #global-nav ul li {
@@ -111,6 +111,9 @@
     top: 22px;
 }
 
+ul.dropdown-menu li {
+  padding: 0px 0px 15px 0px;
+}
 /*次はモバイルのCSSです。*/
 
 @media screen and (max-width: 640px) {

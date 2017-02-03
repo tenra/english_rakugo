@@ -1,0 +1,44 @@
+<% @page_title = 'Participants' %>
+
+<div class="row">
+  <div class='col-sm-offset-1 col-sm-10'>
+      <div class="page-header" style="margin-top:-30px;padding-bottom:0px;">
+        <h1><span style="color:#fff;"><%= @page_title %></span></h1></div>
+    <div class="event-back">
+        
+     <% if @event.booking_users.present? %>
+        <table class="table">
+          <tr>
+             <th>id</th>
+             <th>name</th>
+             <th>email</th>
+             <th>Participants</th>
+             <th></th>
+             <th></th>
+             <th></th>
+          </tr>
+
+         <% @events.each do |booking_user| %>
+          <tr>
+             <td><%= booking_users.id %></td>
+             <td><%= link_to booking_users.name, show_user_path(user) %></td>
+             <td><%= booking_users.email %></td>
+             <td><%= booking_users.bookings.people %></td>
+             <td></td>
+             <td>
+               <%= link_to "Delete", delete_user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete the User <strong>#{booking_users.name}</strong>?",
+               cancel: "Cancel",
+               commit: "Delete"}, title: "Confirmation" %>
+             </td>
+          </tr>
+         <% end %>
+
+        </table>
+     <% else %>
+        <p>no participants</p>
+     <% end %>
+        
+        
+    </div>
+  </div>
+</div>

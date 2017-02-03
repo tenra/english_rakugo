@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       get 'admin/dashboard'
       get 'admin/users'
       get 'admin/events'
+      get 'admin/:event_id/participants', to: 'admin#participants', as: 'admin_participants'
       
       resources :events, only: [:show, :index] do
         member do
