@@ -13,7 +13,7 @@
              <th>name</th>
              <th>email</th>
              <th>Participants</th>
-             <th></th>
+             <th>price</th>
              <th></th>
              <th></th>
           </tr>
@@ -24,7 +24,7 @@
              <td><%= link_to user.name, show_user_path(user) %></td>
              <td><%= user.email %></td>
              <td><%= user.bookings.find_by(event_id: @event.id).people %></td>
-             <td></td>
+             <td><%= @event.price %></td>
              <td>
                <%= link_to "Unbooking", event_bookings_path(@event, user_id: user.id), method: :delete, data: { confirm: "Are you sure you want to unbooking the User <strong>#{user.name}</strong>?",
                cancel: "Cancel",
