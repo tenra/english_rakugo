@@ -12,8 +12,8 @@
              <th>Id</th>
              <th>Name</th>
              <th>Email</th>
-             <th>Participants</th>
-             <th>Total Amount</th>
+             <th><%= @event.bookings.sum(:people, :conditions => "people is not null") %> Participants</th>
+             <th>Total<%= @event.bookings.sum(:people, :conditions => "people is not null") %></th>
              <th></th>
              <th></th>
           </tr>
