@@ -12,5 +12,11 @@ class Event < ActiveRecord::Base
     
     geocoded_by :address
     after_validation :geocode, if: :address_changed?
+   
+   def total_price
+     unless price.nil? || price == 0
+       bookings.sum(:people, :conditions => "people is not null") * price
+     end
+   end
     
 end

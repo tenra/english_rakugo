@@ -36,11 +36,7 @@
       </div>
     
       <%= form_for(@event.bookings.build , url: event_bookings_path(@event)) do |f| %>
-      <% if @booking_people.present? %>
         <%= f.select :people, options_for_select((1..5).to_a, selected: @booking_people), class: "people_select_tag" %>
-      <% else %>
-        <%= f.select :people, options_for_select((1..5).to_a), class: "people_select_tag" %>
-      <% end %>
       <input type="hidden" name="tax_1" value="<%= @event.price %>">
       people
       <div id="total"><%= @event.price * (@booking_people || 1) if @event.price.present? %></div>total
@@ -58,8 +54,9 @@
       	});
       </script>
       
-      <%= @booking_people %>
-    <div style="margin:10px"><%= f.submit 'booking', class: "btn btn-booking" %></div>
+    <div style="margin:10px">
+      <%= f.submit 'booking', class: "btn btn-booking" %>
+    </div>
     <% end %>
       </div>
         <div class="back"><%= link_to "Back", :back %></div>
