@@ -33,7 +33,7 @@
                  <% else %><%= number_to_currency(event.price, :precision => 0, :local => 'jp') %>
                  <% end %>
              </td>
-             <td><%= link_to 'Timetable', timetables_path(event_id: event.id) %></td>
+             <td><%= link_to 'Timetables', timetables_path(event_id: event.id) %></td>
              <td><%= link_to "Edit", edit_event_path(event) %></td>
           </tr>
         <% end %>
