@@ -23,6 +23,9 @@ class TopController < ApplicationController
     render :action => 'thanks'
   end
   
+  def terms_of_service
+  end
+  
   private
   def top_params
     params.require(:top).permit(:name, :email, :message)

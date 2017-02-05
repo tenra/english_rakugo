@@ -8,10 +8,7 @@ class ApplicationController < ActionController::Base
   after_filter :store_location
   
   def store_location
-    if (request.fullpath != new_user_registration_path &&
-        request.fullpath != new_user_session_path &&
-        request.fullpath !~ Regexp.new("\\A/users/password.*\\z") &&
-        !request.xhr?)
+    if controller_name == "events" && action_name == "ticket"
       session[:previous_url] = request.fullpath
     end
   end
@@ -36,16 +33,15 @@ class ApplicationController < ActionController::Base
 
         
   protected
-
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :admin])
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :admin, :agreement])
         devise_parameter_sanitizer.permit(:account_update, keys: [:name])
     end
   
   private
     def sign_in_required
        unless user_signed_in?
-        redirect_to new_user_session_url
+        redirect_to new_user_registration_url
         flash[:alert] = "you need to sign up before you booking"
        end
     end

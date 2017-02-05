@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get "about" => "top#about", as: "about"
       post 'top/confirm' => 'top#confirm' #確認画面
       post 'top/thanks' => 'top#thanks' #送信完了画面
+      get "terms_of_service" => "top#terms_of_service"
       
       get 'users/me' => 'users#me'
       get '/users/:user_id/show', to: 'users#show', as: 'show_user'

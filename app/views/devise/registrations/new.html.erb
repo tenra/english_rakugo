@@ -27,7 +27,8 @@
            <% end %>
              <div id="remember" class="checkbox">
                <label>
-                 
+                 <%= f.check_box :agreement, :as => :boolean, checked:false %>
+                 <%= link_to "利用規約", terms_of_service_path %>に同意する
                </label>
              </div>
             <%= f.submit "Create my account", class: "btn btn-lg btn-primary" %>

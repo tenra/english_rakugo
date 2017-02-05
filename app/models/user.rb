@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :timeoutable, :omniauthable, omniauth_providers: [:twitter, :facebook]
          
-validates :name, presence: true, length: { maximum: 50 }  
+  validates :name, presence: true, length: { maximum: 50 }
+  validate :agreement_valid?
 
   has_many :bookings, foreign_key: "user_id", dependent: :destroy
   has_many :booking_events, through: :bookings, source: :event
@@ -79,5 +80,9 @@ validates :name, presence: true, length: { maximum: 50 }
     clean_up_passwords
     result
   end
-
+  
+  private
+    def agreement_valid?
+      errors.add(:agreement, 'していただかない場合は、登録できません。') unless agreement == true
+    end
 end
