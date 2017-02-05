@@ -25,12 +25,10 @@
               <p class="input_title">Password Confirmation</p>
               <%= f.password_field :password_confirmation, autocomplete: "off", class: "login_box", placeholder: "*********︎" %>
            <% end %>
-             <div id="remember" class="checkbox">
-               <label>
-                 <%= f.check_box :agreement, :as => :boolean, checked:false %>
-                 <%= link_to "利用規約", terms_of_service_path %>に同意する
-               </label>
-             </div>
+               <%= f.label :agreement ,id: "l_agreement" do %>
+                  <%= f.check_box :agreement , :as => :boolean %>
+                  <%= link_to "利用規約", terms_of_service_path %>に同意する
+                <% end %>
             <%= f.submit "Create my account", class: "btn btn-lg btn-primary" %>
           </form>
       </div><!-- /card-container -->
