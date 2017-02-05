@@ -26,20 +26,24 @@
              <%= @event.end_time.strftime("%H:%M") if @event.end_time.present? %>
           <% end %>
       </div>
-      <div class="ticket-price">
+      
+      
         <div class="glyphicon glyphicon-flag"></div><%= t '.Venue' %>:<%= @event.address %>&nbsp;<br />
-          <% if @event.price.blank? || @event.price == 0 %>
-             <%= t '.Admission_free' %>
-          <% else %>
-             <%= number_to_currency(@event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
-          <% end %>
+      <div class="panel panel-default">
+        <div class="panel-body">
+            <% if @event.price.blank? || @event.price == 0 %>
+               <%= t '.Admission_free' %>
+            <% else %>
+               <%= number_to_currency(@event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
+            <% end %>
+        
+               <%= form_for(@event.bookings.build , url: event_bookings_path(@event)) do |f| %>
+               <%= f.select :people, options_for_select((1..5).to_a, selected: @booking_people), class: "people_select_tag" %>
+            <input type="hidden" name="tax_1" value="<%= @event.price %>">
+               people
+            <div id="total"><%= @event.price * (@booking_people || 1) if @event.price.present? %></div>total
+        </div>
       </div>
-    
-      <%= form_for(@event.bookings.build , url: event_bookings_path(@event)) do |f| %>
-        <%= f.select :people, options_for_select((1..5).to_a, selected: @booking_people), class: "people_select_tag" %>
-      <input type="hidden" name="tax_1" value="<%= @event.price %>">
-      people
-      <div id="total"><%= @event.price * (@booking_people || 1) if @event.price.present? %></div>total
       <script type="text/javascript">
       	$(document).ready(function(){
       		$("select#booking_people").change(function(){

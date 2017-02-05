@@ -14,7 +14,7 @@
              <th>Email</th>
              <th>Participants</th>
              <th><% if @event.total_price.nil? %>
-                  Admission fee
+                  Admission free
                  <% else %>
                   Total
                  <% end %>
@@ -38,14 +38,14 @@
              </td>
           </tr>
          <% end %>
-         <tr class="active">
-         <td>Total</td>
-         <td></td>
-         <td></td>
-         <td><%= @event.bookings.sum(:people, :conditions => "people is not null") %></td>
-         <td><%= @event.total_price %></td>
-         <td></td>
-         </tr>
+          <tr class="active">
+             <td>Total</td>
+             <td></td>
+             <td></td>
+             <td><%= @event.bookings.sum(:people, :conditions => "people is not null") %></td>
+             <td><%= @event.total_price %></td>
+             <td></td>
+          </tr>
         </table>
      <% else %>
         <p>no participants</p>
