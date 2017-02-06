@@ -19,5 +19,5 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require bootstrap-toggle
-//= require_tree .
 //= require data-confirm-modal
+//= require_tree .
