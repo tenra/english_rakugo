@@ -37,6 +37,7 @@
   margin:-4px;
   padding:0 12px;
   background: rgba(255,255,255,.7);
+  border-radius: 2px;
 }
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   background-color:initial;
@@ -164,7 +165,7 @@ ul.dropdown-menu li {
     #global-nav {
         position: absolute;
         /* 開いてないときは画面外に配置 */
-        top: -500px;
+        top: -505px;
         background: #fff;
         background: rgba(255,255,255,.7);
         width: 100%;
@@ -190,7 +191,7 @@ ul.dropdown-menu li {
         width: 100%;
         display: block;
         color: #666666;
-        padding: 18px 0;
+        padding: 15px 0;
     }
     #nav-toggle {
         display: block;
@@ -218,5 +219,13 @@ ul.dropdown-menu li {
         -moz-transform: translateY(556px);
         -webkit-transform: translateY(556px);
         transform: translateY(556px);
+    }
+    .dropdown-menu {
+      margin-left:145px;
+      padding:0 50px;
+      border-radius: 2px;
+    }
+    .dropdown-menu > li > a {
+      margin-top:-25px
     }
 }
