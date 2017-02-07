@@ -137,17 +137,19 @@ ul.dropdown-menu li {
     #top-head {
         top: 0;
         position: fixed;
+        height: 45px;
         padding-top: 10px;
     }
     /* Fixed reset */
     #top-head.fixed {
         padding-top: 10px;
+        height:45px;
         background: transparent;
     }
     #mobile-head {
         background: rgba(255,255,255,.7);
         width: 100%;
-        height: 70px;
+        height: 50px;
         z-index: 999;
         position: relative;
     }
@@ -155,6 +157,7 @@ ul.dropdown-menu li {
     #top-head .logo {
         position: absolute;
         left: 13px;
+        bottom: -9px;
         color: #333;
         font-size: 26px;
     }
