@@ -41,7 +41,8 @@
                <%= f.select :people, options_for_select((1..5).to_a, selected: @booking_people), class: "people_select_tag" %>
             <input type="hidden" name="tax_1" value="<%= @event.price %>">
                people
-            <div id="total"><%= @event.price * (@booking_people || 1) if @event.price.present? %></div>total
+            <div id="total"><%= number_to_currency(@event.price * (@booking_people || 1), :precision => 0, :local => 'jp') if @event.price.present? %></div>
+               <%= "total" if @event.price.present? %>
         </div>
       </div>
       <script type="text/javascript">
@@ -51,16 +52,27 @@
        				var tax_1= $('[name=tax_1]').val();
        				var booking = $('[name="booking[people]"]').val();
       				var result = tax_1 * booking ;
-       
-      				$("#total").html(Math.ceil(result));
+      				var old = $("#total").html();
+              var new_price = old.replace(/\d+/g, Math.ceil(result));
+      				$("#total").html(new_price);
       			});
       		});
       	});
       </script>
       
-    <div style="margin:10px">
-      <%= f.submit 'booking', class: "btn btn-booking" %>
-    </div>
+      <div style="margin:10px">
+        <span id="booking_form-<%= @event.id %>">
+            <% if @event.date.present? && @event.date <= Time.now %>
+                <button type="button" class="btn btn-closed">closed</button>
+            <% elsif @event.capacity == @event.booking_users.count %>
+                <button type="button" class="btn btn-fullbook">full booking now</button>
+            <% elsif @event.booking?(current_user) %>
+                <%= link_to "check your booking", users_me_path, class: "btn btn-checkbooking" %>
+            <% else %>
+                <%= f.submit 'booking', class: "btn btn-booking" %>
+            <% end %>
+        </span>
+      </div>
     <% end %>
       </div>
         <div class="back"><%= link_to "Back", :back %></div>
