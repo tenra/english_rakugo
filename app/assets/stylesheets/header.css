@@ -137,17 +137,17 @@ ul.dropdown-menu li {
     #top-head {
         top: 0;
         position: fixed;
-        margin-top: 10px;
+        padding-top: 10px;
     }
     /* Fixed reset */
     #top-head.fixed {
-        padding-top: 0;
+        padding-top: 10px;
         background: transparent;
     }
     #mobile-head {
-        background: #fff;
+        background: rgba(255,255,255,.7);
         width: 100%;
-        height: 56px;
+        height: 70px;
         z-index: 999;
         position: relative;
     }
