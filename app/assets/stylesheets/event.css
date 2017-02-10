@@ -122,3 +122,16 @@
 .new_booking.people_select_tag {
   width: 50px;
 }
+
+.inline-block {
+  display: inline-block;
+}
+input, textarea, select, .uneditable-input {
+  width: 50px;
+  margin: 5px;
+}
+.well {
+  font-size:1.2em;
+  margin: 10px;
+  border: 1px solid #f5f5f5;
+}

@@ -29,36 +29,21 @@
       
       
         <div class="glyphicon glyphicon-flag"></div><%= t '.Venue' %>:<%= @event.address %>&nbsp;<br />
-      <div class="panel panel-default">
-        <div class="panel-body">
+      <div class="well">
             <% if @event.price.blank? || @event.price == 0 %>
                <%= t '.Admission_free' %>
             <% else %>
                <%= number_to_currency(@event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
             <% end %>
         
-               <%= form_for(@event.bookings.build , url: event_bookings_path(@event)) do |f| %>
-               <%= f.select :people, options_for_select((1..5).to_a, selected: @booking_people), class: "people_select_tag" %>
-            <input type="hidden" name="tax_1" value="<%= @event.price %>">
-               people
+    <%= form_for(@event.bookings.build , url: event_bookings_path(@event)) do |f| %>
+                  <%#= f.select :people, options_for_select((SupplierStockType.all.collect {|p| [ p[:name], p[:id] ] }), selected: @booking_people), class: "people_select_tag" %>
+            <div class="inline-block"><%= f.select :people, options_for_select((1..5).to_a, selected: @booking_people), class: "people_select_tag" %><%= t '.people' %></div>
+              <input type="hidden" name="tax_1" value="<%= @event.price %>">
             <div id="total"><%= number_to_currency(@event.price * (@booking_people || 1), :precision => 0, :local => 'jp') if @event.price.present? %></div>
                <%= "total" if @event.price.present? %>
-        </div>
+               ※料金はサービス料と消費税を含んでいます。
       </div>
-      <script type="text/javascript">
-      	$(document).ready(function(){
-      		$("select#booking_people").change(function(){
-      			$("select#booking_people option:selected").each(function(){
-       				var tax_1= $('[name=tax_1]').val();
-       				var booking = $('[name="booking[people]"]').val();
-      				var result = tax_1 * booking ;
-      				var old = $("#total").html();
-              var new_price = old.replace(/\d+/g, Math.ceil(result));
-      				$("#total").html(new_price);
-      			});
-      		});
-      	});
-      </script>
       
       <div style="margin:10px">
         <span id="booking_form-<%= @event.id %>">
@@ -79,3 +64,18 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+      	$(document).ready(function(){
+      		$("select#booking_people").change(function(){
+      			$("select#booking_people option:selected").each(function(){
+       				var tax_1= $('[name=tax_1]').val();
+       				var booking = $('[name="booking[people]"]').val();
+      				var result = tax_1 * booking ;
+      				var old = $("#total").html();
+              var new_price = old.replace(/\d+/g, Math.ceil(result));
+      				$("#total").html(new_price);
+      			});
+      		});
+      	});
+</script>

@@ -18,5 +18,4 @@ class Event < ActiveRecord::Base
        bookings.sum(:people, :conditions => "people is not null") * price
      end
    end
-    
 end

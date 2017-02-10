@@ -21,6 +21,8 @@ ja:
       Venue: "会場"
       Admission_free: "入場無料"
       at_the_door: "会場払い"
+      people: "人"
+  people: "%{num}人"
   date:
     formats:
       full_date: "%Y-%m-%d (%a)"

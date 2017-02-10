@@ -30,3 +30,4 @@ en:
     currency:
       format:
         unit: "¥"
+  people: "%{num}people"
