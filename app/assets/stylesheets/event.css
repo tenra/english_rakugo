@@ -126,7 +126,7 @@
 .inline-block {
   display: inline-block;
 }
-input, textarea, select, .uneditable-input {
+.well input, textarea, select, .uneditable-input {
   width: 50px;
   margin: 5px;
 }
