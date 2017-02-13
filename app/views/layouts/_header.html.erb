@@ -15,7 +15,7 @@
                     <li><%= link_to "Home", root_path %></li>
                     <li>
                         <% if I18n.locale != :en %>
-                            <%= link_to_if params[:locale].present?, 'English',  url_for(controller: controller.controller_name, action: controller.action_name, locale: '') %>
+                            <%= link_to_if params[:locale].present?, 'English',  url_for(controller: controller.controller_name, action: controller.action_name, locale: 'en') %>
                         <% end %>
                         <% if I18n.locale != :ja %>
                             <%= link_to_if params[:locale] != 'ja',  '日本語',  url_for(controller: controller.controller_name, action: controller.action_name, locale: 'ja') %>

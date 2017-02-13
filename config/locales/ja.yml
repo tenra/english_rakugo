@@ -8,6 +8,10 @@ ja:
     home:
       text_text_text_text_text_text_text_text_text_text: "テキスト_テキスト_テキスト_テキスト_テキスト_テキスト_テキスト_テキスト"
       participants: "人の参加者"
+  devise:
+    registrations:
+      new:
+        Name: "名前"
   events:
     show:
       participants: "人の参加者"
