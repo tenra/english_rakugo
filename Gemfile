@@ -30,6 +30,7 @@ gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
 gem 'bootstrap-toggle-rails'
 gem 'data-confirm-modal'
+gem 'google-analytics-rails'
 
 group :development, :test do
   gem 'byebug'

@@ -5,6 +5,7 @@
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
           <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+          <%= analytics_init if Rails.env.production? %>
           <%= csrf_meta_tags %>
             <script src="//maps.google.com/maps/api/js?v=3.27&key=AIzaSyDaqgtOywVdKV-lX-3fIICZJx5kqbG6_dI"></script>
             <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
