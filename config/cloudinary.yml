@@ -1,0 +1,18 @@
+development:
+  cloud_name: hgnyspjkj
+  api_key: '811769739123369'
+  api_secret: uez_swLrVgsUfEHe2ZboPFJ0xUw
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hgnyspjkj
+  api_key: '811769739123369'
+  api_secret: uez_swLrVgsUfEHe2ZboPFJ0xUw
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hgnyspjkj
+  api_key: '811769739123369'
+  api_secret: uez_swLrVgsUfEHe2ZboPFJ0xUw
+  enhance_image_tag: true
+  static_image_support: false
