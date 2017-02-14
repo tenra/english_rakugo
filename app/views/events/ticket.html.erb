@@ -41,7 +41,7 @@
             <div class="inline-block"><%= f.select :people, options_for_select((1..5).to_a, selected: @booking_people), class: "people_select_tag" %><%= t '.people' %></div>
               <input type="hidden" name="tax_1" value="<%= @event.price %>">
             <div id="total"><%= number_to_currency(@event.price * (@booking_people || 1), :precision => 0, :local => 'jp') if @event.price.present? %></div>
-               <%= "total" if @event.price.present? %>
+               <%#= "total" if @event.price.present? %>
                ※料金はサービス料と消費税を含んでいます。
       </div>
       
