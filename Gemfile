@@ -3,7 +3,6 @@ ruby '2.3'
 
 gem 'rails', '4.2.7.1'
 gem 'sqlite3', group: :development
-gem 'pg', group: :production
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -44,5 +43,9 @@ group :development do
   gem 'web-console', '~> 2.0'
 
   gem 'spring'
+end
+
+group :production, :staging do
+  gem 'pg'
 end
 
