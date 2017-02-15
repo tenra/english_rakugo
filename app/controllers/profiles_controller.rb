@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
   
   def edit
     @profile = Profile.find(params[:id])
-    @profile.avatar if @profile.avatar.present?
+    @profile.avatar.cache! if @profile.avatar.present?
   end
 
   def update
