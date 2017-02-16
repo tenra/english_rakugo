@@ -17,7 +17,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b9d2e0', end
     margin-bottom:25px;
     }
 .input_title{
-    color:rgba(164, 164, 164, 0.9);
+    color:#666666;
     padding-left:3px;
     margin-bottom: 2px;
     }
@@ -39,7 +39,7 @@ hr{
     font-family: "myriad-pro",sans-serif;
     font-style: normal;
     font-weight: 100;
-    color:rgba(164, 164, 164, 0.44);
+    color:#666666;
 }
 
 .card-container.card {
