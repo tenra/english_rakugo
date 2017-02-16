@@ -9,26 +9,31 @@
   <div class="col-md-6 col-md-offset-3">
     <h1 class="welcome text-center">Welcome to <br><span style="font-weight:bold">English Rakugo</span></h1>
       <div class="card card-container">
-        <h1 class='login_title text-center'>Sign up</h1>
+        <h1 class='login_title text-center'><%= t '.Sign_up' %></h1>
         <hr>
           <form class="form-signin">
             <span id="reauth-email" class="reauth-email"></span>
               <p class="input_title"><%= t '.Name' %></p>
               <%= f.text_field :name, autofocus: true, class: "login_box", placeholder: "UserName" %>
-              <p class="input_title">Email</p>
+              <p class="input_title"><%= t '.Email' %></p>
               <%= f.email_field :email, autofocus: true, class: "login_box", placeholder: "user01@example.com" %>
            <% if f.object.password_required? %>
-              <p class="input_title">Password</p>
+              <p class="input_title"><%= t '.Password' %></p>
                <% if @validatable %>
                  <em>(<%= @minimum_password_length %> characters minimum)</em>
                <% end %>
               <%= f.password_field :password, autocomplete: "off", class: "login_box", placeholder: "*********︎" %>
-              <p class="input_title">Password Confirmation</p>
+              <p class="input_title"><%= t '.Password_Confirmation' %></p>
               <%= f.password_field :password_confirmation, autocomplete: "off", class: "login_box", placeholder: "*********︎" %>
            <% end %>
                <%= f.label :agreement ,id: "l_agreement" do %>
                   <%= f.check_box :agreement , :as => :boolean %>
-                  <%= link_to "利用規約", terms_of_service_path %>に同意する
+                  <% if I18n.locale != :en %>
+                    <%= link_to "利用規約", terms_of_service_path %>に同意する
+                  <% end %>
+                  <% if I18n.locale != :ja %>
+                    I agree with the <%= link_to "Terms of Service", terms_of_service_path %>
+                  <% end %>
                 <% end %>
             <%= f.submit "Create my account", class: "btn btn-lg btn-primary" %>
           </form>

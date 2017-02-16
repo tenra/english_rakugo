@@ -14,7 +14,11 @@ ja:
   devise:
     registrations:
       new:
+        Sign_up: "アカウント作成"
         Name: "名前"
+        Email: "メールアドレス"
+        Password: "パスワード"
+        Password_Confirmation: "確認用パスワード"
   events:
     show:
       participants: "人の参加者"
