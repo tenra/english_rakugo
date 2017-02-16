@@ -1,4 +1,4 @@
-<div class="white-msg"><h1>English Rakugo</h1></div>
+<div class="white-msg">English Rakugo</div>
 
 <div class="title-text"><%= t '.text_text_text_text_text_text_text_text_text_text' %></div>
 
@@ -27,7 +27,7 @@
                     <%= event.end_time.strftime("%H:%M") if event.end_time.present? %>
                 <% end %>
               </span></div></h4>
-              <div class="glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= event.address %></div>
+              <div class="venue-top glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= event.address %></div>
             <div class="event-text"><%= simple_format event.text %></div>
      </div>
      <div class="user_avatars">

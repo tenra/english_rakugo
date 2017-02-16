@@ -1,9 +1,8 @@
 /* top */
 .white-msg {
-    font-size: 2.5em;
+    font-size: 5em;
     padding: 20px 0;
     text-align: center;
-    letter-spacing: 0.15em;
     color: #fff;
     text-shadow: 1px 1px 0px #808080;
 }
@@ -59,7 +58,16 @@
   display: block;
 }
 
+.venue-top.glyphicon-flag{
+  font-size: 1.2em;
+  color: #4682B4;
+  font-weight: bolder;
+  float:right;
+  margin-bottom: 5px;
+}
+
 .event-text {           /* 行数管理 */
+   clear:both;
    font-family: "myriad-pro",sans-serif;
    color: #808080;
    font-style: normal;
@@ -69,7 +77,7 @@
    text-overflow: ellipsis;
    display: -webkit-box;
    -webkit-box-orient: vertical;
-   -webkit-line-clamp: 9; 
+   -webkit-line-clamp: 8; 
 }
 
 .user_avatars {
@@ -112,4 +120,32 @@ span:hover + p.arrow_box {
 
 .gravatar {
   z-index: 0;
+}
+
+@media screen and (max-width: 640px) {
+.white-msg {
+    font-size: 2.5em;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 0px #808080;
+    padding-top:30px;
+    padding-bottom:0;
+}
+.title-text {
+  font-size: 1.3em;
+  text-align: center;
+  color: #fff;
+  margin:10px 0;
+}
+.trim {
+  height: 240px;
+}
+.event-text {           /* 行数管理 */
+   -webkit-line-clamp: 5; 
+}
+.user_avatars {
+  position: static;
+  float: right;
+}
+
 }
