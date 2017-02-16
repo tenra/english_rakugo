@@ -28,6 +28,13 @@
                 <% end %>
               </span></div></h4>
               <div class="venue-top glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= event.address %></div>
+              <div class="price-top">
+                <% if event.price.blank? || event.price == 0 %>
+                 <%= t '.Admission_free' %>
+                <% else %>
+                 <%= number_to_currency(event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
+                <% end %>
+              </div>
             <div class="event-text"><%= simple_format event.text %></div>
      </div>
      <div class="user_avatars">

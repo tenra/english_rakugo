@@ -7,6 +7,9 @@ ja:
   top:
     home:
       text_text_text_text_text_text_text_text_text_text: "テキスト_テキスト_テキスト_テキスト_テキスト_テキスト_テキスト_テキスト"
+      Venue: "会場"
+      Admission_free: "入場無料"
+      at_the_door: "会場払い"
       participants: "人の参加者"
   devise:
     registrations:

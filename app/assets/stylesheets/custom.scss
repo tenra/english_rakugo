@@ -214,7 +214,7 @@ input {
 .jumbotron {
   position: relative;
   height: 100vh;
-  background: imageurl("github.jpg") center center;
+  background: image-url("github.jpg") center center;
   background-size: cover;
 }
 
@@ -226,7 +226,7 @@ input {
 }
 
 .inquiry-header {
-  color: #fff;
+  color:rgba(164, 164, 164, 0.44);
   text-align: center;
   font-size: 40px;
   margin: 5px;
@@ -322,5 +322,5 @@ margin-left: 20px;
 }
 
 .alert {
-  padding: 30px;
+  padding-left: 30px;
 }
