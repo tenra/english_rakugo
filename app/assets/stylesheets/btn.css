@@ -198,3 +198,12 @@
 .btn.btn-signin:focus {
     background-color: rgb(12, 97, 33);
 }
+
+@media screen and (max-width: 640px) {
+    .btn.btn-booking {
+    font-size: 1.3em;
+    font-weight: 400;
+    height: 38px;
+    width: 150px;
+    }
+}
