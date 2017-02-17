@@ -137,6 +137,50 @@ hr{
     color: rgb(12, 97, 33);
 }
 
+.sign-in-checkbox {
+    margin: 0;
+}
+
+
+.sign-in-with{
+    font-size:16px;
+    color:#666666;
+    padding:10px;
+    margin-top: 10px;
+    text-align: center;
+	overflow: hidden;
+    }
+    
+.sign-in-with span {
+	display: inline-block;
+	position: relative;
+}
+
+.sign-in-with span:before,
+.sign-in-with span:after {
+	content: "";
+	position: absolute;
+	height: 4px;
+	border-top: 2px solid #F4F4F4;
+	top: 12px;
+	width: 100%;
+}
+ 
+.sign-in-with span:before {
+	right: 100%;
+	margin-right: 10px;
+}
+ 
+.sign-in-with span:after {
+	left: 100%;
+	margin-left: 10px;
+}
+
+.devise-shared-links {
+    margin-left:60px;
+    font-size: 1.2em;
+}
+
 @media screen and (max-width: 640px) {
 .welcome{
     margin-top:45px;

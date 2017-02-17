@@ -35,6 +35,6 @@ a.link-social {               /* 不要な線を消す */
     color: #666666;
 }
 
-.btn-lg, .btn-group-lg > .btn {
-  font-size: 16px;
+.btn-social {
+    margin-left: 2.5px;
 }
