@@ -12,6 +12,10 @@ ja:
       at_the_door: "会場払い"
       participants: "人の参加者"
   devise:
+    sessions:
+      new:
+        Email: "メールアドレス"
+        Password: "パスワード"
     registrations:
       new:
         Sign_up: "アカウント作成"

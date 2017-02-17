@@ -18,9 +18,9 @@
 
             <form class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
-                <p class="input_title">Email</p>
+                <p class="input_title"><%= t '.Email' %></p>
                 <%= f.email_field :email, autofocus: true, class: "login_box", placeholder: "user01@example.com" %>
-                <p class="input_title">Password</p>
+                <p class="input_title"><%= t '.Password' %></p>
                 <%= f.password_field :password, autofocus: true, class: "login_box", placeholder: "*********︎" %>
                 <div id="remember" class="sign-in-checkbox">
                     <label>

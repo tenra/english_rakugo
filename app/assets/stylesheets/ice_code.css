@@ -177,12 +177,15 @@ hr{
 }
 
 .devise-shared-links {
-    margin-left:60px;
+    padding-left:120px;
     font-size: 1.2em;
 }
 
 @media screen and (max-width: 640px) {
 .welcome{
     margin-top:45px;
+}
+.devise-shared-links {
+    padding-left:55px;
 }
 }

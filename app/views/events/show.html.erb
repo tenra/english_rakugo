@@ -1,19 +1,16 @@
 <%  @page_title = "Event" %>
 
-<div class="event-back">
-    <div class='row'>
-          <div class="event-image">
+<div class='row'>
+        <div class="event-image">
             <% if @event.image? %>
                 <%= image_tag @event.image.thumb.url, class: "event-show-image img-responsive" %>
             <% else %>
                 <%= image_tag 'noimage.gif', width: 200, :class => "event-show-image img-responsive" %>
             <% end %>
-          </div>
-          <div class="top-head">
-            <%= @event.title %>
-          </div>
+        </div>
+        <div class="event-title"><%= @event.title %></div>
           
-          <h1><span style="color:#535353">
+          <div class="event-time">
              <% if @event.time || @event.end_time.present? %>
                  <%= I18n.l @event.date, format: :full_date if @event.date.present? %>
                  ,&nbsp;<%= @event.time.strftime("%H:%M") %>
@@ -23,7 +20,7 @@
                    <% end %>
                   <%= @event.end_time.strftime("%H:%M") if @event.end_time.present? %>
              <% end %>
-          </span></h1>
+          </div>
           
           <div class="price">
             <% if @event.price.blank? || @event.price == 0 %>
