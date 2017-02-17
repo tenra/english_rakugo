@@ -34,3 +34,7 @@ a.link-social {               /* 不要な線を消す */
 #l_agreement {
     color: #666666;
 }
+
+.btn-lg, .btn-group-lg > .btn {
+  font-size: 16px;
+}

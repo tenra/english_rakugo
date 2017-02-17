@@ -319,8 +319,15 @@ margin-left: 20px;
 
 #user_agreement{
   width: 10px;
+  margin-bottom: 10px;
 }
 
 .alert {
   padding-left: 30px;
+}
+
+@media screen and (max-width: 640px) {
+body {
+  padding-bottom:60px
+}
 }

@@ -14,7 +14,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b9d2e0', end
     border:2px solid #F4F4F4;
     border-radius: 2px;
     padding-left: 15px;
-    margin-bottom:25px;
     }
 .input_title{
     color:#666666;
@@ -31,8 +30,8 @@ hr{
     font-style: normal;
     font-weight: 100;
     color:#4682B4;
-    margin-bottom:25px;
-    margin-top:50px;
+    margin-bottom:18px;
+    margin-top:-5px;
 }
 
 .login_title{
@@ -90,7 +89,6 @@ hr{
     display: block;
     color: #404040;
     line-height: 2;
-    margin-bottom: 10px;
     font-size: 14px;
     text-align: center;
     overflow: hidden;
@@ -137,4 +135,10 @@ hr{
 .forgot-password:active,
 .forgot-password:focus{
     color: rgb(12, 97, 33);
+}
+
+@media screen and (max-width: 640px) {
+.welcome{
+    margin-top:45px;
+}
 }
