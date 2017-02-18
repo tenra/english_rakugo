@@ -17,6 +17,7 @@ class ProfilesController < ApplicationController
   end
   
   def edit
+    binding.pry
     @profile = Profile.find(params[:id])
     @profile.avatar.cache! if @profile.avatar.present?
   end

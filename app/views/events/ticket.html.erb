@@ -77,8 +77,9 @@
        				var tax_1= $('[name=tax_1]').val();
        				var booking = $('[name="booking[people]"]').val();
       				var result = tax_1 * booking ;
+      				
       				var old = $("#total").html();
-              var new_price = old.replace(/[\d,]+/g, Math.ceil(result));
+                    var new_price = old.replace(/[\d,]+/g, Math.ceil(result));
       				$("#total").html(new_price);
       			});
       		});
