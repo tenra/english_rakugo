@@ -1,6 +1,6 @@
-<%  @page_title = "confirm" %>
+<%  @page_title = "Confirm" %>
 
-<h1><span style="color:#fff;">Confirm to Booking</span></h1>
+<div class="inquiry-header">Confirm to Booking</div>
 
 <div class="event-back">
   <div class='row'>
@@ -54,7 +54,7 @@
             <% elsif @event.booking?(current_user) %>
                 <%= link_to "check your booking", users_me_path, class: "btn btn-checkbooking" %>
             <% else %>
-                <%= f.submit 'Complete booking', class: "btn btn-booking" %><br />
+                <%= f.submit 'Complete booking', class: "btn btn-compbooking" %><br />
                 No need to call us. We'll send you instant confirmation mail
             <% end %>
         </span>

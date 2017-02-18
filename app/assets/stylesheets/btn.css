@@ -25,6 +25,32 @@
     border-width: 2px;
 }
 
+.btn.btn-compbooking {
+    transition: 0.2s;
+    color:#FFFFFF;
+    font-size: 1.6em;
+    letter-spacing: 1px;
+    font-weight: 400;
+    vertical-align: middle;
+    height: 38px;
+    width: 225px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius: 5px;
+    background:#0e83b2;
+    height: 55px;
+    margin-bottom:10px;
+    box-shadow:1px 1px 1px #054c68;
+}
+.btn-compbooking:hover {
+    color:#0e83b2;
+    background-color:#FFFFFF;
+    border-color: #0e83b2;
+    border-width: 2px;
+}
+
 .btn.btn-checkbooking {
     transition: 0.2s;
     color:#FFFFFF;
@@ -200,10 +226,14 @@
 }
 
 @media screen and (max-width: 640px) {
-    .btn.btn-booking {
+.btn.btn-booking {
     font-size: 1.3em;
     font-weight: 400;
     height: 38px;
     width: 150px;
-    }
+}
+.btn.btn-compbooking {
+ font-size: 1.3em;
+ width: 190px;
+}
 }
