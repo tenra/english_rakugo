@@ -119,18 +119,17 @@
 
 /* ticket */
 .ticket-image {
-  margin: 0 auto;
-  border-radius: 2px;
+  width:100%;
 }
 .ticket-title {
  text-align: center;
  color: #4682B4;
- font-size: 2em;
- text-shadow: 1px 1px 0px #808080;
+ font-size: 1.5em;
 }
 .ticket-time {
+  text-align: center;
   color: #535353;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 .ticket-price {
   color: #535353;
@@ -144,6 +143,19 @@
 .inline-block {
   display: inline-block;
 }
+
+.panel-default {
+  border-color: #055fad;
+}
+
+aside {
+ margin-top: 10px;
+}
+
+aside span {
+    display: inline-block;
+}
+
 .well input, textarea, select, .uneditable-input {
   width: 50px;
   margin: 5px;
