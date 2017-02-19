@@ -23,6 +23,7 @@
                 <%= @event.end_time.strftime("%H:%M") if @event.end_time.present? %>
               <% end %>
             </div>
+            <div class="venue-ticket glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>
             <div class="ticket-price">
                 <% if @event.price.blank? || @event.price == 0 %>
                  <%= t '.Admission_free' %>
@@ -30,7 +31,6 @@
                  <%= number_to_currency(@event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
                 <% end %>
             </div>
-           <div class="venue glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>
         </div>
     </aside>
 
