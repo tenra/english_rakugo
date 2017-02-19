@@ -61,7 +61,11 @@
                     <%= link_to "check your booking", users_me_path, class: "btn btn-checkbooking" %>
                 <% else %>
                     <%= f.submit 'Complete booking', class: "btn btn-compbooking" %><br />
-                    No need to call us. We'll send you instant confirmation mail
+                <% end %>
+                <% if @user.email.present? %>
+                No need to call us. We'll send you instant confirmation mail
+                <% else %>
+                No need to call us. We'll send you instant confirmation to <% @user.email %>
                 <% end %>
              </span>
            </div>

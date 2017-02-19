@@ -17,6 +17,7 @@ class EventsController < ApplicationController
   end
   
   def ticket
+    @user = User.find(params[:id])
     @event = Event.find(params[:id])
     if session[:booking_people]
       @booking_people = session[:booking_people].to_i
