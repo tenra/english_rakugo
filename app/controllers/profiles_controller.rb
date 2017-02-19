@@ -17,9 +17,9 @@ class ProfilesController < ApplicationController
   end
   
   def edit
-    #binding.pry
     @profile = Profile.find(params[:id])
-    @profile.avatar.cache! if @profile.avatar.present?
+    #binding.pry
+    @profile.avatar.cache! if @profile.avatar.present? && !Rails.env.production?
   end
 
   def update
