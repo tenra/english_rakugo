@@ -11,9 +11,11 @@
            <tr>
                <td style="border-style: none;">
                  <%= f.hidden_field :image_cache %>
-                 <%= image_tag @event.image.url, class: "event-present-image" if @event.image? %>
+                 <%= image_tag @event.image.thumb.url, class: "event-present-image" if @event.image? %>
                </td>
            </tr>
+           <%= @event.image.thumb.url %>
+           <%= @event.image.url %>
            <tr>
                <th>Title</th>
            </tr>
