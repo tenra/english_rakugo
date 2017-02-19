@@ -52,7 +52,7 @@ class EventsController < ApplicationController
 
   def confirm2
     @event = Event.find(params[:id])
-    @event.assign_attributes(event_params)
+    @event.assign_attributes(event_params) if !Rails.env.production?
     render :edit if @event.invalid?
     #binding.pry
   end
