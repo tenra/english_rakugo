@@ -47,7 +47,7 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
-    @event.image.cache! if @event.image.present? && !Rails.env.production?
+    @event.image.cache! if @event.image.present? && (!Rails.env.production? || !Rails.env.staging?)
   end
 
   def confirm2
