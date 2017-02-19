@@ -23,6 +23,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    #params.delete(:avatar) if params[:avatar].blank? 
     @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
       flash[:notice] = "updated your profile image!"
