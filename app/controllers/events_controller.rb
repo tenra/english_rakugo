@@ -17,7 +17,6 @@ class EventsController < ApplicationController
   end
   
   def ticket
-    @user = User.find(params[:id])
     @event = Event.find(params[:id])
     if session[:booking_people]
       @booking_people = session[:booking_people].to_i
@@ -84,5 +83,4 @@ private
       :title, :text, :image, :image_cache, :name, :description, :latitude, :longitude, :address,
       :date, :time, :end_date, :end_time, :price, :capacity)
     end
-
 end
