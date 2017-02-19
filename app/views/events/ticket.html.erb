@@ -65,7 +65,7 @@
              </span>
               <div>
                 <% if @user.email.present? %>
-                  No need to call us. We'll send you instant confirmation to <%= @user.email %>
+                  No need to call us. We'll send you instant confirmation to <span style="font-weight:500"><%= @user.email %></span>
                 <% else %>
                   No need to call us. We'll send you instant confirmation mail
                 <% end %>
