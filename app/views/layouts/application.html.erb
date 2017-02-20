@@ -11,6 +11,25 @@
             <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
             <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
             <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+            <script>
+            (function($) {
+                $(function() {
+                    var $header = $('#top-head');
+                    // Nav Fixed
+                    $(window).scroll(function() {
+                        if ($(window).scrollTop() > 350) {
+                            $header.addClass('fixed');
+                        } else {
+                            $header.removeClass('fixed');
+                        }
+                    });
+                    // Nav Toggle Button
+                    $('#nav-toggle').click(function(){
+                        $header.toggleClass('open');
+                    });
+                });
+            })(jQuery);
+            </script>
     </head>
     <body id="wrap">
           <%= render 'layouts/header' %>

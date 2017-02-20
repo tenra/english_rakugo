@@ -50,7 +50,7 @@
           <div class="event-text2"><%= simple_format @event.text %></div>
           
           <% if @timetable.present? %>
-            <div class='row'>
+            
               <div class='col-sm-offset-2 col-sm-8'>
                 <span style="font-weight:bold">&nbsp;<%= t '.Timetable' %></span>
                 <table class="table table-bordered">
@@ -70,7 +70,7 @@
                   <% end %>
                 </table>
               </div>
-            </div>
+            
           <% end %>
     
   <div class="venue glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>

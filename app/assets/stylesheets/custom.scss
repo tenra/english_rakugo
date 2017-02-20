@@ -17,6 +17,17 @@ body {
   padding-bottom: 200px;  /*必要に応じて調節。小さくするとフッターとコンテンツの幅も小さくなる*/
 }
 
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+.container {
+    width: 100%;
+  }
+
+
 a:hover { color: #FA8072; text-decoration: none; }
 
 section {
