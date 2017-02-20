@@ -1,11 +1,13 @@
 class TopController < ApplicationController
+  #layout "top_layout"
+  
   def home
     @events = Event.all
+    render :home, layout: "top_layout"
   end
   
   def about
     @top = Top.new
-    render :action => 'about'
   end
   
   def confirm

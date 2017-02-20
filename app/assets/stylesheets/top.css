@@ -1,25 +1,13 @@
 /* top */
 
 .top-image {
-  font-size: 5em;
-  padding: 250px 0;
-  text-align: center;
+  font-size: 3em;
   color: rgba(255,255,255,.7);
 }
 
-.white-msg {
-    font-size: 5em;
-    padding: 20px 0;
-    text-align: center;
-    color: #4682B4;
-    text-shadow: 1px 1px 0px #808080;
-}
-
 .title-text {
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
-  color:#4682B4;
-  margin-bottom: 30px;
 }
 
 .top-head {
@@ -138,6 +126,9 @@ span:hover + p.arrow_box {
 }
 
 @media screen and (max-width: 640px) {
+.top-image {
+  font-size: 1.5em;
+}
 .white-msg {
     font-size: 2.5em;
     text-align: center;
