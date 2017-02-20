@@ -51,7 +51,7 @@
                ※ <%= t '.Charges_will_include_a_service_charge_and_consumption_tax' %>
        </div>
       
-           <div style="margin:10px">
+           <div class="ticket-button">
              <span id="booking_form-<%= @event.id %>">
                 <% if @event.date.present? && @event.date <= Time.now %>
                     <button type="button" class="btn btn-closed">closed</button>
