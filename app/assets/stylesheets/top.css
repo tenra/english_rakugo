@@ -1,4 +1,12 @@
 /* top */
+
+.top-image {
+  font-size: 5em;
+  padding: 250px 0;
+  text-align: center;
+  color: rgba(255,255,255,.7);
+}
+
 .white-msg {
     font-size: 5em;
     padding: 20px 0;

@@ -37,6 +37,7 @@ ja:
       Admission_free: "入場無料"
       at_the_door: "会場払い"
       people: "人"
+      Charges_will_include_a_service_charge_and_consumption_tax: "料金はサービス料と消費税を含んでいます。"
   people: "%{num}人"
   date:
     formats:

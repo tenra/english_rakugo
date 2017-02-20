@@ -48,7 +48,7 @@
                <input type="hidden" name="tax_1" value="<%= @event.price %>">
             <div id="total"><%= number_to_currency(@event.price * (@booking_people || 1), :precision => 0, :local => 'jp') if @event.price.present? %></div>
                <%= "total" if @event.price.present? %>
-               ※料金はサービス料と消費税を含んでいます。
+               ※ <%= t '.Charges_will_include_a_service_charge_and_consumption_tax' %>
        </div>
       
            <div style="margin:10px">
@@ -65,9 +65,9 @@
              </span>
               <div>
                 <% if user_signed_in? %>
-                  No need to call us. We'll send you instant confirmation to <span style="font-weight:bold;"><%= current_user.email %></span>
+                  <p>No need to call us. We'll send you instant confirmation to <span style="font-weight:bold;"><%= current_user.email %></span></p>
                 <% else %>
-                  No need to call us. We'll send you instant confirmation mail
+                  <p>No need to call us. We'll send you instant confirmation mail</p>
                 <% end %>
               </div>
            </div>
