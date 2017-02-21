@@ -1,7 +1,7 @@
-<%  @page_title = "Edit your profile image" %>
+<%  @page_title = "Edit Profile" %>
 
 
-<h1><span style="color:#fff;"><%= @page_title %></span></h1>
+<div class="inquiry-header"><%= @page_title %></div>
 
 <div class="event-back">
   <div class='row'>
@@ -40,7 +40,13 @@
                               });
                            });
                   </script>
-            </div>            
+            </div>
+            <label>
+              <% if @profile.avatar.present? %>
+                <%= f.check_box :remove_avatar %>
+                Remove this Profile-Image 
+              <% end %>
+            </label>
             <%= f.check_box :private, { :'data-height' => '40px' } %> <span style="font-size:1.2em">Choose your Profile-Image status</span>
             <script>
               $(function() {
