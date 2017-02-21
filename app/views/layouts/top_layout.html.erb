@@ -34,11 +34,12 @@
     <body id="wrap">
         <div class="top-image jumbotron jumbotron-extend">
             <%= render 'layouts/header' %>
+            <%= render 'layouts/alert', message: flash.to_h %>
             <div class="top-image">English Rakugo</div>
           <div class="title-text"><%= t '.text_text_text_text_text_text_text_text_text_text' %></div>
         </div>
       　    <div id="content" class="container_top_layout">
-             <%= render 'layouts/alert', message: flash.to_h %>
+             
             <%= yield %>
             
      　　    </div>

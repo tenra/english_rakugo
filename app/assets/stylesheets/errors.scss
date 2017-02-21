@@ -6,3 +6,24 @@
   margin: 0;
   }
 }
+
+.alert {
+    margin: 20px;
+}
+
+button {
+    margin: 4px;
+}
+
+.alert-success {
+    opacity: 0.8;
+}
+
+.alert > p, .alert > ul {
+    text-align: center;
+}
+
+ .container p {
+    font-size: 1.6em;
+    font-weight: 300;
+}

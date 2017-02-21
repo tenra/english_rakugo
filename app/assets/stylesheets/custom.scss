@@ -230,7 +230,9 @@ input {
   background-size: cover;
   padding-top: 0px;
 }
-
+.jumbotron p {
+  font-size: 22px;
+}
 .jumbotron-extend {
     min-height: 600px;
 }

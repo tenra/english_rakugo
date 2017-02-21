@@ -6,7 +6,8 @@
 
 .top-image {
   font-size: 3em;
-  color: rgba(255,255,255,.7);
+  color: #FFF;
+  /*color: rgba(255,255,255,.7);*/
 }
 
 .title-text {

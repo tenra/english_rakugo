@@ -1,5 +1,7 @@
 <%  @page_title = "Event" %>
 
+<div class="event-title"><%= @event.title %></div>
+
         <div class="event-image">
             <% if @event.image? %>
                 <%= image_tag @event.image.thumb.url, class: "event-show-image img-responsive" %>
@@ -7,7 +9,6 @@
                 <%= image_tag 'noimage.gif', width: 200, :class => "event-show-image img-responsive" %>
             <% end %>
         </div>
-        <div class="event-title"><%= @event.title %></div>
           
           <div class="event-time">
              <% if @event.time || @event.end_time.present? %>
