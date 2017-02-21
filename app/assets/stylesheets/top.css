@@ -1,4 +1,8 @@
 /* top */
+.container_top_layout {
+    width: 1100px;
+    margin: 0 auto;
+}
 
 .top-image {
   font-size: 3em;
