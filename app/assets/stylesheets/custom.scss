@@ -14,7 +14,7 @@ body {
  min-height: 100%;
 }
 #content{
-  padding-bottom: 200px;  /*必要に応じて調節。小さくするとフッターとコンテンツの幅も小さくなる*/
+  padding-bottom: 159px;  /*必要に応じて調節。小さくするとフッターとコンテンツの幅も小さくなる*/
 }
 
 .container {
@@ -114,7 +114,7 @@ footer {
 .footer-left {
   float: left;
   font-size: 1.5em;
-  padding: 12px;
+  padding: 12px 50px;
   margin-bottom: 50px;
 }
 
@@ -138,6 +138,7 @@ footer small {
 
 footer ul {
   float: right;
+  padding: 0px 50px;
   list-style: none;
 }
 
@@ -324,8 +325,9 @@ aside {
   border-style: hidden;
 }
 
-.back {
-margin: 20px;
+.show-back {
+clear: both;
+margin-left: 250px;
 }
 
 .test li {

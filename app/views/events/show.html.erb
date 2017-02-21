@@ -72,8 +72,9 @@
               </div>
             
           <% end %>
-    
-  <div class="venue glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>
+          
+  <div class="show-back"><%= link_to "Back", :back %></div>
+  <div class="venue-map glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>
             
     <%#= @hash.inspect %>
     
@@ -88,5 +89,3 @@
           handler.getMap().setZoom(15);
         });
     </script>
-    
-    <div class="back"><%= link_to "Back", :back %></div>

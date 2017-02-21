@@ -1,6 +1,7 @@
 /* event */
 .event-back {
   padding: 30px;
+  margin-bottom: 50px;
   background-color: #FFFFFF;
   height: 100%;
   width: 100%;
@@ -58,10 +59,18 @@
 
 .venue {
   float:right;
-  padding: 20px 0;
+  padding: 20px 180px 20px 0px;
   font-size: 1.5em;
   color: #535353;
   font-weight: bold;
+}
+.venue-map {
+    float: right;
+    padding-bottom: 5px;
+    padding-right: 180px;
+    font-size: 1.2em;
+    color: #535353;
+    font-weight: bold;
 }
 
 .text-center {
@@ -70,13 +79,13 @@
 }
 
 .show_avatars div {
-   position: relative;
-   display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 .right {
   text-align: right;
-  margin: 10px 0;
-  font-size: 1.1em;
+  padding: 20px 180px 20px 0px;
+  font-size: 1.2em;
 }
 
 .datepicker {
@@ -87,6 +96,7 @@
 
 .event-text2 {
   font-family: "myriad-pro",sans-serif;
+  padding: 5px 240px 15px;
   color: #808080;
   font-style: normal;
   font-weight: 100;
