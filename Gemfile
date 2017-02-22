@@ -30,6 +30,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
 gem 'bootstrap-toggle-rails'
 gem 'data-confirm-modal'
 gem 'google-analytics-rails'
+gem 'bxslider-rails'
 
 group :development, :test do
   gem 'byebug'

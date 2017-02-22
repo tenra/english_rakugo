@@ -20,4 +20,5 @@
 //= require bootstrap-datetimepicker
 //= require bootstrap-toggle
 //= require data-confirm-modal
+//= require bxslider
 //= require_tree .
