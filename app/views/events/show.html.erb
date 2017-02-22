@@ -3,20 +3,27 @@
 <div class="event-title"><%= @event.title %></div>
 
 <ul class="bxslider1">
-  <li><%= link_to image_tag( @event.image,:alt => "rakugo",:width => "1000",:height => "200", class: "btn") ,"#" %></li>
+  <li><%= link_to image_tag( @event.image,:alt => "rakugo",:width => "1000",:height => "200", class: "") ,"#" %></li>
+  <li><img src="http://placehold.jp/1000x200.png" /></li>
   <li><img src="http://placehold.jp/1000x200.png" /></li>
   <li><img src="http://placehold.jp/1000x200.png" /></li>
   <li><img src="http://placehold.jp/1000x200.png" /></li>
 </ul>
  
 <div id="bx-pager">
-    <%= link_to image_tag( @event.image,:alt => "rakugo",:width => "250",:height => "50", class: "btn"), "", "data-slide-index" => "0" %>
+    <%= link_to image_tag( @event.image,:alt => "rakugo",:width => "250",:height => "50", class: ""), "", "data-slide-index" => "0" %>
   <a data-slide-index="1" href=""><img src="http://placehold.jp/250x50.png" /></a>
   <a data-slide-index="2" href=""><img src="http://placehold.jp/250x50.png" /></a>
   <a data-slide-index="3" href=""><img src="http://placehold.jp/250x50.png" /></a>
+  <a data-slide-index="4" href=""><img src="http://placehold.jp/250x50.png" /></a>
 </div>
         <script>
-        $('.bxslider1').bxSlider({  pagerCustom: '#bx-pager'});
+        $('.bxslider1').bxSlider({ 
+            auto: true,
+            mode: 'fade',
+            pause: 3000, /*default4000*/
+            pagerCustom: '#bx-pager'
+        });
         </script>
           
           <div class="event-time">
