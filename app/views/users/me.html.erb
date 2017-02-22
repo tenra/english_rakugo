@@ -7,9 +7,9 @@
     <table class="table">
           <div class="text-center">
             <% if !current_user.profile.nil? && current_user.profile.avatar? %>
-              <%= image_tag(current_user.profile.avatar.thumb.url, :class => "my_page_img") %>
+              <%= image_tag(current_user.profile.avatar.thumb.url, :class => "mypage_img") %>
             <% else %>
-              <%= image_tag 'no-avatar.png', width: 200, :class => "my_page_img"%>
+              <%= image_tag 'no-avatar.png', width: 200, :class => "mypage_img"%>
             <% end %>
           </div>
       <div align="right"><%= link_to 'Edit Profile-Image', new_profile_path %></div>
@@ -47,9 +47,9 @@
               <% end %><br />
               <div class="me-event">
                 <% if event.image? %>
-                    <%= image_tag event.image.thumb.url, :class => "e-img-mini" %>
+                    <%= image_tag event.image.thumb.url, :class => "mypage_event_img" %>
                 <% else %>
-                    <%= image_tag 'noimage.gif', :class => "e-img-mini" %>
+                    <%= image_tag 'noimage.gif', :class => "mypage_event_img" %>
                 <% end %>
                 <%= link_to event.title, show_event_path(event) %><br />
                 <span style="font-weight:bold"><%= t '.Confirmatin_number' %></span><%= current_user.bookings[i].number if current_user.bookings[i].number.present? %><br />
@@ -60,6 +60,7 @@
               </div>
               <hr>
             <% end %>
+     <div class="all-events"><%= link_to "all events", root_path(anchor: 'all-events'), class: "all-events" %></div>
   </div>
 </div>
 
