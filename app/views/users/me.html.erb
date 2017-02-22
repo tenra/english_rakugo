@@ -1,16 +1,15 @@
 <%  @page_title = "My page" %>
 
-<h1><span style="color:#fff;"><%= @page_title %></span></h1>
+<div class="inquiry-header"><%= @page_title %></div>
 
-<div class="event-back">
-  <div class='row'>
-    <div class='col-sm-offset-3 col-sm-6'>
-   　  <table class="table">
+<div class="row">
+  <aside class="col-md-4">
+    <table class="table">
           <div class="text-center">
             <% if !current_user.profile.nil? && current_user.profile.avatar? %>
-              <%= image_tag(current_user.profile.avatar.thumb.url, :class => "img-circle") %>
+              <%= image_tag(current_user.profile.avatar.thumb.url, :class => "my_page_img") %>
             <% else %>
-              <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle"%>
+              <%= image_tag 'no-avatar.png', width: 200, :class => "my_page_img"%>
             <% end %>
           </div>
       <div align="right"><%= link_to 'Edit Profile-Image', new_profile_path %></div>
@@ -35,8 +34,12 @@
           </td>
         </tr>
         <tr><th><td></td></th></tr>
-      </table>
-          <span style="font-weight:bold"><%= t '.My_events' %></span><br />
+    </table>
+  </aside>
+      
+  <div class="col-md-8">
+          <span style="font-weight:bold"><%= t '.My_events' %></span>
+            <hr>
             <% current_user.booking_events.each_with_index do |event, i| %>
               <% if (event.date.present? && event.time.present?) %>
                 <span style="margin-left:20px"><%= I18n.l event.date, format: :full_date %></span>
@@ -57,8 +60,6 @@
               </div>
               <hr>
             <% end %>
-        
-    </div>
   </div>
 </div>
 
