@@ -149,6 +149,9 @@
   font-size: 1.5em;
   color: #ef4040;
 }
+.social {
+ margin: 20px 0px 0px 250px; 
+}
 .social-share-button .ssb-icon {
   background-position: center center;
   background-repeat: no-repeat;
