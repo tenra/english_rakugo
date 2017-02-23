@@ -149,6 +149,14 @@
   font-size: 1.5em;
   color: #ef4040;
 }
+.social-share-button .ssb-icon {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
 
 /* ticket */
 .ticket-image {

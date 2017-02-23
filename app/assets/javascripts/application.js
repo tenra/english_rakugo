@@ -21,4 +21,5 @@
 //= require bootstrap-toggle
 //= require data-confirm-modal
 //= require bxslider
+//= require social-share-button
 //= require_tree .

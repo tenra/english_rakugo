@@ -23,6 +23,7 @@
             mode: 'fade',
             speed: 2000, /*default500*/
             pause: 3000, /*default4000*/
+            touchEnabled: true,
             pagerCustom: '#bx-pager'
         });
         </script>
@@ -92,6 +93,9 @@
           <% end %>
           
   <div class="show-back"><%= link_to "Back", :back %></div>
+ 
+ <%= social_share_button_tag(@event.title) %>
+  
   <div class="venue-map glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>
             
     <%#= @hash.inspect %>
