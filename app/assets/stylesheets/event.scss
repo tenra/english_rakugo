@@ -25,7 +25,9 @@
  }
  
  .bx-wrapper {
-    margin: 0 auto -5px;
+    margin: 0 auto 5px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
  }
  
  .bx-wrapper img {
@@ -42,13 +44,21 @@
 }
 #bx-pager > a {
     display: table-cell;
-    border: 5px solid transparent;
 }
 #bx-pager img {
+    margin: 2px;
+    padding-left: 1px;
     display: block;
-    height: 50px;
-    width: 100px;
+    height: 40px;
+    width: auto;
 }
+#bx-pager {
+  a.active {
+  border:solid 2px; 
+  border-color: #cae4f9;
+  }
+}
+
 
 .eimg-thumbnail {
   width: 520px;

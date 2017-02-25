@@ -32,6 +32,7 @@ Rails.application.routes.draw do
       resources :events, only: [:show, :index] do
         member do
           get "ticket" => "events#ticket"
+          post "pay" => "events#pay"
         end
         resource :bookings, only: [:create, :destroy]
       end

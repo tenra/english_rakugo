@@ -32,6 +32,7 @@ gem 'data-confirm-modal'
 gem 'google-analytics-rails'
 gem 'bxslider-rails'
 gem 'social-share-button'
+gem 'payjp'
 
 group :development, :test do
   gem 'byebug'

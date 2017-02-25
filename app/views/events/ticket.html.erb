@@ -72,6 +72,17 @@
               </div>
            </div>
          <% end %>
+        
+         <%= form_tag(action: :pay, method: :post) do %>
+           <script
+           type="text/javascript"
+           src="https://checkout.pay.jp"
+           class="payjp-button"
+           data-key="pk_test_bae6b9133c5b41e763694e11"
+           data-payjp="1ddb958cb5c46cdef98381be4aa59dee5445e2a6">
+           </script>
+         <% end %>
+
        <div class="back"><%= link_to "Back", :back %></div>
     </div>
 </div>
