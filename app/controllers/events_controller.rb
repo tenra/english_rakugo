@@ -26,11 +26,9 @@ class EventsController < ApplicationController
   
     def pay
       @event = Event.find(params[:id])
-      #logger.info(@event.inspect)
       Payjp.api_key = 'sk_test_529baaaf684e0a59892924d9'
       Payjp::Customer.create(
-      description: 'test'
-      #metadata: {user_id: 1}
+      metadata: { user_id: current_user.id }
       )
       charge = Payjp::Charge.create(
       #:amount => 3500,
@@ -40,7 +38,7 @@ class EventsController < ApplicationController
       #:customer => customer.id,
       :description => 'test english_rakugo'
       )
-      #Payjp::Charge.retrieve('sk_test_529baaaf684e0a59892924d9')
+      retrieve = Payjp::Charge.retrieve('ch_5ebd5f15641991353eb8212343dbc')
     end
   
   def new
