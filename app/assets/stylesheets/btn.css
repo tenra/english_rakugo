@@ -2,9 +2,9 @@
 .btn.btn-booking {
     transition: 0.2s;
     color:#FFFFFF;
-    font-size: 1.8em;
+    font-size: 2em;
     letter-spacing: 1px;
-    font-weight: 400;
+    font-weight: 200;
     vertical-align: middle;
     height: 36px;
     width: 200px;
@@ -16,13 +16,12 @@
     background:#0e83b2;
     height: 55px;
     margin-bottom:10px;
-    box-shadow:1px 1px 1px #054c68;
 }
 .btn-booking:hover {
     color:#0e83b2;
     background-color:#FFFFFF;
     border-color: #0e83b2;
-    border-width: 2px;
+    border-width: 1.9px;
 }
 
 .btn.btn-compbooking {

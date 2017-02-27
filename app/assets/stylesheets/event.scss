@@ -58,7 +58,13 @@
   border-color: #cae4f9;
   }
 }
-
+#bx-pager {
+  a {
+    box-sizing: border-box;
+    width: 10px;
+    height: 10px;
+  }
+}
 
 .eimg-thumbnail {
   width: 520px;
@@ -84,7 +90,7 @@
 
 .event-time {
   font-size:2em;
-  font-weight: bold;
+  font-weight: 400;
   color:#666666;
   text-align: center;
 }
@@ -94,7 +100,15 @@
   padding: 20px 300px 20px 0px;
   font-size: 1.5em;
   color: #535353;
-  font-weight: bold;
+  font-weight: normal;
+}
+.timetable {
+  padding: 0px 300px;
+}
+.time {
+  width: 150px;
+}
+.description {
 }
 .venue-map {
     float: right;
@@ -102,7 +116,7 @@
     padding-right: 180px;
     font-size: 1.2em;
     color: #535353;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .text-center {
@@ -236,7 +250,7 @@ aside span {
 
 .table > thead > tr > th.active, .table > thead > tr.active > td, .table > thead > tr.active > th {
   color: #FFF;
-  background-color: #2d83ce;
+  background-color: #5c9ad1;
 }
 
 .table > tbody + tbody,

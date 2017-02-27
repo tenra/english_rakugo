@@ -1,7 +1,5 @@
 <%  @page_title = "Event" %>
 
-<div class="event-title"><%= @event.title %></div>
-
     <ul class="bxslider1">
       <li><%= link_to image_tag( @event.image,:alt => "rakugo", class: "") ,"#" %></li>
       <li><%= link_to image_tag( 'noimage.gif',:alt => "rakugo", class: "") ,"#" %></li>
@@ -27,6 +25,8 @@
             pagerCustom: '#bx-pager'
         });
         </script>
+        
+        <div class="event-title"><%= @event.title %></div>
           
           <div class="event-time">
              <% if @event.time || @event.end_time.present? %>
@@ -70,13 +70,13 @@
           
           <% if @timetable.present? %>
             
-              <div class='col-sm-offset-2 col-sm-8'>
+              <div class='timetable'>
                 <span style="font-weight:bold">&nbsp;<%= t '.Timetable' %></span>
                 <table class="table table-bordered">
                     <thead>
                 　　　<tr class="active">
-                　　　     <th class="col-xs-1 col-ms-1 col-md-1 col-lg-1"><%= t '.Time' %></th>
-                　　  　  <th class="col-xs-3 col-ms-3 col-md-4 col-lg-4"><%= t '.Description' %></th>
+                　　　     <th class="time"><%= t '.Time' %></th>
+                　　  　  <th class="description"><%= t '.Description' %></th>
                 　　　</tr>
                     </thead>
                   <% @timetables.each do |timetable| %>
