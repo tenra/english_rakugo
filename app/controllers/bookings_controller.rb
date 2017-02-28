@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
         @booking = current_user.booking(@event)
         @booking.people = params[:booking][:people]
         @booking.number = @event.created_at.strftime('%Y%m%d%H%M').to_s + @event.id.to_s + @user.id.to_s
-        @booking.save
+        #@booking.save
         #flash[:notice] = "your booking is completed!"
         #EventMailer.received_email(@event, current_user).deliver_now
         redirect_to charge_event_path(@event)
@@ -27,14 +27,24 @@ class BookingsController < ApplicationController
     @event = Event.find_by(params[:id])
     @booking = current_user.booking(@event)
     Payjp.api_key = 'sk_test_529baaaf684e0a59892924d9'
+    
+    customer = Payjp::Customer.create(
+      :email => current_user.email,
+      :description => 'test english_rakugo'
+      )
+    
     charge = Payjp::Charge.create(
       :amount => @booking.people * @event.price,
       :currency => 'jpy',
-      #:customer => @user.customer,
+      :customer => current_user.payjp_customer_id,
       :card => params['payjp-token'],
       :description => 'test english_rakugo'
     )
-    #self.update({pay_charge_id: charge['id']})
+    
+    @booking.payjp_charge_id = charge[:id]
+    @booking.save
+    
+    Payjp::Charge.retrieve(@booking.payjp_charge_id)
   end
 
   def destroy

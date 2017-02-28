@@ -24,23 +24,6 @@ class EventsController < ApplicationController
     end
   end
   
-    def pay
-      @event = Event.find(params[:id])
-      Payjp.api_key = 'sk_test_529baaaf684e0a59892924d9'
-      Payjp::Customer.create(
-      #metadata: { user_id: current_user.id }
-      )
-      charge = Payjp::Charge.create(
-      #:amount => 3500,
-      :amount => @event.price,
-      :card => params['payjp-token'],
-      :currency => 'jpy',
-      #:customer => customer.id,
-      :description => 'test english_rakugo'
-      )
-      retrieve = Payjp::Charge.retrieve('ch_5ebd5f15641991353eb8212343dbc')
-    end
-  
   def new
     @event = Event.new
   end
