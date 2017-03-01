@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
       :email => current_user.email,
       :description => 'test english_rakugo'
       )
-    
+      
     charge = Payjp::Charge.create(
       :amount => @booking.people * @event.price,
       :currency => 'jpy',
@@ -44,7 +44,7 @@ class BookingsController < ApplicationController
     @booking.payjp_charge_id = charge[:id]
     @booking.save
     
-    Payjp::Charge.retrieve(@booking.payjp_charge_id)
+    @charge = Payjp::Charge.retrieve(@booking.payjp_charge_id)
   end
 
   def destroy
