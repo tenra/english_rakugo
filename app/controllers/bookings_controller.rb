@@ -48,7 +48,7 @@ class BookingsController < ApplicationController
     else
        @booking.save
     end
-    binding.pry
+    
     @charge = Payjp::Charge.retrieve(@booking.payjp_charge_id)
   end
 
