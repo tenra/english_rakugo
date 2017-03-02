@@ -14,10 +14,11 @@ class BookingsController < ApplicationController
         @booking = current_user.booking(@event)
         @booking.people = params[:booking][:people]
         @booking.number = @event.created_at.strftime('%Y%m%d%H%M').to_s + @event.id.to_s + @user.id.to_s
-        #@booking.save
+        @booking.payment = true
+        @booking.save
         #flash[:notice] = "your booking is completed!"
         #EventMailer.received_email(@event, current_user).deliver_now
-        redirect_to charge_event_path(@event)
+        redirect_to charge_event_path(@booking)
       end
     end
   end
@@ -42,8 +43,12 @@ class BookingsController < ApplicationController
     )
     
     @booking.payjp_charge_id = charge[:id]
-    @booking.save
-    
+    if @booking.payment == false
+        redirect_to :action => 'destroy'
+    else
+       @booking.save
+    end
+    binding.pry
     @charge = Payjp::Charge.retrieve(@booking.payjp_charge_id)
   end
 
