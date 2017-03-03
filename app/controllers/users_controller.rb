@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:user_id])
+    @booking = current_user.booking(@event)
   end
   
   def destroy

@@ -5,19 +5,23 @@ class BookingsController < ApplicationController
   def create
       #binding.pry
       @event = Event.find(params[:event_id])
+      @user = current_user
+      @booking = current_user.booking(@event)
+      @booking.people = params[:booking][:people]
+      @booking.number = @event.created_at.strftime('%Y%m%d%H%M').to_s + @event.id.to_s + @user.id.to_s
     ActiveRecord::Base.transaction do
       if @event.capacity <= @event.booking_users.count
         flash[:alert] = "Sorry, It is fullbooking now."
         redirect_to show_event_path
-      else
-        @user = current_user
-        @booking = current_user.booking(@event)
-        @booking.people = params[:booking][:people]
-        @booking.number = @event.created_at.strftime('%Y%m%d%H%M').to_s + @event.id.to_s + @user.id.to_s
+      elsif @event.price.blank? || @event.price == 0
         @booking.payment = true
         @booking.save
-        #flash[:notice] = "your booking is completed!"
-        #EventMailer.received_email(@event, current_user).deliver_now
+        flash[:notice] = "your booking is completed!"
+        EventMailer.received_email(@event, current_user).deliver_now
+        redirect_to users_me_path
+      else
+        @booking.payment = false
+        @booking.save
         redirect_to charge_event_path(@booking)
       end
     end
@@ -43,11 +47,11 @@ class BookingsController < ApplicationController
     )
     
     @booking.payjp_charge_id = charge[:id]
-    if @booking.payment == false
-        redirect_to :action => 'destroy'
-    else
+
+       @booking.payment = true
        @booking.save
-    end
+       #flash[:notice] = "your booking is completed!"
+       #EventMailer.received_email(@event, current_user).deliver_now
     
     @charge = Payjp::Charge.retrieve(@booking.payjp_charge_id)
   end
