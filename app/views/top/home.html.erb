@@ -3,7 +3,8 @@
 
 <div class="row">
   <div class="wrap clearfix hvr-glow" data-url="<%= show_event_path(event) %>">
-     <div class="col-xs-12 col-md-7">
+     <!--<div class="col-xs-12 col-md-7">-->
+     <div class="left-image">
            <div id="all-events" class="trim">
                <%#= event.image.inspect %>
              <% if event.image.thumb.present? %>
@@ -11,7 +12,8 @@
              <% end %>
            </div>
      </div>
-     <div class="col-xs-12 col-md-5">
+     <!--<div class="col-xs-12 col-md-5">-->
+     <div class="event-contents">
             <h3><div class="text-center"><%= link_to event.title, show_event_path(event) %></div></h3>
               <h4><div class="text-center"><span style="color:#535353">
                 <% if event.time || event.end_time.present? %>
@@ -48,6 +50,9 @@
 </div>
   <hr>
   <% end %>
+  
+  <div class="top-pagination">
+  </div>
 
   <script>
       jQuery('.wrap').click(function() {
