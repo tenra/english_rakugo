@@ -1,14 +1,4 @@
 /* top */
-.left-image {
-  width: 645px;
-  display: inline-block;
-}
-.event-contents {
-  display: inline-block;
-  width: 450px;
-  float:right
-}
-
 .container_top_layout {
     width: 1100px;
     margin: 0 auto;
@@ -102,6 +92,7 @@
   position: absolute;
   bottom: 10px;
   right: 5px;
+  color: #666;
 }
 
 .arrow_box {
@@ -143,8 +134,7 @@ span:hover + p.arrow_box {
 
 @media screen and (max-width: 640px) {
 .top-image {
-  font-size: 1.9em;
-  color: rgba(255,255,255,.7);
+  font-size: 1.5em;
 }
 .white-msg {
     font-size: 2.5em;
@@ -157,25 +147,8 @@ span:hover + p.arrow_box {
 .title-text {
   font-size: 1.3em;
   text-align: center;
-  color: rgba(255,255,255,.7);
+  color: #4682B4;
   margin:10px 0;
-}
-
-#content {
-  width: 100%;
-}
-.wrap {
-    margin: 0 10px 0 25px;
-  }
-  
-.left-image {
-  width: 100%;
-}
-.trim {
-  margin-bottom: -50px;
-}
-.event-contents {
-  width: 100%;
 }
 .trim {
   height: 240px;
@@ -186,9 +159,6 @@ span:hover + p.arrow_box {
 .user_avatars {
   position: static;
   float: right;
-}
-.top-pagination {
-  height: 130px;
 }
 
 }

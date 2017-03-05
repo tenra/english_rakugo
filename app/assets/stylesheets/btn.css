@@ -225,7 +225,7 @@
 @media screen and (max-width: 640px) {
 .btn.btn-booking {
     font-size: 1.3em;
-    font-weight: 400;
+    font-weight: 300;
     height: 38px;
     width: 150px;
 }
