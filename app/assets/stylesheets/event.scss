@@ -224,6 +224,20 @@ aside .glyphicon {
   display: inline-block;
 }
 
+.row {
+    margin-right: 0px;
+}
+.ticket-aside {
+  width: 400px;
+  margin: 40px 0px 50px 80px;
+  float: left;
+}
+
+.ticket-well {
+  float:right;
+  width: 800px;
+  margin: 30px 80px 30px 0px;
+}
 .panel-default {
   border-color: #92badd;
 }
@@ -246,6 +260,7 @@ aside span {
   background-color: #e8f2f9;
   border-radius: 2px;
   border: 0px;
+
 }
 
 .table > thead > tr > th.active, .table > thead > tr.active > td, .table > thead > tr.active > th {
@@ -269,6 +284,7 @@ aside span {
   margin:10px;
 }
 
+
 @media screen and (max-width: 640px) {
 .event-title {
  font-size: 2em;
@@ -283,4 +299,20 @@ aside span {
 .venue {
   font-size: 1.2em;
 }
+.ticket-aside {
+    width: 100%;
+    margin: 0 auto;
+  float: left;
+}
+
+.ticket-well {
+  float:right;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 150px;
+}
+.send-mail {
+ font-size: 0.7em; 
+}
+
 }

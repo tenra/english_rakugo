@@ -2,8 +2,8 @@
 
 <div class="inquiry-header">Confirm to Booking</div>
 
-<div class="row">
-    <aside class="col-md-4">
+<div class="samplebox">
+    <aside class="ticket-aside">
         <div class="panel panel-default">
           <% if @event.image? %>
               <%= image_tag @event.image.thumb.url, class: "ticket-image img-responsive" %>
@@ -34,7 +34,8 @@
         </div>
     </aside>
 
-    <div class="col-md-8">
+    <!-- <div class="col-md-8"> -->
+    <div class="ticket-well">
        <div class="well">
          <% if @event.price.blank? || @event.price == 0 %>
            <%= t '.Admission_free' %>
@@ -63,7 +64,7 @@
                     <%= f.submit 'Complete booking', class: "btn btn-compbooking" %><br />
                 <% end %>
              </span>
-              <div>
+              <div class="send-mail">
                 <% if user_signed_in? %>
                   <p>No need to call us. We'll send you instant confirmation to <span style="font-weight:400;"><%= current_user.email %></span></p>
                 <% else %>
