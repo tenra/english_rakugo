@@ -102,6 +102,23 @@
   color: #535353;
   font-weight: normal;
 }
+
+.attend {
+  clear:both;
+}
+
+.attend .well {
+  background-color: #fbfcd6;
+  font-weight: 300;
+  font-size: 1.4em;
+  color: #535353;
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  box-shadow: 1px 1px 2px #e4e5c9;
+}
+
 .timetable {
   padding: 0px 300px;
 }
@@ -171,6 +188,7 @@
 .price {
   text-align: center;
   font-size: 1.5em;
+  font-weight: 300;
   color: #ef4040;
 }
 .social {

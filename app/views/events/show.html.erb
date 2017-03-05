@@ -41,6 +41,9 @@
           </div>
             
             <div class="venue glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>
+            
+            <div><%= render 'events/attend_form' %></div>
+            
             <div class="text-center"><%= render 'events/booking_form', event: @event %></div>
     
           <div class="price">

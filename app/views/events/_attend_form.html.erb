@@ -1,0 +1,7 @@
+<div class="attend">
+  <% if @event.booking?(current_user) %>
+      <div class="well">
+         <%= t '.You_are_confirmed_to_attend_this_event' %>
+      </div>
+  <% end %>
+</div>

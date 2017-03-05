@@ -32,6 +32,8 @@ ja:
       Description: "内容"
       Admission_free: "入場無料"
       at_the_door: "会場払い"
+    attend_form:
+      You_are_confirmed_to_attend_this_event: "イベントの申し込みは完了しています。"
     ticket:
       Venue: "会場"
       Admission_free: "入場無料"
