@@ -137,12 +137,13 @@ ul.dropdown-menu li {
     }
     #top-head {
         top: 0;
-        position: fixed;
+        position: absolute;
         height: 45px;
         padding-top: 10px;
     }
     /* Fixed reset */
     #top-head.fixed {
+        position: absolute;
         padding-top: 10px;
         height:45px;
         background: transparent;
