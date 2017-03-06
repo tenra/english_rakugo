@@ -185,6 +185,12 @@ hr{
 .welcome{
     margin-top:45px;
 }
+.card-container.card {
+    margin-left: 15px;
+}
+.card {
+    padding: 1px 15px 30px;
+}
 .devise-shared-links {
     padding-left:55px;
 }
