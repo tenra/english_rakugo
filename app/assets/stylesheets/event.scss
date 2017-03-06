@@ -123,6 +123,7 @@
 
 .timetable {
   padding: 0px 300px;
+  color: #666;
 }
 .time {
   width: 150px;
@@ -345,12 +346,36 @@ aside span {
 .timetable {
     padding: 10px;
 }
+
+.inquiry-header {
+    font-size: 2em;
+}
+.ticket-image {
+    height: 30px;
+    border-radius: 2px;
+    width: 45px;
+    float: left;
+}
 .ticket-aside {
     width: 100%;
     margin: 0 auto;
   float: left;
 }
-
+.ticket-aside .panel {
+    margin-bottom: 0px;
+}
+.well {
+    margin: 10px 5px;
+}
+.ticket-time {
+    display: none;
+}
+.venue-ticket.glyphicon-flag {
+    display: none;
+}
+.ticket-price {
+    display: none;
+}
 .ticket-well {
   float:right;
     width: 100%;
@@ -359,6 +384,10 @@ aside span {
 }
 .send-mail {
  font-size: 0.7em; 
+}
+.attend .well {
+    font-size: 1.1em;
+    width: 100%;
 }
 
 }

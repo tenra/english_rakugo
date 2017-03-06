@@ -360,6 +360,9 @@ margin-left: 20px;
 body {
   padding-bottom: 70px;
   padding-top: 25px;
-
 }
+textarea, select, .uneditable-input {
+  padding: 0px;
+}
+
 }
