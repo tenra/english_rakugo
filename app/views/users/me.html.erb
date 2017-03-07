@@ -4,37 +4,38 @@
 
 <div class="row">
   <aside class="me-aside">
-    <table class="table">
-          <div class="text-center">
-            <% if !current_user.profile.nil? && current_user.profile.avatar? %>
-              <%= image_tag(current_user.profile.avatar.thumb.url, :class => "mypage_img") %>
-            <% else %>
-              <%= image_tag 'no-avatar.png', width: 200, :class => "mypage_img"%>
-            <% end %>
-          </div>
-      <div align="right"><%= link_to 'Edit Profile-Image', new_profile_path %></div>
-      <div align="right"><%= link_to 'Edit User', edit_user_registration_path %></div>
-      
-        <tr>
-          <th><%= t '.User_name' %></th>
-          <td><%= current_user.name %></td>
-        </tr>
-        <tr>
-          <th><%= t '.Email_address' %></th>
-          <td><%= current_user.email %></td>
-        </tr>
-        <tr>
-          <th><%= t '.Profile-Image_status' %></th>
-          <td>
-            <% if current_user.profile.present? && current_user.profile.private %>
-              <%= t '.Public' %>
-            <% else %>
-              <%= t '.Private' %>
-            <% end %>
-          </td>
-        </tr>
-        <tr><th><td></td></th></tr>
-    </table>
+    <div class="my_profiles"><%= t '.My_profiles' %></div>
+      <table class="table">
+            <div class="text-center">
+              <% if !current_user.profile.nil? && current_user.profile.avatar? %>
+                <%= image_tag(current_user.profile.avatar.thumb.url, :class => "mypage_img") %>
+              <% else %>
+                <%= image_tag 'no-avatar.png', width: 200, :class => "mypage_img"%>
+              <% end %>
+            </div>
+        <div align="right"><%= link_to 'Edit Profile-Image', new_profile_path %></div>
+        <div align="right"><%= link_to 'Edit User', edit_user_registration_path %></div>
+        
+          <tr>
+            <th><%= t '.User_name' %></th>
+            <td><%= current_user.name %></td>
+          </tr>
+          <tr>
+            <th><%= t '.Email_address' %></th>
+            <td><%= current_user.email %></td>
+          </tr>
+          <tr>
+            <th><%= t '.Profile-Image_status' %></th>
+            <td>
+              <% if current_user.profile.present? && current_user.profile.private %>
+                <%= t '.Public' %>
+              <% else %>
+                <%= t '.Private' %>
+              <% end %>
+            </td>
+          </tr>
+          <tr><th><td></td></th></tr>
+      </table>
   </aside>
       
   <div class="me-right">
@@ -57,7 +58,7 @@
                       <%= event.end_time.strftime("%H:%M") if event.end_time.present? %>
                   <% end %>
                 </div>
-              <span style="font-weight:bold"><%= t '.Booking_people' %></span><%= current_user.bookings[i].people if current_user.bookings[i].people.present? %><br />
+              <span style="font-weight:bold"><%= t '.Booking_people' %></span>:&nbsp;<%= current_user.bookings[i].people if current_user.bookings[i].people.present? %><br />
               <span style="font-weight:bold"><%= t '.Confirmatin_number' %></span>:&nbsp;<%= current_user.bookings[i].number if current_user.bookings[i].number.present? %><br />
                 <%= link_to "unbooking", event_bookings_path(event, user_id: current_user.id), method: :delete, data: { confirm: 'Are you really unbooking the event registration？',
                 cancel: "Cancel",
