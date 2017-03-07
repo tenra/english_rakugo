@@ -3,7 +3,7 @@
 <div class="inquiry-header"><%= @page_title %></div>
 
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="me-aside">
     <table class="table">
           <div class="text-center">
             <% if !current_user.profile.nil? && current_user.profile.avatar? %>
@@ -37,29 +37,34 @@
     </table>
   </aside>
       
-  <div class="col-md-8">
-          <span style="font-weight:bold"><%= t '.My_events' %></span>
-            <hr>
-            <% current_user.booking_events.each_with_index do |event, i| %>
-              <% if (event.date.present? && event.time.present?) %>
-                <span style="margin-left:20px"><%= I18n.l event.date, format: :full_date %></span>
-                 ,&nbsp;<%= event.time.strftime("%H:%M") %>~
-              <% end %><br />
-              <div class="me-event">
+  <div class="me-right">
+      <div class="my_events"><%= t '.My_events' %></div>
+        <hr>
+          <% current_user.booking_events.each_with_index do |event, i| %>
+            <div class="me-event">
                 <% if event.image? %>
                     <%= image_tag event.image.thumb.url, :class => "mypage_event_img" %>
                 <% else %>
                     <%= image_tag 'noimage.gif', :class => "mypage_event_img" %>
                 <% end %>
-                <%= link_to event.title, show_event_path(event) %><br />
-                <span style="font-weight:bold"><%= t '.Confirmatin_number' %></span><%= current_user.bookings[i].number if current_user.bookings[i].number.present? %><br />
-                <span style="font-weight:bold"><%= t '.Booking_people' %></span><%= current_user.bookings[i].people if current_user.bookings[i].people.present? %><br />
+              <div class="me-event-title"><%= link_to event.title, show_event_path(event) %></div>
+                <div class="me-event-time">
+                  <% if event.time || event.end_time.present? %>
+                     <%= I18n.l event.date, format: :full_date if event.date.present? %>,&nbsp;<%= event.time.strftime("%H:%M") %>&nbsp;~&nbsp;
+                       <% if (event.date.present? && event.end_date.present?) && (event.date != event.end_date) %>
+                         <%= I18n.l event.end_date, format: :full_date %>,
+                       <% end %>
+                      <%= event.end_time.strftime("%H:%M") if event.end_time.present? %>
+                  <% end %>
+                </div>
+              <span style="font-weight:bold"><%= t '.Booking_people' %></span><%= current_user.bookings[i].people if current_user.bookings[i].people.present? %><br />
+              <span style="font-weight:bold"><%= t '.Confirmatin_number' %></span>:&nbsp;<%= current_user.bookings[i].number if current_user.bookings[i].number.present? %><br />
                 <%= link_to "unbooking", event_bookings_path(event, user_id: current_user.id), method: :delete, data: { confirm: 'Are you really unbooking the event registration？',
                 cancel: "Cancel",
                 commit: "Unbooking"}, title: "Confirmation", class: "btn btn-unbooking" %>
-              </div>
-              <hr>
-            <% end %>
+            </div>
+           <hr>
+          <% end %>
      <div class="all-events"><%= link_to "all events", root_path(anchor: 'all-events'), class: "all-events" %></div>
   </div>
 </div>

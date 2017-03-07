@@ -1,0 +1,50 @@
+.me-aside {
+ width: 300px;
+ margin: 30px;
+ float: left;
+ color: #666;
+}
+
+.mypage_img {
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: 150px;
+    background-position: center center;
+    margin-bottom: 15px;
+}
+
+.me-right {
+    width: 1000px;
+    float: right;
+    color: #666;
+}
+
+.my_events {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin: 20px 0 -20px;
+}
+
+.mypage_event_img {
+    border-radius: 5px;
+    width: 200px;
+    height: 100px;
+    margin: 0 10px;
+    float: left;
+}
+.me-event-title {
+    font-size: 24px;
+}
+
+.me-event-time {
+    font-size: 18px;
+}
+
+.all-events {
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 640px) {
+}
