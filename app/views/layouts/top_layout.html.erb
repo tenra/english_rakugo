@@ -32,8 +32,7 @@
             </script>
     </head>
     <body id="wrap">
-      <div class="top-image jumbotron jumbotron-extend">
-        <header id="top-head">
+        <header id="home-head">
             <div class="inner">
                 <div id="mobile-head">
                    <h1 class="logo">Logo</h1>
@@ -84,10 +83,29 @@
                 </nav>
             </div>
         </header>
+        
+    <div class="top-slider">
+     <ul class="bxslider">
+       <li><%= link_to image_tag( 'tera.jpg',:alt => "rakugo", class: "") ,"#" %></li>
+       <li><%= link_to image_tag( 'mise.jpg',:alt => "rakugo", class: "") ,"#" %></li>
+       <li><%= link_to image_tag( 'sakura.jpg',:alt => "rakugo", class: "") ,"#" %></li>
+       <li><%= link_to image_tag( 'saru.jpg',:alt => "rakugo", class: "") ,"#" %></li>
+       <li><%= link_to image_tag( 'hanabi.jpg',:alt => "rakugo", class: "") ,"#" %></li>
+     </ul>
+        <script>
+        $('.bxslider').bxSlider({ 
+            auto: true,
+            mode: 'fade',
+            speed: 2000, /*default500*/
+            pause: 3000, /*default4000*/
+            touchEnabled: true
+        });
+        </script>
+    </div><!--top-slider-->
             <%= render 'layouts/alert', message: flash.to_h %>
-            <div class="top-image">English Rakugo</div>
+            <div class="home-title">English Rakugo</div>
           <div class="title-text"><%= t '.text_text_text_text_text_text_text_text_text_text' %></div>
-        </div>
+          
       　    <div id="content" class="container_top_layout">
              
             <%= yield %>

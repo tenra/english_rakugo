@@ -10,6 +10,15 @@
 }
  
 /* header */
+#home-head {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0 0;
+    line-height: 1;
+    height: 65px;
+    z-index: 999;
+    position: absolute;
+}
 #top-head {
     top: -100px;
     width: 100%;
@@ -23,6 +32,7 @@
     -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2); */
 }
 
+
 .top-image #top-head a {
   color: #FFFFFF;
 }
@@ -30,10 +40,21 @@
   color: #FFFFFF;
 }
 
+#home-head a,
+#home-head {
+    color: #FFFFFF;
+    text-decoration: none;
+}
 #top-head a,
 #top-head {
     color: #4682B4;
     text-decoration: none;
+}
+#home-head ul li ul li:hover a {
+  color: #FA8072;
+}
+#home-head ul li:hover > a {
+  color: #FA8072;
 }
 #top-head ul li ul li:hover a {
   color: #FA8072;
@@ -50,6 +71,19 @@
 }
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   background-color:initial;
+}
+
+#home-head .dropdown-menu > li > a {
+  color: #666666;
+}
+
+#home-head .inner {
+    position: relative;
+    bottom: 15px;
+}
+#home-head .logo {
+    float: left;
+    font-size: 30px;
 }
 
 #top-head .inner {
@@ -75,6 +109,29 @@
 }
  
 /* Fixed */
+#top-head.fixed {
+    margin-top: 0;
+    top: 0;
+    position: fixed;
+    height: 65px;
+    background: #fff;
+    background: rgba(255,255,255,.7);
+    transition: top 0.65s ease-in;
+    -webkit-transition: top 0.65s ease-in;
+    -moz-transition: top 0.65s ease-in;
+}
+#home-head.fixed .logo {
+    font-size: 24px;
+    color: #666666;
+}
+#home-head.fixed #global-nav ul li a {
+    color: #666666;
+    padding: 0 20px;
+}
+#home-head.fixed #global-nav ul li:hover > a {
+  color: #FA8072;
+}
+
 #top-head.fixed {
     margin-top: 0;
     top: 0;
