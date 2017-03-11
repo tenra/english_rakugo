@@ -50,13 +50,16 @@
     color: #4682B4;
     text-decoration: none;
 }
+
 #home-head ul li ul li:hover a {
   color: #FA8072;
 }
-#home-head ul li:hover > a {
+#top-head ul li ul li:hover a {
   color: #FA8072;
 }
-#top-head ul li ul li:hover a {
+
+
+#home-head ul li:hover > a {
   color: #FA8072;
 }
 #top-head ul li:hover > a {
@@ -81,19 +84,20 @@
     position: relative;
     bottom: 15px;
 }
-#home-head .logo {
-    float: left;
-    font-size: 30px;
-}
-
 #top-head .inner {
     position: relative;
     bottom: 15px;
+}
+
+#home-head .logo {
+    float: left;
+    font-size: 30px;
 }
 #top-head .logo {
     float: left;
     font-size: 30px;
 }
+
 #global-nav ul {
     list-style: none;
     position: absolute;
@@ -120,19 +124,8 @@
     -webkit-transition: top 0.65s ease-in;
     -moz-transition: top 0.65s ease-in;
 }
-#home-head.fixed .logo {
-    font-size: 24px;
-    color: #666666;
-}
-#home-head.fixed #global-nav ul li a {
-    color: #666666;
-    padding: 0 20px;
-}
-#home-head.fixed #global-nav ul li:hover > a {
-  color: #FA8072;
-}
 
-#top-head.fixed {
+#home-head.fixed {
     margin-top: 0;
     top: 0;
     position: fixed;
@@ -143,15 +136,41 @@
     -webkit-transition: top 0.65s ease-in;
     -moz-transition: top 0.65s ease-in;
 }
+
+#home-head.fixed .logo {
+    font-size: 24px;
+    color: #666666;
+}
 #top-head.fixed .logo {
     font-size: 24px;
     color: #666666;
+}
+
+#home-head.fixed #global-nav ul li a {
+    color: #666666;
+    padding: 0 20px;
 }
 #top-head.fixed #global-nav ul li a {
     color: #666666;
     padding: 0 20px;
 }
+
+#home-head.fixed #global-nav ul li:hover > a {
+  color: #FA8072;
+}
 #top-head.fixed #global-nav ul li:hover > a {
+  color: #FA8072;
+}
+ 
+#home-head.fixed .logo {
+    font-size: 24px;
+    color: #666666;
+}
+#home-head.fixed #global-nav ul li a {
+    color: #666666;
+    padding: 0 20px;
+}
+#home-head.fixed #global-nav ul li:hover > a {
   color: #FA8072;
 }
  
