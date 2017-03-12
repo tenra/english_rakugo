@@ -13,9 +13,19 @@
                     <%= image_tag 'noimage.gif', width: 200, :class => "event-present-image" %>
                   <% end %>
                 <%= f.hidden_field :image_cache %>
-                
                   <img id="img_prev" width=200 height=200 src="#" class="eimg-thumbnail hidden"/>
                   <%= f.file_field :image, :id => 'post_post_img' %>
+                  
+                  <%= f.label :image2 %>
+                  <% if @event.image2? %>
+                    <%= image_tag @event.image2.thumb.url, class: "event-present-image" %>
+                  <% else %>
+                    <%= image_tag 'noimage.gif', width: 200, :class => "event-present-image" %>
+                  <% end %>
+                <%= f.hidden_field :image2_cache %>
+                  <img id="img_prev" width=200 height=200 src="#" class="eimg-thumbnail hidden"/>
+                  <%= f.file_field :image2, :id => 'post_post_img' %>
+                  
                   <script type="text/javascript">
                     $(function() {
                       function readURL(input) {
