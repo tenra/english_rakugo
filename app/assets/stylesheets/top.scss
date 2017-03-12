@@ -35,6 +35,11 @@
     position: relative;
 }
 
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  bottom: -20px;
+}
+
 .left-image {
    width: 645px;
    display: inline-block;

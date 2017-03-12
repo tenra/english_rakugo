@@ -50,8 +50,8 @@ class BookingsController < ApplicationController
 
        @booking.payment = true
        @booking.save
-       #flash[:notice] = "your booking is completed!"
-       #EventMailer.received_email(@event, current_user).deliver_now
+       flash[:notice] = "your booking is completed!"
+       EventMailer.received_email(@event, current_user).deliver_now
     
     @charge = Payjp::Charge.retrieve(@booking.payjp_charge_id)
   end
