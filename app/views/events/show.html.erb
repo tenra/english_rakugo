@@ -1,5 +1,7 @@
 <%  @page_title = "Event" %>
 
+<div class="card card-show-container">
+
     <ul class="bxslider1">
       <li><%= link_to image_tag( @event.image,:alt => "rakugo", class: "") ,"#" %></li>
       <li><%= link_to image_tag( 'noimage.gif',:alt => "rakugo", class: "") ,"#" %></li>
@@ -104,6 +106,8 @@
     <%#= @hash.inspect %>
     
   <div id="map" style='width:100%; height: 500px; text-align: center; '></div>
+
+</div><!-- /card-container -->
 
     <script type="text/javascript">
         handler = Gmaps.build('Google');
