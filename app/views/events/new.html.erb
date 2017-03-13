@@ -6,26 +6,42 @@
    <div class='col-md-6 col-md-offset-3'>
       <%= form_for @event, url: {action: 'confirm'} do |f| %>
               <div class="form-group">
-                <%= f.label :image %>
+                <div>
+                  <%= f.label :image %>
                   <% if @event.image? %>
                     <%= image_tag @event.image.thumb.url, class: "event-present-image" %>
                   <% else %>
                     <%= image_tag 'noimage.gif', width: 200, :class => "event-present-image" %>
                   <% end %>
-                <%= f.hidden_field :image_cache %>
+                  <%= f.hidden_field :image_cache %>
                   <img id="img_prev" width=200 height=200 src="#" class="eimg-thumbnail hidden"/>
-                  <%= f.file_field :image, :id => 'post_post_img' %>
-                  
+                  <%= f.file_field :image, :class => 'preview' %>
+                </div>
+                
+                <div>
                   <%= f.label :image2 %>
                   <% if @event.image2? %>
                     <%= image_tag @event.image2.thumb.url, class: "event-present-image" %>
                   <% else %>
                     <%= image_tag 'noimage.gif', width: 200, :class => "event-present-image" %>
                   <% end %>
-                <%= f.hidden_field :image2_cache %>
+                  <%= f.hidden_field :image2_cache %>
                   <img id="img_prev" width=200 height=200 src="#" class="eimg-thumbnail hidden"/>
-                  <%= f.file_field :image2, :id => 'post_post_img' %>
-                  
+                  <%= f.file_field :image2, :class => 'preview' %>
+                </div>
+                
+                <div>
+                  <%= f.label :image3 %>
+                  <% if @event.image3? %>
+                    <%= image_tag @event.image3.thumb.url, class: "event-present-image" %>
+                  <% else %>
+                    <%= image_tag 'noimage.gif', width: 200, :class => "event-present-image" %>
+                  <% end %>
+                  <%= f.hidden_field :image3_cache %>
+                  <img id="img_prev" width=200 height=200 src="#" class="eimg-thumbnail hidden"/>
+                  <%= f.file_field :image3, :class => 'preview' %>
+                </div>
+                
                   <script type="text/javascript">
                     $(function() {
                       function readURL(input) {
@@ -33,16 +49,17 @@
                           var reader = new FileReader();
                     
                           reader.onload = function (e) {
-                            $('.event-present-image').remove();
-                            $('#img_prev').html("");
-                            $('#img_prev').attr('src', e.target.result);
+                            var imgBlock = $(input).parent()
+                            imgBlock.find('.event-present-image').remove();
+                            imgBlock.find('.eimg-thumbnail').html("");
+                            imgBlock.find('.eimg-thumbnail').attr('src', e.target.result);
                           }
                           reader.readAsDataURL(input.files[0]);
                         }
                       }
                     
-                      $("#post_post_img").change(function(){
-                        $('#img_prev').removeClass('hidden');
+                      $(".preview").change(function(){
+                        $(this).parent().find('.eimg-thumbnail').removeClass('hidden');
                         readURL(this);
                       });
                     });

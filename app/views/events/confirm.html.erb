@@ -15,6 +15,24 @@
                </td>
            </tr>
            <tr>
+               <th>Image2</th>
+           </tr>
+           <tr>
+               <td style="border-style: none;">
+                 <%= f.hidden_field :image2_cache %>
+                 <%= image_tag @event.image2.thumb.url, class: "event-present-image" if @event.image2? %>
+               </td>
+           </tr>
+           <tr>
+               <th>Image3</th>
+           </tr>
+           <tr>
+               <td style="border-style: none;">
+                 <%= f.hidden_field :image3_cache %>
+                 <%= image_tag @event.image3.thumb.url, class: "event-present-image" if @event.image3? %>
+               </td>
+           </tr>
+           <tr>
                <th>Title</th>
            </tr>
            <tr>

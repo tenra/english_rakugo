@@ -9,6 +9,8 @@ class Event < ActiveRecord::Base
     end
     
     mount_uploader :image, ImageUploader
+    mount_uploader :image2, ImageUploader
+    mount_uploader :image3, ImageUploader
     
     geocoded_by :address
     after_validation :geocode, if: :address_changed?
