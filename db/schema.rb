@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302085255) do
+ActiveRecord::Schema.define(version: 20170314091205) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20170302085255) do
     t.time     "end_time"
     t.string   "image2"
     t.string   "image3"
+    t.string   "image4"
+    t.string   "image5"
   end
 
   create_table "profiles", force: :cascade do |t|
