@@ -3,17 +3,17 @@
 <div class="card card-show-container">
 
     <ul class="bxslider1">
-      <li><%= link_to image_tag( @event.image,:alt => "rakugo", class: "") ,"#" %></li>
-      <li><%= link_to image_tag( @event.image2,:alt => "rakugo", class: "") ,"#" %></li>
-      <li><%= link_to image_tag( @event.image3,:alt => "rakugo", class: "") ,"#" %></li>
+      <%= link_to image_tag( @event.image,:alt => "rakugo", class: "") ,"#" if @event.image.present? %>
+      <%= link_to image_tag( @event.image2,:alt => "rakugo", class: "") ,"#" if @event.image2.present? %>
+      <%= link_to image_tag( @event.image3,:alt => "rakugo", class: "") ,"#" if @event.image3.present? %>
       <li><%= link_to image_tag( 'no-avatar.png',:alt => "rakugo", class: "") ,"#" %></li>
       <li><%= link_to image_tag( 'noimage.gif',:alt => "rakugo", class: "") ,"#" %></li>
     </ul>
      
     <div id="bx-pager">
-        <%= link_to image_tag( @event.image,:alt => "rakugo", class: ""), "", "data-slide-index" => "0" %>
-        <%= link_to image_tag( @event.image2,:alt => "rakugo", class: ""), "", "data-slide-index" => "1" %>
-        <%= link_to image_tag( @event.image3,:alt => "rakugo", class: ""), "", "data-slide-index" => "2" %>
+        <%= link_to image_tag( @event.image,:alt => "rakugo", class: ""), "", "data-slide-index" => "0" if @event.image.present? %>
+        <%= link_to image_tag( @event.image2,:alt => "rakugo", class: ""), "", "data-slide-index" => "1" if @event.image2.present? %>
+        <%= link_to image_tag( @event.image3,:alt => "rakugo", class: ""), "", "data-slide-index" => "2" if @event.image3.present? %>
         <%= link_to image_tag( 'no-avatar.png',:alt => "rakugo", class: ""), "", "data-slide-index" => "3" %>
         <%= link_to image_tag( 'noimage.gif',:alt => "rakugo", class: ""), "", "data-slide-index" => "4" %>
     </div>
