@@ -218,84 +218,6 @@
   width: 40px;
 }
 
-/* ticket */
-.ticket-image {
-  width:100%;
-}
-.ticket-title {
- text-align: center;
- color: #4682B4;
- font-size: 1.5em;
-}
-.ticket-time {
-  text-align: center;
-  color: #535353;
-  font-size: 1.3em;
-}
-.ticket-price {
-  color: #535353;
-  text-align: right;
-  font-size: 1.4em;
-  margin: 8px;
-  font-weight: 300;
-}
-.venue-ticket.glyphicon-flag {
- color:#535353;
- text-align: right;
- font-size: 1.3em;
- display: inherit;
-}
-aside .glyphicon {
-  letter-spacing: 0px;
-}
-
-.new_booking.people_select_tag {
-  width: 50px;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.row {
-    margin-right: 0px;
-}
-.ticket-aside {
-  width: 400px;
-  margin: 40px 0px 50px 80px;
-  float: left;
-}
-
-.ticket-well {
-  float:right;
-  width: 800px;
-  margin: 30px 80px 30px 0px;
-}
-.panel-default {
-  border-color: #92badd;
-}
-
-aside {
- margin-top: 10px;
-}
-
-aside span {
- display: inline-block;
-}
-
-.well input, textarea, select, .uneditable-input {
-  width: 50px;
-  margin: 5px;
-}
-.well {
-  font-size:1.2em;
-  margin: 10px;
-  background-color: #e8f2f9;
-  border-radius: 2px;
-  border: 0px;
-
-}
-
 .table > thead > tr > th.active, .table > thead > tr.active > td, .table > thead > tr.active > th {
   color: #FFF;
   background-color: #5c9ad1;
@@ -310,11 +232,6 @@ aside span {
 .table-bordered > tfoot > tr > th,
 .table-bordered > tfoot > tr > td {
   border: 1px solid #92badd;
-}
-
-.ticket-button {
-  text-align: center;
-  margin:10px;
 }
 
 
@@ -365,45 +282,6 @@ aside span {
 
 .inquiry-header {
     font-size: 2em;
-}
-.ticket-image {
-    height: 30px;
-    border-radius: 2px;
-    width: 45px;
-    float: left;
-}
-.ticket-aside {
-    width: 100%;
-    margin: 0 auto;
-  float: left;
-}
-.ticket-aside .panel {
-    margin-bottom: 0px;
-}
-.well {
-    margin: 10px 5px;
-}
-.ticket-time {
-    display: none;
-}
-.venue-ticket.glyphicon-flag {
-    display: none;
-}
-.ticket-price {
-    display: none;
-}
-.ticket-well {
-  float:right;
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 150px;
-}
-.send-mail {
- font-size: 0.7em; 
-}
-.attend .well {
-    font-size: 1.1em;
-    width: 100%;
 }
 
 }
