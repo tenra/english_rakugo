@@ -1,6 +1,7 @@
 /* ticket */
 .ticket-image {
-  width:100%;
+  width: 100%;
+  height: auto;
 }
 .ticket-title {
  text-align: center;
@@ -41,7 +42,7 @@ aside .glyphicon {
     margin-right: 0px;
 }
 .ticket-aside {
-  width: 380px;
+  width: 350px;
   /*margin: 40px 0px 50px 80px;*/
   display: inline-block;
 }
