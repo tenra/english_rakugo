@@ -13,7 +13,7 @@ print '.'
 User.create!(name: 'mentor_user', email: 'mentor@user.com', password: 'password', admin: false, :agreement => true)
 puts '.Admin'
 
-50.times do
+10.times do
   User.create!(name: Faker::Name.name,
               email: Faker::Internet.email,
               password: "password",
@@ -23,7 +23,7 @@ puts '.Admin'
 end
 puts 'User'
 
-1.upto(5) do |n|
+1.upto(3) do |n|
   Event.create!(title: Faker::Lorem.sentence,
                 text: "#{Faker::Lorem.paragraph}\n#{Faker::Lorem.paragraph}\n#{Faker::Lorem.paragraph}",
                 image: open("#{Rails.root}/db/fixtures/img#{n}.jpg")
