@@ -192,17 +192,24 @@ span:hover + p.arrow_box {
     padding-top:30px;
     padding-bottom:0;
 }
+.home-title {
+    font-size: 3.7em;
+    left: 2px;
+}
+
 .title-text {
   font-size: 1.3em;
+  left: 0;
   text-align: center;
-  color: rgba(255,255,255,.7);
+  color: #FFFFFF;
   margin:10px 0;
 }
 #content {
    width: 100%;
  }
  .wrap {
-     margin: 0 10px 0 25px;
+    margin: 0 5px 0 20px;
+    padding: 5px 5px;
    }
    
  .left-image {
