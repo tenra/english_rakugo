@@ -56,6 +56,10 @@
        </div>
       
         <div><%= render 'events/attend_form' %></div>
+        
+           <div class="need_sign_up">
+             <%= link_to "you need to sign up before you booking", new_user_registration_path if !@event.booking?(current_user) %>
+           </div>
       
            <div class="ticket-button">
              <span id="booking_form-<%= @event.id %>">
