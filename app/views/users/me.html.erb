@@ -2,7 +2,7 @@
 
 <div class="inquiry-header"><%= @page_title %></div>
 
-<div class="row">
+<div class="card card-show-container">
   <aside class="me-aside">
     <div class="my_profiles"><%= t '.My_profiles' %></div>
       <table class="table">
@@ -58,8 +58,12 @@
                       <%= event.end_time.strftime("%H:%M") if event.end_time.present? %>
                   <% end %>
                 </div>
-              <span style="font-weight:bold"><%= t '.Booking_people' %></span>:&nbsp;<%= current_user.bookings[i].people if current_user.bookings[i].people.present? %><br />
-              <span style="font-weight:bold"><%= t '.Confirmatin_number' %></span>:&nbsp;<%= current_user.bookings[i].number if current_user.bookings[i].number.present? %><br />
+              <div class="me-other">
+                <span style="font-weight:bold"><%= t '.Booking_people' %></span>
+                :&nbsp;<%= current_user.bookings[i].people if current_user.bookings[i].people.present? %><br />
+                <span style="font-weight:bold"><%= t '.Confirmatin_number' %></span>
+                :&nbsp;<%= current_user.bookings[i].number if current_user.bookings[i].number.present? %><br />
+              </div>
                 <%= link_to "unbooking", event_bookings_path(event, user_id: current_user.id), method: :delete, data: { confirm: 'Are you really unbooking the event registration？',
                 cancel: "Cancel",
                 commit: "Unbooking"}, title: "Confirmation", class: "btn btn-unbooking" %>
@@ -68,6 +72,4 @@
           <% end %>
      <div class="all-events"><%= link_to "all events", root_path(anchor: 'all-events'), class: "all-events" %></div>
   </div>
-</div>
-
-
+</div><!-- /card-container -->

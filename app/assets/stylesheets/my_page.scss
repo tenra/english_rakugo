@@ -1,8 +1,9 @@
 .me-aside {
  width: 300px;
- margin: 30px;
- float: left;
+ margin: 20px;
+ /*float: left;*/
  color: #666;
+ display: inline-block;
 }
 
 .my_profiles {
@@ -20,9 +21,10 @@
 }
 
 .me-right {
-    width: 1000px;
+    width: 800px;
     float: right;
     color: #666;
+    display: inline-block;
 }
 
 .my_events {
@@ -44,6 +46,11 @@
 
 .me-event-time {
     font-size: 18px;
+    font-weight: 600;
+}
+
+.me-other {
+    /*font-size: 18px;*/
 }
 
 .all-events {
@@ -52,4 +59,17 @@
 }
 
 @media screen and (max-width: 640px) {
+ .me-aside {
+    margin: 0;
+}
+    
+ .me-right {
+    width: 100%;
+    float: none;
+}
+
+.mypage_event_img {
+    float: none;
+}
+    
 }
