@@ -1,0 +1,25 @@
+---
+development:
+  cloud_name: hsyrpa9uf
+  api_key: '463248512257821'
+  api_secret: MiAOtJ8eiMFdJrynseIWQjVfHgU
+  enhance_image_tag: true
+  static_image_support: false
+staging:
+  cloud_name: hsyrpa9uf
+  api_key: '463248512257821'
+  api_secret: MiAOtJ8eiMFdJrynseIWQjVfHgU
+  enhance_image_tag: true
+  static_image_support: true
+production:
+  cloud_name: hsyrpa9uf
+  api_key: '463248512257821'
+  api_secret: MiAOtJ8eiMFdJrynseIWQjVfHgU
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hsyrpa9uf
+  api_key: '463248512257821'
+  api_secret: MiAOtJ8eiMFdJrynseIWQjVfHgU
+  enhance_image_tag: true
+  static_image_support: false
