@@ -1,10 +1,10 @@
 class TopMailer < ActionMailer::Base
   default from: "11tenra@gmail.com"
-  default to: "11tenchi@ezweb.ne.jp"
+  default to: "amigojpn5115@god.zaq.jp"
   
   def received_email(top)
     @top = top
-    mail(:subject => 'お問い合わせを承りました')
+    mail(:subject => 'English Rakugo Contact Us')
   end
  
 end

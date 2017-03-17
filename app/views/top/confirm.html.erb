@@ -1,30 +1,37 @@
-<div class="page-header">
-    <h1>お問い合わせ</h1>
-</div>
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3'>
+    <div id="inquiry" class="inquiry-header">
+      <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contact / Confirm
+    </div>
+    <div class="card card-show-container">
 
-<%= form_for @top, :url => top_thanks_path do |f| %>
-<table class="table">
-    <tr>
-        <th>名前</th>
-        <td>
-            <%= f.hidden_field :name %>
-            <%= @top.name %>
-        </td>
-    </tr>
-    <tr>
-        <th>メールアドレス</th>
-        <td>
-            <%= f.hidden_field :email %>
-            <%= @top.email %>
-        </td>
-    </tr>
-    <tr>
-        <th>お問い合わせ内容</th>
-        <td>
-            <%= f.hidden_field :message %>
-            <%= simple_format(@top.message) %>
-        </td>
-    </tr>
-</table>
-<%= f.submit '送信', :class => 'btn btn-primary' %>
-<% end %>
+        <%= form_for @top, :url => top_thanks_path do |f| %>
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <td>
+                    <%= f.hidden_field :name %>
+                    <%= @top.name %>
+                </td>
+            </tr>
+            <tr>
+                <th>EmailAddress</th>
+                <td>
+                    <%= f.hidden_field :email %>
+                    <%= @top.email %>
+                </td>
+            </tr>
+            <tr>
+                <th>Message</th>
+                <td>
+                    <%= f.hidden_field :message %>
+                    <%= simple_format(@top.message) %>
+                </td>
+            </tr>
+        </table>
+       <div class="text-center"><%= f.submit 'Submit', class: 'btn btn-booking' %></div>
+        <% end %>
+    </div>
+      <div class="back"><%= link_to "Back", :back %></div>
+  </div>
+</div>
