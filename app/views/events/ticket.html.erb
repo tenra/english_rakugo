@@ -2,91 +2,91 @@
 
 <div class="inquiry-header">Confirm to Booking</div>
 
-<div class="card card-show-container">
-<div class="samplebox">
-    <aside class="ticket-aside">
-        <div class="panel panel-default">
-          <% if @event.image? %>
-              <%= image_tag @event.image.thumb.url, class: "ticket-image img-responsive" %>
-          <% else %>
-              <%= image_tag 'noimage.gif', width: 200, :class => "ticket-image img-responsive" %>
-          <% end %>
-        <div class="ticket-title"><%= @event.title %></div>
-      
-            <div class="ticket-time">
-              <% if @event.time || @event.end_time.present? %>
-                <%= I18n.l @event.date, format: :full_date if @event.date.present? %>
-                 ,&nbsp;<%= @event.time.strftime("%H:%M") %>
-                 &nbsp;~&nbsp;
-                  <% if (@event.date.present? && @event.end_date.present?) && (@event.date != @event.end_date) %>
-                    <%= I18n.l @event.end_date, format: :full_date %>,
-                  <% end %>
-                <%= @event.end_time.strftime("%H:%M") if @event.end_time.present? %>
+<div class="card-ticket card card-show-container">
+    <div class="samplebox">
+        <aside class="ticket-aside">
+            <div class="panel panel-default">
+              <% if @event.image? %>
+                  <%= image_tag @event.image.thumb.url, class: "ticket-image img-responsive" %>
+              <% else %>
+                  <%= image_tag 'noimage.gif', width: 200, :class => "ticket-image img-responsive" %>
               <% end %>
+            <div class="ticket-title"><%= @event.title %></div>
+          
+                <div class="ticket-time">
+                  <% if @event.time || @event.end_time.present? %>
+                    <%= I18n.l @event.date, format: :full_date if @event.date.present? %>
+                     ,&nbsp;<%= @event.time.strftime("%H:%M") %>
+                     &nbsp;~&nbsp;
+                      <% if (@event.date.present? && @event.end_date.present?) && (@event.date != @event.end_date) %>
+                        <%= I18n.l @event.end_date, format: :full_date %>,
+                      <% end %>
+                    <%= @event.end_time.strftime("%H:%M") if @event.end_time.present? %>
+                  <% end %>
+                </div>
+                <div class="venue-ticket glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>
+                <div class="ticket-price">
+                    <% if @event.price.blank? || @event.price == 0 %>
+                     <%= t '.Admission_free' %>
+                    <% else %>
+                     <%= number_to_currency(@event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
+                    <% end %>
+                </div>
             </div>
-            <div class="venue-ticket glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>
-            <div class="ticket-price">
-                <% if @event.price.blank? || @event.price == 0 %>
-                 <%= t '.Admission_free' %>
-                <% else %>
-                 <%= number_to_currency(@event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
-                <% end %>
-            </div>
+        </aside>
+    
+        <!-- <div class="col-md-8"> -->
+        <div class="ticket-well">
+           <div class="well">
+             <% if @event.price.blank? || @event.price == 0 %>
+               <%= t '.Admission_free' %>
+             <% else %>
+               <%= number_to_currency(@event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
+             <% end %>
+            
+             <%= form_for(@event.bookings.build , url: event_bookings_path(@event)) do |f| %>
+              <%#= f.select :people, options_for_select((SupplierStockType.all.collect {|p| [ p[:name], p[:id] ] }), selected: @booking_people), class: "people_select_tag" %>
+                <div class="inline-block"><%= f.select :people, options_for_select((1..5).to_a, selected: @booking_people), class: "people_select_tag" %><%= t '.people' %></div>
+                   <input type="hidden" name="tax_1" value="<%= @event.price %>">
+                <div id="total">
+                    <%= "total price" if @event.price.present? %>
+                    <%= number_to_currency(@event.price * (@booking_people || 1), :precision => 0, :local => 'jp') if @event.price.present? %>
+                </div>
+                   ※ <%= t '.Charges_will_include_a_service_charge_and_consumption_tax' %>
+           </div>
+          
+            <div><%= render 'events/attend_form' %></div>
+            
+               <div class="need_sign_up">
+                 <%= link_to "you need to sign up before you booking", new_user_registration_path if !@event.booking?(current_user) %>
+               </div>
+          
+               <div class="ticket-button">
+                 <span id="booking_form-<%= @event.id %>">
+                    <% if @event.date.present? && @event.date <= Time.now %>
+                        <button type="button" class="btn btn-closed">closed</button>
+                    <% elsif @event.capacity == @event.booking_users.count %>
+                        <button type="button" class="btn btn-fullbook">full booking now</button>
+                    <% elsif @event.booking?(current_user) %>
+                        <%= link_to "check your booking", users_me_path, class: "btn btn-checkbooking" %>
+                    <% else %>
+                        <%= f.submit 'Complete booking', class: "btn btn-compbooking" %><br />
+                    <% end %>
+                 </span>
+                  <div class="send-mail">
+                    <% if user_signed_in? %>
+                      <p>No need to call us. We'll send you instant confirmation to <span style="font-weight:400;"><%= current_user.email %></span></p>
+                    <% else %>
+                      <p>No need to call us. We'll send you instant confirmation mail</p>
+                    <% end %>
+                  </div>
+               </div>
+             <% end %>
+    
+           <div class="back"><%= link_to "Back", :back %></div>
         </div>
-    </aside>
-
-    <!-- <div class="col-md-8"> -->
-    <div class="ticket-well">
-       <div class="well">
-         <% if @event.price.blank? || @event.price == 0 %>
-           <%= t '.Admission_free' %>
-         <% else %>
-           <%= number_to_currency(@event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
-         <% end %>
-        
-         <%= form_for(@event.bookings.build , url: event_bookings_path(@event)) do |f| %>
-          <%#= f.select :people, options_for_select((SupplierStockType.all.collect {|p| [ p[:name], p[:id] ] }), selected: @booking_people), class: "people_select_tag" %>
-            <div class="inline-block"><%= f.select :people, options_for_select((1..5).to_a, selected: @booking_people), class: "people_select_tag" %><%= t '.people' %></div>
-               <input type="hidden" name="tax_1" value="<%= @event.price %>">
-            <div id="total">
-                <%= "total price" if @event.price.present? %>
-                <%= number_to_currency(@event.price * (@booking_people || 1), :precision => 0, :local => 'jp') if @event.price.present? %>
-            </div>
-               ※ <%= t '.Charges_will_include_a_service_charge_and_consumption_tax' %>
-       </div>
-      
-        <div><%= render 'events/attend_form' %></div>
-        
-           <div class="need_sign_up">
-             <%= link_to "you need to sign up before you booking", new_user_registration_path if !@event.booking?(current_user) %>
-           </div>
-      
-           <div class="ticket-button">
-             <span id="booking_form-<%= @event.id %>">
-                <% if @event.date.present? && @event.date <= Time.now %>
-                    <button type="button" class="btn btn-closed">closed</button>
-                <% elsif @event.capacity == @event.booking_users.count %>
-                    <button type="button" class="btn btn-fullbook">full booking now</button>
-                <% elsif @event.booking?(current_user) %>
-                    <%= link_to "check your booking", users_me_path, class: "btn btn-checkbooking" %>
-                <% else %>
-                    <%= f.submit 'Complete booking', class: "btn btn-compbooking" %><br />
-                <% end %>
-             </span>
-              <div class="send-mail">
-                <% if user_signed_in? %>
-                  <p>No need to call us. We'll send you instant confirmation to <span style="font-weight:400;"><%= current_user.email %></span></p>
-                <% else %>
-                  <p>No need to call us. We'll send you instant confirmation mail</p>
-                <% end %>
-              </div>
-           </div>
-         <% end %>
-
-       <div class="back"><%= link_to "Back", :back %></div>
     </div>
-</div>
-</div><!-- /card-container -->
+</div><!-- card-ticket card-container -->
 
 <script type="text/javascript">
       	$(document).ready(function(){
