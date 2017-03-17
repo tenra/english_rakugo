@@ -1,0 +1,68 @@
+/* about_us*/
+.about-text {
+  font-size: 5em;
+  padding: 20px 0;
+  text-align: center;
+  color: rgba(255,255,255,.7);
+}
+
+.outline {
+  margin-bottom: 100px;
+  th {
+    width: 200px
+  }
+}
+
+.inquiry-header {
+  color:#666666;
+  text-align: center;
+  font-size: 40px;
+  margin: 5px;
+  font-weight: 300;
+}
+
+span.glyphicon-envelope {
+  top: 5px;
+}
+
+.text-code {
+  /*width: 400px*/
+}
+
+.area-code {
+  height: 100px !important;
+}
+
+.actions {
+ text-align: center;
+}
+
+
+.blank {
+  text-align: right;
+  margin: 0;
+  font-weight: 300;
+  font-size: 1.4em;
+}
+
+.contact-us .form-control {
+    border: 2px solid #F4F4F4;
+    border-radius: 2px;
+}
+
+.contact-us label {
+    font-weight: 300;
+    font-size: 1.5em;
+}
+
+.contact-message {
+  font-size: 1.5em;
+  font-weight: 300;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 640px) {
+    
+}

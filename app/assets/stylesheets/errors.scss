@@ -28,3 +28,7 @@ button {
     font-size: 1.6em;
     font-weight: 300;
 }
+
+.new_top .alert > p, .alert > ul {
+    text-align: inherit;
+}
