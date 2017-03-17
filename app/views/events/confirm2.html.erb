@@ -10,12 +10,8 @@
            </tr>
            <tr>
                <td style="border-style: none;">
-                 <%= f.hidden_field :image_cache %>
-                 <% if @event.image_cache.present? %>
-                   <%= image_tag "/uploads/tmp/#{@event.image_cache}", class: "event-present-image" %>
-                 <% elsif @event.image? %>
-                   <%= image_tag @event.image.thumb.url, class: "event-present-image" %>
-                 <% end %>
+                <%= f.hidden_field :image_cache %>
+                 <%= image_tag @event.image.thumb.url, class: "event-present-image" if @event.image? %>
                </td>
            </tr>
            <tr>
@@ -24,11 +20,7 @@
            <tr>
                <td style="border-style: none;">
                  <%= f.hidden_field :image2_cache %>
-                 <% if @event.image2_cache.present? %>
-                   <%= image_tag "/uploads/tmp/#{@event.image2_cache}", class: "event-present-image" %>
-                 <% elsif @event.image2? %>
-                   <%= image_tag @event.image2.thumb.url, class: "event-present-image" %>
-                 <% end %>
+                 <%= image_tag @event.image2.thumb.url, class: "event-present-image" if @event.image2? %>
                </td>
            </tr>
            <tr>
@@ -37,11 +29,7 @@
            <tr>
                <td style="border-style: none;">
                  <%= f.hidden_field :image3_cache %>
-                 <% if @event.image3_cache.present? %>
-                   <%= image_tag "/uploads/tmp/#{@event.image3_cache}", class: "event-present-image" %>
-                 <% elsif @event.image3? %>
-                   <%= image_tag @event.image3.thumb.url, class: "event-present-image" %>
-                 <% end %>
+                 <%= image_tag @event.image3.thumb.url, class: "event-present-image" if @event.image3? %>
                </td>
            </tr>
            <tr>
@@ -50,11 +38,7 @@
            <tr>
                <td style="border-style: none;">
                  <%= f.hidden_field :image4_cache %>
-                 <% if @event.image4_cache.present? %>
-                   <%= image_tag "/uploads/tmp/#{@event.image4_cache}", class: "event-present-image" %>
-                 <% elsif @event.image4? %>
-                   <%= image_tag @event.image4.thumb.url, class: "event-present-image" %>
-                 <% end %>
+                 <%= image_tag @event.image4.thumb.url, class: "event-present-image" if @event.image4? %>
                </td>
            </tr>
            <tr>
@@ -63,11 +47,7 @@
            <tr>
                <td style="border-style: none;">
                  <%= f.hidden_field :image5_cache %>
-                 <% if @event.image5_cache.present? %>
-                   <%= image_tag "/uploads/tmp/#{@event.image5_cache}", class: "event-present-image" %>
-                 <% elsif @event.image5? %>
-                   <%= image_tag @event.image5.thumb.url, class: "event-present-image" %>
-                 <% end %>
+                 <%= image_tag @event.image5.thumb.url, class: "event-present-image" if @event.image5? %>
                </td>
            </tr>
            <tr>
