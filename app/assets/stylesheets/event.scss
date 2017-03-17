@@ -237,6 +237,7 @@
 
 @media screen and (max-width: 640px) {
  .card-show-container.card {
+    margin-top: 5px;
     width: 97%;
 }
   
@@ -244,7 +245,6 @@
     height: 35px;
   }
  .bx-wrapper img {
-    margin-top: 7px;
     height: 300px;
 }
 .event-title {

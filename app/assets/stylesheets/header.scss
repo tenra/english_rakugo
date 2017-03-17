@@ -220,7 +220,18 @@ ul.dropdown-menu li {
         width: 100%;
         padding: 0;
     }
+    #home-head,
+    .inner {
+        width: 100%;
+        padding: 0;
+    }
     #top-head {
+        top: 0;
+        position: absolute;
+        height: 45px;
+        padding-top: 10px;
+    }
+    #home-head {
         top: 0;
         position: absolute;
         height: 45px;
@@ -228,6 +239,12 @@ ul.dropdown-menu li {
     }
     /* Fixed reset */
     #top-head.fixed {
+        position: absolute;
+        padding-top: 10px;
+        height:45px;
+        background: transparent;
+    }
+    #home-head.fixed {
         position: absolute;
         padding-top: 10px;
         height:45px;
@@ -242,6 +259,14 @@ ul.dropdown-menu li {
     }
     #top-head.fixed .logo,
     #top-head .logo {
+        position: absolute;
+        left: 13px;
+        bottom: -9px;
+        color: #333;
+        font-size: 26px;
+    }
+    #home-head.fixed .logo,
+    #home-head .logo {
         position: absolute;
         left: 13px;
         bottom: -9px;
@@ -274,6 +299,13 @@ ul.dropdown-menu li {
     }
     #top-head #global-nav ul li a,
     #top-head.fixed #global-nav ul li a {
+        width: 100%;
+        display: block;
+        color: #666666;
+        padding: 15px 0;
+    }
+    #home-head #global-nav ul li a,
+    #home-head.fixed #global-nav ul li a {
         width: 100%;
         display: block;
         color: #666666;
