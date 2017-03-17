@@ -198,7 +198,8 @@ span:hover + p.arrow_box {
 }
 
 .title-text {
-  font-size: 1.3em;
+  font-size: 1.5em;
+  top: 250px;
   left: 0;
   text-align: center;
   color: #FFFFFF;
@@ -234,5 +235,11 @@ span:hover + p.arrow_box {
 .top-pagination {
    height: 0;
  }
+ .bx-wrapper .bx-prev {
+  background:none
+}
+ .bx-wrapper .bx-next {
+  background:none
+}
 
 }
