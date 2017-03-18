@@ -26,15 +26,15 @@
               <p class="input_title"><%= t '.Password_Confirmation' %></p>
               <%= f.password_field :password_confirmation, autocomplete: "off", class: "login_box", placeholder: "*********︎" %>
            <% end %>
-               <%= f.label :agreement ,id: "l_agreement" do %>
-                  <%= f.check_box :agreement , :as => :boolean %>
+               <%#= f.label :agreement ,id: "l_agreement" do %>
+                  <%#= f.check_box :agreement , :as => :boolean %>
                   <% if I18n.locale != :en %>
                     <%= link_to "利用規約", terms_of_service_path %>に同意する
                   <% end %>
                   <% if I18n.locale != :ja %>
                     I agree with the <%= link_to "Terms of Service", terms_of_service_path %>
                   <% end %>
-               <% end %>
+               <%# end %>
             <%= f.submit "Create my account", class: "btn btn-lg btn-primary" %>
               <div class="sign-in-with"><span><%= t '.Or_Sign_in_with' %></span></div>
             <%= link_to user_twitter_omniauth_authorize_path, { :class => "link-social" } do %>

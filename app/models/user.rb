@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :timeoutable, :omniauthable, omniauth_providers: [:twitter, :facebook]
          
   validates :name, presence: true, length: { maximum: 50 }
-  validate :agreement_valid?
+  #validate :agreement_valid?
 
   has_many :bookings, foreign_key: "user_id", dependent: :destroy
   has_many :booking_events, through: :bookings, source: :event
@@ -82,7 +82,7 @@ class User < ActiveRecord::Base
   end
   
   private
-    def agreement_valid?
-      errors.add(:agreement, 'していただかない場合は、登録できません。') unless agreement == true
-    end
+    #def agreement_valid?
+    #  errors.add(:agreement, 'していただかない場合は、登録できません。') unless agreement == true
+    #end
 end
