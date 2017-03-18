@@ -70,6 +70,7 @@
             </div>
            <hr>
           <% end %>
+          <%= "No booking event" if !current_user.booking_events.present? %>
      <div class="all-events"><%= link_to "all events", root_path(anchor: 'all-events'), class: "all-events" %></div>
   </div>
 </div><!-- /card-container -->
