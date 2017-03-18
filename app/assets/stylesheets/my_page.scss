@@ -54,22 +54,63 @@
 }
 
 .all-events {
+    font-size: 1.1em;
     padding: 10px;
     margin-bottom: 30px;
 }
 
+.remove-image {
+    width: 100%;
+    color: #666666;
+input, textarea, select, .uneditable-input {
+    width: initial;
+}
+}
+
+.toggle-me-edit{
+    font-size: 1.2em;
+    color: #666666;
+.toggle-off.btn {
+    padding-left: 19px;
+    padding-top: 14px;
+}
+}
+
+.toggle-me-edit{
+.toggle-on {
+    top: 9px;
+}
+}
+
 @media screen and (max-width: 640px) {
- .me-aside {
-    margin: 0;
+.col-sm-6 {
+padding-right: 0;
 }
     
- .me-right {
+.me-right {
     width: 100%;
     float: none;
+}
+
+.my_events {
+    margin: 20px 20px -10px;
+}
+
+.my-event-pic {
+  text-align: center;
 }
 
 .mypage_event_img {
     float: none;
 }
-    
+
+.me-other {
+    margin: 5px;
+}
+
+.toggle-me-edit {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
 }

@@ -42,13 +42,15 @@
       <div class="my_events"><%= t '.My_events' %></div>
         <hr>
           <% current_user.booking_events.each_with_index do |event, i| %>
-            <div class="me-event">
-                <% if event.image? %>
+               <div class="my-event-pic">
+                 <% if event.image? %>
                     <%= image_tag event.image.thumb.url, :class => "mypage_event_img" %>
-                <% else %>
+                 <% else %>
                     <%= image_tag 'noimage.gif', :class => "mypage_event_img" %>
-                <% end %>
-              <div class="me-event-title"><%= link_to event.title, show_event_path(event) %></div>
+                 <% end %>
+               </div>
+          <div class="me-event">
+             <div class="me-event-title"><%= link_to event.title, show_event_path(event) %></div>
                 <div class="me-event-time">
                   <% if event.time || event.end_time.present? %>
                      <%= I18n.l event.date, format: :full_date if event.date.present? %>,&nbsp;<%= event.time.strftime("%H:%M") %>&nbsp;~&nbsp;
@@ -67,7 +69,7 @@
                 <%= link_to "unbooking", event_bookings_path(event, user_id: current_user.id), method: :delete, data: { confirm: 'Are you really unbooking the event registration？',
                 cancel: "Cancel",
                 commit: "Unbooking"}, title: "Confirmation", class: "btn btn-unbooking" %>
-            </div>
+          </div>
            <hr>
           <% end %>
           <%= "No booking event" if !current_user.booking_events.present? %>

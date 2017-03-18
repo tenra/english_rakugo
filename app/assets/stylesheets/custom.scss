@@ -177,7 +177,7 @@ footer ul li {
  
 /* forms */
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+  /* border: 1px solid #bbb; */
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -300,6 +300,9 @@ margin-left: 20px;
 
 .alert {
   padding-left: 30px;
+}
+.toggle.btn.btn-primary {
+    border-radius: 20px;
 }
 
 @media screen and (max-width: 640px) {
