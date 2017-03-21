@@ -103,11 +103,19 @@
 }
 
 .venue {
-  float:right;
+  float: right;
   padding: 20px 300px 20px 0px;
   font-size: 1.5em;
   color: #535353;
   font-weight: normal;
+}
+
+.capacity {
+  float: right;
+  font-size: 1.5em;
+  color: #535353;
+  padding: 5px 300px 20px 0px;
+  clear: both;
 }
 
 .attend {

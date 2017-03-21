@@ -42,7 +42,8 @@
              <% end %>
           </div>
             
-            <div class="venue glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= @event.address %></div>
+            <div class="venue"><%= t '.Venue' %>:<%= @event.address %></div>
+            <div class="capacity"><%= t '.Capacity'%>:<%= @event.capacity %><%= t '.People' %></div>
             
             <div><%= render 'events/attend_form' %></div>
             

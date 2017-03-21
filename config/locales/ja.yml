@@ -27,6 +27,8 @@ ja:
     show:
       participants: "人の参加者"
       Venue: "会場"
+      Capacity: "定員"
+      People: "人"
       Timetable: "タイムテーブル"
       Time: "時間"
       Description: "内容"
@@ -38,7 +40,8 @@ ja:
       Venue: "会場"
       Admission_free: "入場無料"
       at_the_door: "会場払い"
-      people: "人"
+      Capacity: "定員"
+      People: "人"
       Charges_will_include_a_service_charge_and_consumption_tax: "料金はサービス料と消費税を含んでいます。"
   people: "%{num}人"
   date:
