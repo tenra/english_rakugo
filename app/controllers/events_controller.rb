@@ -38,6 +38,7 @@ class EventsController < ApplicationController
     if params[:back]
       render :new
     elsif @event.save
+    #binding.pry
        flash[:success] = "Create Event!"
        redirect_to show_event_path(@event)
     else
@@ -58,7 +59,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.assign_attributes(event_params)
     render :edit if @event.invalid?
-    #binding.pry
   end
   
   def update

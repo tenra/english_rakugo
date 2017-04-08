@@ -61,10 +61,16 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
    
    def filename
-     time = Time.now
-     name = time.strftime('%Y%m%d%H%M%S') + '.jpg'
-     name.downcase
+       "#{secure_token}.#{file.extension}" if original_filename.present?
+     #time = Time.now
+     #name = time.strftime('%Y%m%d%H%M%S') + '.jpg'
+     #name.downcase
      #"image_#{model.id}.#{file.extension}" if original_filename
    end
-
+   
+   protected
+    def secure_token
+        var = :"@#{mounted_as}_secure_token"
+        model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
+    end
 end
