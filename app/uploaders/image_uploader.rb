@@ -14,7 +14,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
   
   def public_id
-    model.id
+    return model.short_name
   end
   
   # storage :fog
