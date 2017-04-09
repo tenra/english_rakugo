@@ -25,7 +25,7 @@
              <th></th>
           </tr>
 
-        <% @users.each do |user| %>
+        <% @users.order('id').each do |user| %>
           <tr>
              <td><%= user.id %></td>
              <td><%= link_to user.name, show_user_path(user) %></td>
