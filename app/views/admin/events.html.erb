@@ -26,7 +26,7 @@
              <th></th>
           </tr>
 
-        <% @events.each do |event| %>
+        <% @events.order('id').each do |event| %>
           <tr>
              <td><%= event.id %></td>
              <td><%= link_to event.title, show_event_path(event) %></td>

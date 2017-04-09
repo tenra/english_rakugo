@@ -1,5 +1,5 @@
 
-  <% @events.each do |event| %>
+  <% @events.order('id').each do |event| %>
 
 <div class="row">
   <div class="wrap clearfix hvr-glow" data-url="<%= show_event_path(event) %>">
