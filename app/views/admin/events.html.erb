@@ -19,6 +19,7 @@
           <tr>
              <th>id</th>
              <th>title</th>
+             <th>created_at</th>
              <th>Participants</th>
              <th>Price</th>
              <th></th>
@@ -29,6 +30,7 @@
           <tr>
              <td><%= event.id %></td>
              <td><%= link_to event.title, show_event_path(event) %></td>
+             <td><%= event.created_at.strftime("%Y,%m/%d-%H:%M") %></td>
              <td><%= link_to ( "#{event.booking_users.count} / #{event.capacity}"), admin_participants_path(event) %></td>
              <td><% if event.price.blank? || event.price == 0 %>free
                  <% else %><%= number_to_currency(event.price, :precision => 0, :local => 'jp') %>
