@@ -24,19 +24,12 @@
             </div>
             <label class="remove-image">
               <% if @profile.avatar.present? %>
-                <%= f.check_box :remove_avatar %>
-                Remove Image 
-              <% end %>
+                <%= f.check_box :remove_avatar %>&nbsp;Remove Image 
             </label>
-            <div class="toggle-me-edit"><%= f.check_box :private, { :'data-height' => '40px' } %>&nbsp;Choose your Profile-Image status</div>
-            <script>
-              $(function() {
-                $('#profile_private').bootstrapToggle({
-                  on: 'Public',
-                  off: 'Private'
-                });
-              })
-            </script>
+            <div class="toggle-me-edit">
+                <%= f.check_box :private, { :'data-height' => '40px' } %>&nbsp;Choose your Profile-Image status
+              <% end %>
+            </div>
                         
             <div class="text-center"><%= f.submit 'Update', class: "btn btn-compbooking" %></div>
         <% end %>

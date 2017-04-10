@@ -22,14 +22,6 @@
 
             </div>            
             <%= f.check_box :private %>
-            <script>
-              $(function() {
-                $('#profile_private').bootstrapToggle({
-                  on: 'Public',
-                  off: 'Private'
-                });
-              })
-            </script>
                         
             <div class="text-center"><%= f.submit 'Create', class: "btn btn-compbooking" %></div>
         <% end %>
