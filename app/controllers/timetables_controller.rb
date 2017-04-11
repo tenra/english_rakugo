@@ -1,4 +1,6 @@
 class TimetablesController < ApplicationController
+   before_action :admin_check
+  
   def index
     @timetable = Timetable.new(event_id: params[:event_id]) 
     @timetables = Timetable.where(event_id: params[:event_id])

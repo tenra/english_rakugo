@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-    before_action :sign_in_required, only: [:edit, :update, :destroy]
-    before_action :admin_check, only: [:new, :create, :edit, :update, :destroy]
+    before_action :sign_in_required, only: [:new, :confirm, :create, :edit, :confirm2, :update, :destroy]
+    before_action :admin_check, only: [:new, :confirm, :create, :edit, :confirm2, :update, :destroy]
   
   def show
     @events = Event.where(id: Event.find(params[:event_id]))

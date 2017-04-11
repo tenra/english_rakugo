@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-    #before_action :authenticate_user!
+   before_action :sign_in_required
+   before_action :admin_check, only: [:show, :destroy]
+   #before_action :authenticate_user!
   
   def me
       @users = User.all

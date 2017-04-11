@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :sign_in_required
   before_action :already_build, only: [:new]
 
   def new
