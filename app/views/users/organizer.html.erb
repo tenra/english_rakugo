@@ -1,1 +1,11 @@
-organizer
+<%  @page_title = "Organizer" %>
+
+<div class="inquiry-header"><%= @page_title %></div>
+
+<% current_user.events.each_with_index do |event| %>
+          
+          <div class="me-event-title"><%= link_to event.title, "" %></div>
+<% end %>
+
+
+<div align="right"><%= link_to "Event Create", new_event_path, class: "btn btn-eventcreate" %></div>

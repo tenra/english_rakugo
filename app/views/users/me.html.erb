@@ -24,7 +24,7 @@
             <th><%= t '.Email_address' %></th>
             <td><%= current_user.email %></td>
           </tr>
-       <% if current_user.profile.avatar.present? %>
+       <% if current_user.profile.present? %>
           <tr>
             <th><%= t '.Profile-Image_status' %></th>
             <td>
