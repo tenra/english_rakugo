@@ -13,6 +13,18 @@ Rails.application.routes.draw do
       
       get 'events/:event_id/show', to: 'events#show', as: 'show_event'
       
+      scope :organizer do
+        resources :events, except: [:show, :index] do
+          member do
+           post 'confirm', to: 'events#confirm'
+           post 'confirm2', to: 'events#confirm2'
+          end
+        end
+        resources :timetables
+      end
+      
+      get "organizer" => "users#organizer", as: "organizer"
+      
       scope :admin do
         resources :events, except: [:show, :index] do
           member do

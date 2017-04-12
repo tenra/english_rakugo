@@ -33,6 +33,11 @@
                               <ul class="dropdown-menu">
                                 <li><%= link_to "My page", users_me_path %></li>
                                 <li>
+                                    <% if current_user.organizer %>
+                                      <%= link_to "Organizer Page", organizer_path %>
+                                    <% end %>
+                                </li>
+                                <li>
                                     <% if current_user.admin %>
                                       <%= link_to "Admin Page", admin_events_path %>
                                     <% end %>
