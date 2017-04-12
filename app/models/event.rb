@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+    
+    belongs_to :user
     has_many :bookings, foreign_key: "event_id", dependent: :destroy
     has_many :booking_users, through: :bookings, source: :user
     

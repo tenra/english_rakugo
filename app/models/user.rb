@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
          
   validates :name, presence: true, length: { maximum: 50 }
   #validate :agreement_valid?
+  
+  has_many :events, foreign_key: "user_id", dependent: :destroy
 
   has_many :bookings, foreign_key: "user_id", dependent: :destroy
   has_many :booking_events, through: :bookings, source: :event
