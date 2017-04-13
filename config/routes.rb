@@ -26,6 +26,8 @@ Rails.application.routes.draw do
       get "organizer/events" => "users#organizer", as: "organizer"
       get "organizer/blogs" => "users#blogs", as: "blogs"
       
+      resources :introductions, only: [:new, :create, :edit, :update]
+      
       scope :admin do
         resources :events, except: [:show, :index] do
           member do
@@ -53,7 +55,7 @@ Rails.application.routes.draw do
         end
       end
       
-      resources :profiles
+      resources :profiles, only: [:new, :create, :edit, :update]
       
       get "spots/test"
   end

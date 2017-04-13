@@ -33,7 +33,6 @@ class TimetablesController < ApplicationController
       render 'edit'
     end
   end
-  
   def destroy
     @timetable = Timetable.find(params[:id])
     @timetable.destroy
