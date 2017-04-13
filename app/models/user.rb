@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :booking_events, through: :bookings, source: :event
   
   has_one :profile, dependent: :destroy
+  has_one :introduction, dependent: :destroy
 
   def booking(event)
     bookings.find_or_create_by(event_id: event.id)
