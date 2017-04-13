@@ -19,7 +19,7 @@ class IntroductionsController < ApplicationController
     end
     
     private
-    def profile_params
+    def introduction_params
         params.require(:introduction).permit(:photo, :photo_cache, :name, :sentence)
     end
     
