@@ -1,6 +1,6 @@
 .organizer-side {
   display: inline-block;
-  padding: 30px;
+  padding: 20px 30px 30px 20px;
   margin: 10px 0px 10px 10px;
   background-color: #FFFFFF;
   height: 100%;
@@ -33,4 +33,13 @@
 
 .glyphicon-list-alt:before {
     margin: 2px;
+}
+
+.organizer_photo {
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: 150px;
+    background-position: center center;
+    margin: 10px;
 }

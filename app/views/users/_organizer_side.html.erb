@@ -1,3 +1,12 @@
 <div class="organizer-side">
-    test
+         <div class="my_profiles"><%= t '.Organizer_Profile' %></div>
+      <table class="table">
+            <div class="text-center">
+              <% if !current_user.introduction.nil? && current_user.introduction.photo? %>
+                <%= image_tag(current_user.introduction.photo.thumb.url, :class => "organizer_photo") %>
+              <% else %>
+                <%= image_tag 'no-avatar.png', width: 200, :class => "organizer_photo"%>
+              <% end %>
+            </div>
+      </table>
 </div>
