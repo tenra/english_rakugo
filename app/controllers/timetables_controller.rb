@@ -1,5 +1,6 @@
 class TimetablesController < ApplicationController
-   before_action :admin_check
+   #before_action :admin_check
+   before_action :organizer_check
   
   def index
     @timetable = Timetable.new(event_id: params[:event_id]) 
