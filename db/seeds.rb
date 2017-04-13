@@ -10,7 +10,7 @@ User.create!(:name => 'tenra', :email => 'tenra@tenra.com', :password => 'fogefo
 print '.'
 User.create!(name: 'mentor_admin', email: 'mentor@admin.com', password: 'password', admin: true, :agreement => true)
 print '.'
-User.create!(name: 'mentor_user', email: 'mentor@user.com', password: 'password', admin: false, :orgaizer => true, :agreement => true)
+User.create!(name: 'test_user', email: 'test@user.com', password: 'password', admin: false, :orgaizer => true, :agreement => true)
 puts '.Admin'
 
 10.times do

@@ -2,10 +2,32 @@
 
 <div class="inquiry-header"><%= @page_title %></div>
 
-<% current_user.events.each_with_index do |event| %>
-          
-          <div class="me-event-title"><%= link_to event.title, "" %></div>
-<% end %>
-
-
-<div align="right"><%= link_to "Event Create", new_event_path, class: "btn btn-eventcreate" %></div>
+<div class="row">
+  <div class='col-sm-offset-1 col-sm-10'>
+    <div class="event-back">
+        
+        <div align="right"><%= link_to "Event Create", new_event_path, class: "btn btn-eventcreate" %></div>
+  
+  <% if current_user.events.present? %>
+  
+     <table class="table">
+          <tr>
+             <th>title</th>
+             <th>created_at</th>
+          </tr>
+              
+        <% current_user.events.each_with_index do |event| %>
+          <tr>
+             <td><%= link_to event.title, "" %></td>
+             <td><%= event.created_at.strftime("%Y, %m/%d - %H:%M") %></td>
+          </tr>
+        <% end %>
+     </table>
+  <% else %>
+        <p>no event</p>
+  <% end %>
+    
+    
+    </div> <!-- event-back -->
+  </div>
+</div>
