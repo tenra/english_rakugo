@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
    before_action :sign_in_required
    #before_action :admin_check, only: [:show, :destroy]
-   before_action :organizer_check, only: [:show, :destroy]
+   before_action :organizer_check, only: [:show, :organizer, :blogs, :destroy]
    #before_action :authenticate_user!
   
   def me
@@ -15,6 +15,9 @@ class UsersController < ApplicationController
   end
   
   def organizer
+  end
+  
+  def blogs
   end
   
   def destroy

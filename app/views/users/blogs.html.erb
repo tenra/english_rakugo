@@ -1,0 +1,14 @@
+<%  @page_title = "Blogs" %>
+
+<div class="inquiry-header"><%= @page_title %></div>
+
+<%= render 'organizer_side' %>
+
+<div class="organizer-back">
+    
+        <ul class="nav nav-tabs">
+          <li role="presentation"><%= link_to 'Events', organizer_path, class: "glyphicon glyphicon-flag" %></li>
+          <li role="presentation" class="active"><%= link_to 'Blogs', blogs_path, class: "glyphicon glyphicon-list-alt" %></li>
+        </ul>
+    blogs
+</div> <!-- event-back -->

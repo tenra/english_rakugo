@@ -2,11 +2,14 @@
 
 <div class="inquiry-header"><%= @page_title %></div>
 
-<div class="organizer-side">
-    test
-</div>
+<%= render 'organizer_side' %>
 
 <div class="organizer-back">
+    
+        <ul class="nav nav-tabs">
+          <li role="presentation" class="active"><%= link_to 'Events', organizer_path, class: "glyphicon glyphicon-flag" %></li>
+          <li role="presentation"><%= link_to 'Blogs', blogs_path, class: "glyphicon glyphicon-list-alt" %></li>
+        </ul>
         
         <div align="right"><%= link_to "Event Create", new_event_path, class: "btn btn-eventcreate" %></div>
   

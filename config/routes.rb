@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       end
       
       get "organizer" => "users#organizer", as: "organizer"
+      get "blogs" => "users#blogs", as: "blogs"
       
       scope :admin do
         resources :events, except: [:show, :index] do
