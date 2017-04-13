@@ -13,12 +13,16 @@
      <table class="table">
           <tr>
              <th>title</th>
+             <th></th>
+             <th></th>
              <th>created_at</th>
           </tr>
               
         <% current_user.events.each_with_index do |event| %>
           <tr>
              <td><%= link_to event.title, "" %></td>
+             <td><%= link_to 'Timetables', timetables_path(event_id: event.id) %></td>
+             <td><%= link_to "Edit", edit_event_path(event) %></td>
              <td><%= event.created_at.strftime("%Y, %m/%d - %H:%M") %></td>
           </tr>
         <% end %>

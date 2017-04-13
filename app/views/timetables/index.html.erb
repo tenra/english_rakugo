@@ -1,6 +1,6 @@
-<% @page_title = 'timetable' %>
+<% @page_title = 'Timetable' %>
 
-<h1><span style="color:#fff;">Create your Timetable</span></h1>
+<div class="inquiry-header">Create Timetables</div>
 
 <div class='row'>
   <div class='col-sm-offset-2 col-sm-8'>
@@ -28,11 +28,7 @@
             </table>
         
          <%= link_to "Show Event", show_event_path(@event) %><br />
-         <%= link_to "All Events", admin_events_path %><br />
-         <%= link_to "Back", :back %>
-      <br />
-      <br />
-      <br />
+         <%= link_to "Organizer Page", organizer_path %>
       
     </div>
   </div>
