@@ -11,7 +11,7 @@ class IntroductionsController < ApplicationController
         @introduction = Introduction.new(introduction_params)
         @introduction.user = current_user
         if @introduction.save
-            flash[:success] = "Created Organizer Image!"
+            flash[:success] = "Created Organizer Status!"
             redirect_to organizer_url
         else
             render 'new'
@@ -26,7 +26,7 @@ class IntroductionsController < ApplicationController
     def update
         @introduction = Introduction.find(params[:id])
         if @introduction.update(introduction_params)
-            flash[:notice] = 'Update Organizer Image!'
+            flash[:notice] = 'Updated Organizer Status!'
             redirect_to organizer_url
         else
             render 'edit'

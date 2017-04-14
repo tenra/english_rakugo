@@ -8,6 +8,15 @@
                 <%= image_tag 'no-avatar.png', width: 200, :class => "organizer_photo"%>
               <% end %>
             </div>
-            <%= link_to "edit", new_introduction_path %>
+            <div><%= link_to "edit", new_introduction_path %></div>
+            <tr>
+            　<th>Name</th>
+            　<td><%= current_user.introduction.name %></td>
+          　</tr>
+          　<tr>
+            　<th>Introduction</th>
+            　<td><%= current_user.introduction.sentence %></td>
+        　　  </tr>
+            
       </table>
 </div>

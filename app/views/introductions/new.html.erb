@@ -9,18 +9,19 @@
         <%= form_for(@introduction) do |f| %>
             <%#= f.label :Image %>
             <div align="center">
-              <% if @introduction.photo? %>
+               <% if @introduction.photo? %>
                  <%= image_tag @introduction.photo.thumb.url, class: "profile-present-avatar img-responsive" %>
-              <% else %>
+               <% else %>
                  <%= image_tag 'no-avatar.png', width: 200, :class => "profile-present-avatar img-responsive" %>
-              <% end %>
-            
+               <% end %>
               <%= f.hidden_field :photo_cache %>
-                        
               <img id="img_prev" width=200 height=200 src="#" class="img-thumbnail hidden"/>
                   <%= f.file_field :photo, :id => 'post_post_img' %>
-
-            </div>            
+            </div>
+            <div class="form-group">
+               <%= f.label :name %><br />
+               <%= f.text_field :name, class: "form-control", placeholder: "OrganizerName" %>
+            </div>
                         
             <div class="text-center"><%= f.submit 'Create', class: "btn btn-compbooking" %></div>
         <% end %>
