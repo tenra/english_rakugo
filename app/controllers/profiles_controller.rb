@@ -16,7 +16,6 @@ class ProfilesController < ApplicationController
       render 'new'
     end
   end
-  
   def edit
     @profile = Profile.find(params[:id])
     #binding.pry

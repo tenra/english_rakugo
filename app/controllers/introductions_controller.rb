@@ -11,10 +11,25 @@ class IntroductionsController < ApplicationController
         @introduction = Introduction.new(introduction_params)
         @introduction.user = current_user
         if @introduction.save
-            flash[:success] = "Created your Introduction Photo!"
+            flash[:success] = "Created Organizer Image!"
             redirect_to organizer_url
         else
             render 'new'
+        end
+    end
+    
+    def edit
+        @introduction = Introduction.find(params[:id])
+        @introduction.photo.cache! if @introduction.photo.present? && Rails.env.development?
+    end
+    
+    def update
+        @introduction = Introduction.find(params[:id])
+        if @introduction.update(introduction_params)
+            flash[:notice] = 'Update Organizer Image!'
+            redirect_to organizer_url
+        else
+            render 'edit'
         end
     end
     
@@ -25,5 +40,5 @@ class IntroductionsController < ApplicationController
     
     def already_build
         redirect_to edit_introduction_path(current_user.introduction) if current_user.introduction
-    end        
+    end
 end
