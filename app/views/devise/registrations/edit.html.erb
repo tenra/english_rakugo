@@ -6,19 +6,42 @@
     	</div>
 
     	<div class="panel-body">
-    	  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    	  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:method => :put, :multipart => true}) do |f| %>
           <% if @user.errors.present? %>
             <div class="alert alert-danger"><%= devise_error_messages! %></div>
           <% end %>
+          
+            <div align="center">
+              <% if @user.avatar? %>
+                 <%= image_tag @user.avatar.thumb.url, class: "profile-present-avatar img-responsive" %>
+              <% else %>
+                 <%= image_tag 'no-avatar.png', width: 200, :class => "profile-present-avatar img-responsive" %>
+              <% end %>
+            
+              <%= f.hidden_field :avatar_cache %>
+              <%= f.hidden_field :avatar %>
+                        
+              <img id="img_prev" width=200 height=200 src="#" class="img-thumbnail hidden"/>
+                  <%= f.file_field :avatar, :id => 'post_post_img' %>
+
+            </div>
+            <label class="remove-image">
+              <% if @user.avatar.present? %>
+                <%= f.check_box :remove_avatar %>&nbsp;Remove Image 
+            </label>
+            <div class="toggle-me-edit">
+                <%= f.check_box :private, { :'data-height' => '40px' } %>&nbsp;Choose your Profile-Image status
+              <% end %>
+            </div>
     
           <div class="field">
             <%= f.label :name %><br />
-            <%= f.text_field :name, autofocus: true %>
+            <%= f.text_field :name, autofocus: false %>
           </div>
       
           <div class="field">
             <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true %>
+            <%= f.email_field :email, autofocus: false %>
           </div>
     
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

@@ -38,8 +38,12 @@ class ApplicationController < ActionController::Base
         
   protected
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :admin, :agreement])
-        devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password,
+          :password_confirmation, :admin, :agreement, :organizer, :avatar, :avatar_cache,
+          :photo, :photo_cache])
+        devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email, :password,
+          :password_confirmation, :current_password, :admin, :organizer, :avatar, :avatar_cache, :remove_avatar,
+          :photo, :photo_cache, :remove_photo])
     end
   
   private
@@ -48,6 +52,10 @@ class ApplicationController < ActionController::Base
         redirect_to new_user_registration_url
         flash[:alert] = "you need to sign up before you booking"
        end
+    end
+    
+    def avatar_size_validation
+    errors[:avatar] << "should be less than 500KB" if avatar.size > 0.5.megabytes
     end
         
 end

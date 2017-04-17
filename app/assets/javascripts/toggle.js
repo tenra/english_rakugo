@@ -1,5 +1,5 @@
   $(function() {
-    $('#profile_private').bootstrapToggle({
+    $('#user_private').bootstrapToggle({
       on: 'Public',
       off: 'Private'
     });

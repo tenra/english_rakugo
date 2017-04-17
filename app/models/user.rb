@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   
   has_one :profile, dependent: :destroy
   has_one :introduction, dependent: :destroy
+  
+  mount_uploader :avatar, AvatarUploader
+  mount_uploader :photo, PhotoUploader
 
   def booking(event)
     bookings.find_or_create_by(event_id: event.id)

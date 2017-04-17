@@ -7,8 +7,8 @@
     <div class='col-sm-offset-3 col-sm-6'>
    　  <table class="table">
           <div class="text-center">
-            <% if !@user.profile.nil? && @user.profile.avatar? %>
-              <%= image_tag(@user.profile.avatar.thumb.url, :class => "img-circle") %>
+            <% if @user.avatar? %>
+              <%= image_tag(@user.avatar.thumb.url, :class => "img-circle") %>
             <% else %>
               <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle"%>
             <% end %>
@@ -25,7 +25,8 @@
         <tr>
           <th>Profile-Image status</th>
           <td>
-            <% if @user.profile.present? && @user.profile.private %>
+            <% if @user.private %>
+            <%# if @user.profile.present? && @user.profile.private %>
               Public
             <% else %>
               Private

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170415051333) do
+ActiveRecord::Schema.define(version: 20170417030024) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
@@ -111,6 +111,11 @@ ActiveRecord::Schema.define(version: 20170415051333) do
     t.boolean  "agreement",              default: false
     t.string   "payjp_customer_id"
     t.boolean  "organizer",              default: false
+    t.binary   "avatar"
+    t.boolean  "private",                default: false, null: false
+    t.string   "organizername"
+    t.text     "sentence"
+    t.binary   "photo"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
