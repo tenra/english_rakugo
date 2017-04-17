@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       
       get "organizer/events" => "users#organizer", as: "organizer"
       get "organizer/blogs" => "users#blogs", as: "blogs"
+      get "organizer/booking_events" => "users#booking_events", as: "booking_events"
       
       resources :introductions, only: [:new, :create, :edit, :update]
       

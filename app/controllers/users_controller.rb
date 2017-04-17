@@ -20,6 +20,9 @@ class UsersController < ApplicationController
   def blogs
   end
   
+  def booking_events
+  end
+  
   def destroy
     @user = User.find(params[:id])
     @user.destroy
