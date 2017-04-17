@@ -1,81 +1,83 @@
-<%  @page_title = "My page" %>
+<% if current_user.organizer? %>
+    <% @page_title = "Organizer page" %>
+<% else %>
+    <%  @page_title = "My page" %>
+<% end %>
 
 <div class="inquiry-header"><%= @page_title %></div>
 
 <div class="card card-mypage-container">
-  <aside class="me-aside">
-    <div class="my_profiles"><%= t '.My_profiles' %></div>
-      <table class="table">
-            <div class="text-center">
-              <% if current_user.avatar? %>
-                <%= image_tag(current_user.avatar.thumb.url, :class => "mypage_img") %>
-              <% else %>
-                <%= image_tag 'no-avatar.png', width: 200, :class => "mypage_img"%>
-              <% end %>
-            </div>
-        <div align="right"><%= link_to 'Edit Profile-Image', new_profile_path %></div>
-        <div align="right"><%= link_to 'Edit User', edit_user_registration_path %></div>
-        
-          <tr>
-            <th><%= t '.User_name' %></th>
-            <td><%= current_user.name %></td>
-          </tr>
-          <tr>
-            <th><%= t '.Email_address' %></th>
-            <td><%= current_user.email %></td>
-          </tr>
-       <% if current_user.avatar.present? %>
-          <tr>
-            <th><%= t '.Profile-Image_status' %></th>
-            <td>
-              <% if current_user.private %>
-              <%# if current_user.profile.present? && current_user.profile.private %>
-                <%= t '.Public' %>
-              <% else %>
-                <%= t '.Private' %>
-              <% end %>
-            </td>
-          </tr>
-       <% end %>
-          <tr><th><td></td></th></tr>
-      </table>
-  </aside>
+
+<%= render 'me_side' %>
       
   <div class="me-right">
-      <div class="my_events"><%= t '.My_Booking_Events' %></div>
-        <hr>
-          <% current_user.booking_events.each_with_index do |event, i| %>
-               <div class="my-event-pic">
-                 <% if event.image? %>
-                    <%= image_tag event.image.thumb.url, :class => "mypage_event_img" %>
-                 <% else %>
-                    <%= image_tag 'noimage.gif', :class => "mypage_event_img" %>
-                 <% end %>
-               </div>
-          <div class="me-event">
-             <div class="me-event-title"><%= link_to event.title, show_event_path(event) %></div>
-                <div class="me-event-time">
-                  <% if event.time || event.end_time.present? %>
-                     <%= I18n.l event.date, format: :full_date if event.date.present? %>,&nbsp;<%= event.time.strftime("%H:%M") %>&nbsp;~&nbsp;
-                       <% if (event.date.present? && event.end_date.present?) && (event.date != event.end_date) %>
-                         <%= I18n.l event.end_date, format: :full_date %>,
-                       <% end %>
-                      <%= event.end_time.strftime("%H:%M") if event.end_time.present? %>
-                  <% end %>
-                </div>
-              <div class="me-other">
-                <span style="font-weight:bold"><%= t '.Booking_people' %></span>
-                :&nbsp;<%= current_user.bookings[i].people if current_user.bookings[i].people.present? %><br />
-                <span style="font-weight:bold"><%= t '.Confirmatin_number' %></span>
-                :&nbsp;<%= current_user.bookings[i].number if current_user.bookings[i].number.present? %><br />
-              </div>
-                <%= link_to "unbooking", event_bookings_path(event, user_id: current_user.id), method: :delete, data: { confirm: 'Are you really unbooking the event registration？',
-                cancel: "Cancel",
-                commit: "Unbooking"}, title: "Confirmation", class: "btn btn-unbooking" %>
-          </div>
-           <hr>
+     <% if current_user.organizer? %>
+                <ul class="nav nav-tabs">
+                  <li role="presentation" class="active"><%= link_to 'Events', organizer_path, class: "glyphicon glyphicon-flag" %></li>
+                  <li role="presentation"><%= link_to 'Blogs', blogs_path, class: "glyphicon glyphicon-list-alt" %></li>
+                  <li role="presentation"><%= link_to 'Blogs', blogs_path, class: "glyphicon glyphicon-list-alt" %></li>
+                </ul>
+                
+                <div align="right"><%= link_to "Event Create", new_event_path, class: "btn btn-eventcreate" %></div>
+          
+          <% if current_user.events.present? %>
+          
+             <table class="table">
+                  <tr>
+                     <th>title</th>
+                     <th></th>
+                     <th></th>
+                     <th>created_at</th>
+                  </tr>
+                      
+                <% current_user.events.each_with_index do |event| %>
+                  <tr>
+                     <td><%= link_to event.title, "" %></td>
+                     <td><%= link_to 'Timetables', timetables_path(event_id: event.id) %></td>
+                     <td><%= link_to "Edit", edit_event_path(event) %></td>
+                     <td><%= event.created_at.strftime("%Y, %m/%d - %H:%M") %></td>
+                  </tr>
+                <% end %>
+             </table>
+          <% else %>
+                <p>no event</p>
           <% end %>
-          <%= "No booking event" if !current_user.booking_events.present? %>
-     <div class="all-events"><%= link_to "all events", root_path(anchor: 'all-events'), class: "all-events" %></div>
-  </div>
+     <% else %>
+        <div class="my_events"><%= t '.My_Booking_Events' %></div>
+          <hr>
+            <% current_user.booking_events.each_with_index do |event, i| %>
+                 <div class="my-event-pic">
+                   <% if event.image? %>
+                      <%= image_tag event.image.thumb.url, :class => "mypage_event_img" %>
+                   <% else %>
+                      <%= image_tag 'noimage.gif', :class => "mypage_event_img" %>
+                   <% end %>
+                 </div>
+            <div class="me-event">
+               <div class="me-event-title"><%= link_to event.title, show_event_path(event) %></div>
+                  <div class="me-event-time">
+                    <% if event.time || event.end_time.present? %>
+                       <%= I18n.l event.date, format: :full_date if event.date.present? %>,&nbsp;<%= event.time.strftime("%H:%M") %>&nbsp;~&nbsp;
+                         <% if (event.date.present? && event.end_date.present?) && (event.date != event.end_date) %>
+                           <%= I18n.l event.end_date, format: :full_date %>,
+                         <% end %>
+                        <%= event.end_time.strftime("%H:%M") if event.end_time.present? %>
+                    <% end %>
+                  </div>
+                <div class="me-other">
+                  <span style="font-weight:bold"><%= t '.Booking_people' %></span>
+                  :&nbsp;<%= current_user.bookings[i].people if current_user.bookings[i].people.present? %><br />
+                  <span style="font-weight:bold"><%= t '.Confirmatin_number' %></span>
+                  :&nbsp;<%= current_user.bookings[i].number if current_user.bookings[i].number.present? %><br />
+                </div>
+                  <%= link_to "unbooking", event_bookings_path(event, user_id: current_user.id), method: :delete, data: { confirm: 'Are you really unbooking the event registration？',
+                  cancel: "Cancel",
+                  commit: "Unbooking"}, title: "Confirmation", class: "btn btn-unbooking" %>
+            </div>
+             <hr>
+            <% end %>
+            <%= "No booking event" if !current_user.booking_events.present? %>
+       <div class="all-events"><%= link_to "all events", root_path(anchor: 'all-events'), class: "all-events" %></div>
+     <% end %>  
+  </div><!-- /me-right -->
 </div><!-- /card-container -->

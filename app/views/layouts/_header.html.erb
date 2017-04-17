@@ -24,8 +24,8 @@
                 <% if user_signed_in? %>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                      <% if !current_user.profile.nil? && current_user.profile.avatar? %>
-                                        <%= image_tag(current_user.profile.avatar.thumb.url, :class => "img-circle_h") %>
+                                      <% if current_user.avatar? %>
+                                        <%= image_tag(current_user.avatar.thumb.url, :class => "img-circle_h") %>
                                       <% else %>
                                         <%= image_tag 'no-avatar.png', width: 200, :class => "img-circle_h" %>
                                       <% end %> <%= current_user.name %>

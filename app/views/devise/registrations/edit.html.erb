@@ -29,11 +29,12 @@
               <% if @user.avatar.present? %>
                 <%= f.check_box :remove_avatar %>&nbsp;Remove Image 
             </label>
+            
             <div class="toggle-me-edit">
-                <%= f.check_box :private, { :'data-height' => '40px' } %>&nbsp;Choose your Profile-Image status
+                <%= f.check_box :private %>&nbsp;Choose your Profile-Image status
               <% end %>
             </div>
-    
+            
           <div class="field">
             <%= f.label :name %><br />
             <%= f.text_field :name, autofocus: false %>
