@@ -82,8 +82,8 @@
             　<% @event.booking_users.order('updated_at desc').limit(40).each do |user| %>
                 <div>
                   <span>
-                    <% if user.profile && user.profile.avatar.present? && user.profile.private %>
-                      <%= image_tag user.profile.avatar , :alt => user.name , :class => "img-circle_h"%>
+                    <% if user.avatar.present? && user.private %>
+                      <%= image_tag user.avatar , :alt => user.name , :class => "img-circle_h"%>
                     <% end %>
                   </span>
                  <p class="arrow_box"><%= user.name %></p>
