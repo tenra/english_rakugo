@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   
   def me
       @users = User.all
-
   end
   
   def show
