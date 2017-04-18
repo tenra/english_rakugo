@@ -13,9 +13,6 @@ class User < ActiveRecord::Base
   has_many :bookings, foreign_key: "user_id", dependent: :destroy
   has_many :booking_events, through: :bookings, source: :event
   
-  has_one :profile, dependent: :destroy
-  has_one :introduction, dependent: :destroy
-  
   mount_uploader :avatar, AvatarUploader
   mount_uploader :photo, PhotoUploader
 

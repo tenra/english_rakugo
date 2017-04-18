@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   
   def me
       @users = User.all
-      @profiles = Profile.all
+
   end
   
   def show
