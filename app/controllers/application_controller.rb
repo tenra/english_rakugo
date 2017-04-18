@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
           :photo, :photo_cache])
         devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email, :password,
           :password_confirmation, :current_password, :admin, :organizer, :avatar, :avatar_cache, :remove_avatar,
-          :photo, :photo_cache, :remove_photo])
+          :organizername, :sentence, :photo, :photo_cache, :remove_photo])
     end
   
   private
