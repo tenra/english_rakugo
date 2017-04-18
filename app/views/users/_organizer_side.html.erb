@@ -1,0 +1,23 @@
+  <aside class="me-aside">
+    <div class="my_profiles"><%= t '.My_profiles' %></div>
+      <table class="table">
+            <div class="text-center">
+              <% if current_user.photo? %>
+                <%= image_tag(current_user.photo.thumb.url, :class => "organizer_photo img-responsive") %>
+              <% else %>
+                <%= image_tag 'no-avatar.png', width: 200, :class => "organizer_photo img-responsive"%>
+              <% end %>
+            </div>
+        <div align="right"><%= link_to 'Edit', edit_user_registration_path %></div>
+        
+          <tr>
+            <th><%= t '.Organizer' %></th>
+            <td><%= current_user.organizername %></td>
+          </tr>
+          <tr>
+            <th><%= t '.Sentence' %></th>
+            <td><%= current_user.sentence %></td>
+          </tr>
+          <tr><th><td></td></th></tr>
+      </table>
+  </aside>

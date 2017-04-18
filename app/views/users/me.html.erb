@@ -6,46 +6,61 @@
 
 <div class="inquiry-header"><%= @page_title %></div>
 
-<div class="card card-mypage-container">
+<% if current_user.organizer? %>
 
-<%= render 'me_side' %>
-      
-  <div class="me-right">
-     <% if current_user.organizer? %>
-                <ul class="nav nav-tabs">
-                  <li role="presentation" class="active"><%= link_to 'Events', organizer_path, class: "glyphicon glyphicon-flag" %></li>
-                  <li role="presentation"><%= link_to 'Blogs', blogs_path, class: "glyphicon glyphicon-list-alt" %></li>
-                  <li role="presentation"><%= link_to 'BookingEvents', booking_events_path, class: "glyphicon glyphicon-list-alt" %></li>
-                </ul>
-                
-                <div align="right"><%= link_to "Event Create", new_event_path, class: "btn btn-eventcreate" %></div>
-          
-          <% if current_user.events.present? %>
-          
-             <table class="table">
-                  <tr>
-                     <th>title</th>
-                     <th></th>
-                     <th></th>
-                     <th>created_at</th>
-                  </tr>
-                      
-                <% current_user.events.each_with_index do |event| %>
-                  <tr>
-                     <td><%= link_to event.title, "" %></td>
-                     <td><%= link_to 'Timetables', timetables_path(event_id: event.id) %></td>
-                     <td><%= link_to "Edit", edit_event_path(event) %></td>
-                     <td><%= event.created_at.strftime("%Y, %m/%d - %H:%M") %></td>
-                  </tr>
-                <% end %>
-             </table>
-          <% else %>
-                <p>no event</p>
-          <% end %>
-     <% else %>
-     
-         <%= render 'my_events' %>
+        <div class="card card-mypage-container">
         
-     <% end %>  
-  </div><!-- /me-right -->
-</div><!-- /card-container -->
+        <%= render 'organizer_side' %>
+              
+          <div class="me-right">
+             <% if current_user.organizer? %>
+                        <ul class="nav nav-tabs">
+                          <li role="presentation" class="active"><%= link_to 'Events', organizer_path, class: "glyphicon glyphicon-flag" %></li>
+                          <li role="presentation"><%= link_to 'Blogs', blogs_path, class: "glyphicon glyphicon-list-alt" %></li>
+                          <li role="presentation"><%= link_to 'else', else_path, class: "glyphicon glyphicon-list-alt" %></li>
+                        </ul>
+                        
+                        <div align="right"><%= link_to "Event Create", new_event_path, class: "btn btn-eventcreate" %></div>
+                  
+                  <% if current_user.events.present? %>
+                  
+                     <table class="table">
+                          <tr>
+                             <th>title</th>
+                             <th></th>
+                             <th></th>
+                             <th>created_at</th>
+                          </tr>
+                              
+                        <% current_user.events.each_with_index do |event| %>
+                          <tr>
+                             <td><%= link_to event.title, "" %></td>
+                             <td><%= link_to 'Timetables', timetables_path(event_id: event.id) %></td>
+                             <td><%= link_to "Edit", edit_event_path(event) %></td>
+                             <td><%= event.created_at.strftime("%Y, %m/%d - %H:%M") %></td>
+                          </tr>
+                        <% end %>
+                     </table>
+                  <% else %>
+                        <p>no event</p>
+                  <% end %>
+             <% else %>
+             
+                 <%= render 'my_events' %>
+                
+             <% end %>  
+          </div><!-- /me-right -->
+        </div><!-- /card-container -->
+
+<% end %>
+        
+        <div class="card card-mypage-container">
+        
+             <%= render 'me_side' %>
+              
+          <div class="me-right">
+             
+             <%= render 'my_events' %>
+                
+          </div><!-- /me-right -->
+        </div><!-- /card-container -->

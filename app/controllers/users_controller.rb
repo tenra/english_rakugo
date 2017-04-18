@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def blogs
   end
   
-  def booking_events
+  def elses
   end
   
   def destroy

@@ -1,4 +1,4 @@
-    <%  @page_title = "BookingEvents" %>
+    <%  @page_title = "Else" %>
 
 <div class="inquiry-header"><%= @page_title %></div>
 
@@ -10,11 +10,13 @@
           <ul class="nav nav-tabs">
             <li role="presentation"><%= link_to 'Events', users_me_path, class: "glyphicon glyphicon-flag" %></li>
             <li role="presentation"><%= link_to 'Blogs', blogs_path, class: "glyphicon glyphicon-list-alt" %></li>
-            <li role="presentation" class="active"><%= link_to 'BookingEvents', booking_events_path, class: "glyphicon glyphicon-list-alt" %></li>
+            <li role="presentation" class="active"><%= link_to 'else', else_path, class: "glyphicon glyphicon-list-alt" %></li>
           </ul>
                 
           
-          <%= render 'my_events' %>
+          else</br>
+          
+          <%= link_to 'Organizer Top Page', users_me_path %>
           
   </div><!-- /me-right -->
 </div><!-- /card-container -->
