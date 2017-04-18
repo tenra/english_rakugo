@@ -4,19 +4,19 @@
          <div class="my_profiles"><%= t '.Organizer' %></div>
       <table class="table">
             <div class="text-center">
-              <% if !@event.introduction.nil? && @event.introduction.photo? %>
-                <%= image_tag(@event.introduction.photo.thumb.url, :class => "organizer_photo") %>
+              <% if @event.user.photo? %>
+                <%= image_tag(@event.user.photo.thumb.url, :class => "organizer_photo") %>
               <% else %>
                 <%= image_tag 'no-avatar.png', width: 200, :class => "organizer_photo"%>
               <% end %>
             </div>
             <tr>
             　<th>Name</th>
-            　<td><%= @event.introduction.name if !@event.introduction.nil? && @event.introduction.name? %></td>
+            　<td><%= @event.user.name %></td>
           　</tr>
           　<tr>
             　<th>Introduction</th>
-            　<td><%= @event.introduction.sentence if !@event.introduction.nil? && @event.introduction.sentence? %></td>
+            　<td><%= @event.user.sentence %></td>
         　　</tr>
       </table>
 </div>

@@ -1,5 +1,5 @@
   <aside class="me-aside">
-    <div class="my_profiles"><%= t '.My_profiles' %></div>
+    <div class="my_profiles"><%= t '.Organizer' %></div>
       <table class="table">
             <div class="text-center">
               <% if current_user.photo? %>
@@ -11,7 +11,7 @@
         <div align="right"><%= link_to 'Edit', edit_user_registration_path %></div>
         
           <tr>
-            <th><%= t '.Organizer' %></th>
+            <th><%= t '.Name' %></th>
             <td><%= current_user.organizername %></td>
           </tr>
           <tr>

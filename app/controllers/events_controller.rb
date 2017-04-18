@@ -36,7 +36,6 @@ class EventsController < ApplicationController
   
   def create
     @event = current_user.events.build(event_params)
-    @event.introduction = current_user.introduction
     if params[:back]
       render :new
     elsif @event.save
