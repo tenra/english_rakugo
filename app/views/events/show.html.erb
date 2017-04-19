@@ -7,7 +7,7 @@
               <% if @event.user.photo? %>
                 <%= image_tag(@event.user.photo.thumb.url, :class => "organizer_photo") %>
               <% else %>
-                <%= image_tag 'no-avatar.png', width: 200, :class => "organizer_photo"%>
+                <%= image_tag 'noimage.gif', width: 200, :class => "organizer_photo"%>
               <% end %>
             </div>
             <tr>

@@ -5,7 +5,7 @@
               <% if current_user.photo? %>
                 <%= image_tag(current_user.photo.thumb.url, :class => "organizer_photo img-responsive") %>
               <% else %>
-                <%= image_tag 'no-avatar.png', width: 200, :class => "organizer_photo img-responsive"%>
+                <%= image_tag 'noimage.gif', width: 200, :class => "organizer_photo img-responsive"%>
               <% end %>
             </div>
         <div align="right"><%= link_to 'Edit', edit_user_registration_path %></div>
