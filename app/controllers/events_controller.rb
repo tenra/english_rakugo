@@ -80,7 +80,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
     flash[:success] = 'Your event has been successfully cancelled.'
-    redirect_to admin_events_url
+    redirect_to users_me_path
   end
 
 private
