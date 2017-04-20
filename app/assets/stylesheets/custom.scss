@@ -104,7 +104,8 @@ li.dropdown > a > img.img-circle_h {
 
 /* footer */
 footer {
-  position: absolute;
+  clear: both;
+  /*position: absolute;*/
   width: 100%;
   bottom: 0;
   padding-top: 25px;

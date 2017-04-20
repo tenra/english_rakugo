@@ -1,62 +1,78 @@
-
-  <% @events.order('id').each do |event| %>
-
-<div class="row">
-  <div class="wrap clearfix hvr-glow" data-url="<%= show_event_path(event) %>">
-     <!--<div class="col-xs-12 col-md-7">-->
-     <div class="left-image">
-           <div id="all-events" class="trim">
-               <%#= event.image.inspect %>
-             <% if event.image.thumb.present? %>
-               <%= image_tag event.image.thumb.url , class: "img-responsive center-block" %>
-             <% end %>
-           </div>
-     </div>
-     <!--<div class="col-xs-12 col-md-5">-->
-     <div class="event-contents">
-            <h3><div class="text-center"><%= link_to event.title, show_event_path(event) %></div></h3>
-              <h4><div class="text-center"><span style="color:#535353">
-                <% if event.time || event.end_time.present? %>
-                   <%= I18n.l event.date, format: :full_date if event.date.present? %>,
-                   &nbsp;<%= event.time.strftime("%H:%M") %>
-                   &nbsp;~&nbsp;
-                     <% if (event.date.present? && event.end_date.present?) && (event.date != event.end_date) %>
-                        <%= I18n.l event.end_date, format: :full_date %>,
-                     <% end %>
-                    <%= event.end_time.strftime("%H:%M") if event.end_time.present? %>
-                <% end %>
-              </span></div></h4>
-              <div class="venue-top glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= event.address %></div>
-              <div class="price-top">
-                <% if event.price.blank? || event.price == 0 %>
-                 <%= t '.Admission_free' %>
-                <% else %>
-                 <%= number_to_currency(event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
-                <% end %>
-              </div>
-            <div class="event-text"><%= simple_format event.text %></div>
-     </div>
-     <div class="user_avatars">
-              　<% event.booking_users.order('updated_at desc').limit(10).each do |user| %>
-                    <% if user.avatar.present? && user.private %>
-                      <%= image_tag user.avatar , :alt => user.name , :class => "img-circle_h"%>
-                    <% end %>
-                      <p class="arrow_box"><%= user.name %></p>
-                <% end %>
-                    &nbsp;
-               <span class="badge"><%= event.booking_users.count %></span>&nbsp;<%= t '.participants' %>&nbsp;&nbsp;&nbsp;
-     </div>
-  </div>
+<div class="event-side">
+      <table class="table">
+            <div class="text-center">
+            　<th>Blogs</th>
+            　<td>
+               <% @blogs.each_with_index do |b| %>
+                  <%= b.title %>
+               <% end %>
+            　</td>
+        　　</tr>
+      </table>
 </div>
-  <hr>
-  <% end %>
-  
-  <div class="top-pagination">
-      <%#= link_to "test", spots_test_path %>
-  </div>
 
-  <script>
-      jQuery('.wrap').click(function() {
-          location.href = jQuery(this).attr('data-url');
-      });
-  </script>
+<div class="top-events-right">
+        
+      <% @events.order('id').each do |event| %>
+    
+    <div class="row">
+      <div class="wrap clearfix hvr-glow" data-url="<%= show_event_path(event) %>">
+         <!--<div class="col-xs-12 col-md-7">-->
+         <div class="left-image">
+               <div id="all-events" class="trim">
+                   <%#= event.image.inspect %>
+                 <% if event.image.thumb.present? %>
+                   <%= image_tag event.image.thumb.url , class: "img-responsive center-block" %>
+                 <% end %>
+               </div>
+         </div>
+         <!--<div class="col-xs-12 col-md-5">-->
+         <div class="event-contents">
+                <h3><div class="text-center"><%= link_to event.title, show_event_path(event) %></div></h3>
+                  <h4><div class="text-center"><span style="color:#535353">
+                    <% if event.time || event.end_time.present? %>
+                       <%= I18n.l event.date, format: :full_date if event.date.present? %>,
+                       &nbsp;<%= event.time.strftime("%H:%M") %>
+                       &nbsp;~&nbsp;
+                         <% if (event.date.present? && event.end_date.present?) && (event.date != event.end_date) %>
+                            <%= I18n.l event.end_date, format: :full_date %>,
+                         <% end %>
+                        <%= event.end_time.strftime("%H:%M") if event.end_time.present? %>
+                    <% end %>
+                  </span></div></h4>
+                  <div class="venue-top glyphicon glyphicon-flag"><%= t '.Venue' %>:<%= event.address %></div>
+                  <div class="price-top">
+                    <% if event.price.blank? || event.price == 0 %>
+                     <%= t '.Admission_free' %>
+                    <% else %>
+                     <%= number_to_currency(event.price, :precision => 0, :local => 'jp') %>&nbsp;<%= t '.at_the_door' %>
+                    <% end %>
+                  </div>
+                <div class="event-text"><%= simple_format event.text %></div>
+         </div>
+         <div class="user_avatars">
+                  　<% event.booking_users.order('updated_at desc').limit(10).each do |user| %>
+                        <% if user.avatar.present? && user.private %>
+                          <%= image_tag user.avatar , :alt => user.name , :class => "img-circle_h"%>
+                        <% end %>
+                          <p class="arrow_box"><%= user.name %></p>
+                    <% end %>
+                        &nbsp;
+                   <span class="badge"><%= event.booking_users.count %></span>&nbsp;<%= t '.participants' %>&nbsp;&nbsp;&nbsp;
+         </div>
+      </div>
+    </div>
+      <hr>
+      <% end %>
+      
+      <div class="top-pagination">
+          <%#= link_to "test", spots_test_path %>
+      </div>
+      
+</div><!-- /card-container -->
+    
+      <script>
+          jQuery('.wrap').click(function() {
+              location.href = jQuery(this).attr('data-url');
+          });
+      </script>

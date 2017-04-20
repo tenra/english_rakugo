@@ -3,6 +3,7 @@ class TopController < ApplicationController
   
   def home
     @events = Event.all
+    @blogs = Blog.all
     render :home, layout: "top_layout"
   end
   
