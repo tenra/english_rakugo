@@ -41,7 +41,7 @@ class EventsController < ApplicationController
       render :new
     elsif @event.save
     #binding.pry
-       flash[:success] = "Create Event!"
+       flash[:success] = "Created new Event!"
        redirect_to show_event_path(@event)
     else
       render 'new'
@@ -69,7 +69,7 @@ class EventsController < ApplicationController
     if params[:back]
       render :edit
     elsif @event.update(event_params)
-       flash[:success] = "update completed!"
+       flash[:success] = "Update completed!"
        redirect_to show_event_path(@event)
     else
       render 'edit'
