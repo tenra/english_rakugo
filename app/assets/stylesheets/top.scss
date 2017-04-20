@@ -1,4 +1,8 @@
 /* top */
+#top-html {
+    background: #FFFFFF;
+}
+
 .home-alert {
     position: absolute;
     top: 70px;
@@ -33,6 +37,14 @@
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
   bottom: -20px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+  display: none;
+}
+
+.bx-wrapper .bx-controls-direction a {
+  display: none;
 }
 
 .left-image {
@@ -70,6 +82,10 @@
   width: 100%;
   height: auto;
   }
+
+#top-wrap {
+  background-color: #ffffff;
+}
 
 .wrap {   /* shadows and rounded borders */
   background-color: #FFFFFF;
