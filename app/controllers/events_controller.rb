@@ -8,6 +8,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:event_id])
     @timetable = Timetable.find_by(event_id: params[:event_id])
     @timetables = Timetable.where(event_id: params[:event_id])
+    @user = @event.user
     
     @hash = Gmaps4rails.build_markers(@events) do |event, marker|
      marker.lat event.latitude

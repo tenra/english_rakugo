@@ -18,6 +18,14 @@
             　<th>Introduction</th>
             　<td><%= @event.user.sentence %></td>
         　　</tr>
+        　　<tr>
+            　<th>Blogs</th>
+            　<td>
+               <% @user.blogs.each_with_index do |blog| %>
+                  <%= blog.title %>
+               <% end %>
+            　</td>
+        　　</tr>
       </table>
 </div>
 
