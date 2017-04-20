@@ -9,13 +9,30 @@
   <div class="me-right">
           <ul class="nav nav-tabs">
             <li role="presentation"><%= link_to 'Events', users_me_path, class: "glyphicon glyphicon-flag" %></li>
-            <li role="presentation" class="active"><%= link_to 'Blogs', blogs_path, class: "glyphicon glyphicon-list-alt" %></li>
+            <li role="presentation" class="active"><%= link_to 'Blogs', postblog_path, class: "glyphicon glyphicon-list-alt" %></li>
             <li role="presentation"><%= link_to 'else', else_path, class: "glyphicon glyphicon-th" %></li>
           </ul>
                 
-            <div align="right"><%= link_to "Blogs Create", "", class: "btn btn-eventcreate" %></div>
-          
+            <div align="right"><%= link_to "Blogs Create", new_blog_path, class: "btn btn-eventcreate" %></div>
+       <% if current_user.blogs.present? %>
+               <% current_user.blogs.each_with_index do |blog| %>
+                     <div class="">
+                       <% if blog.photo? %>
+                          <%= image_tag blog.photo.thumb.url, :class => "mypage_event_img" %>
+                       <% else %>
+                          <%= image_tag 'noimage.gif', :class => "mypage_event_img" %>
+                       <% end %>
+                     </div>
+                        <%= blog.title %>
+                        <%= blog.text %>
+                        <%= link_to "Edit", edit_blog_path(blog) %>
+                        <%= link_to "Delete", blog_path(blog), method: :delete, data: { confirm: 'Are you sure？' } %>
+               <% end %>
+       <% else %>
           no blogs</br>
+       <% end %>
+          
+          <hr>
           
           <%= link_to 'Organizer Top Page', users_me_path %>
           

@@ -13,9 +13,6 @@ class UsersController < ApplicationController
     @booking = current_user.booking(@event)
   end
   
-  def organizer
-  end
-  
   def blogs
   end
   

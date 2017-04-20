@@ -7,13 +7,10 @@ class BlogsController < ApplicationController
 
   def create
     @user = current_user
-    @blog = current_user.events.build(blog_params)
-    if params[:back]
-      render :new
-    elsif @blog.save
-    #binding.pry
-       flash[:success] = "Created new Blog!"
-       redirect_to blogs_path(@blog)
+    @blog = current_user.blogs.build(blog_params)
+    if @blog.save
+      flash[:success] = "Successfully created new Blog!"
+      redirect_to postblog_path
     else
       render 'new'
     end
@@ -31,7 +28,7 @@ class BlogsController < ApplicationController
       render :edit
     elsif @blog.update(blog_params)
        flash[:success] = "Update completed!"
-       redirect_to blogs_path(@blog)
+       redirect_to postblog_path
     else
       render 'edit'
     end
@@ -41,13 +38,13 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     @blog.destroy
     flash[:success] = 'Your blog has been successfully cancelled.'
-    redirect_to blogs_path
+    redirect_to postblog_path
   end
 
   private
-    def blog_params
-      params.require(:blog).permit(
-      :title, :text, :photo, :photo_cache)
-    end
+  def blog_params
+    params.require(:blog).permit(
+    :title, :text, :photo, :photo_cache)
+  end
     
 end

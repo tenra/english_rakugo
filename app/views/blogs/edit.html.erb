@@ -1,0 +1,16 @@
+<% @page_title = "Edit Blog" %>
+
+<div class="inquiry-header"><%= @page_title %></div>
+
+<div class="card card-mypage-container">
+
+    <%= form_for(@blog) do |f| %>
+
+        <%= render 'form', f: f %>
+
+      <%= f.submit "Update", class: "btn btn-primary" %>
+    <% end %>
+
+  <%= link_to "Back", :back %>
+
+</div>

@@ -41,7 +41,7 @@ class EventsController < ApplicationController
       render :new
     elsif @event.save
     #binding.pry
-       flash[:success] = "Created new Event!"
+       flash[:success] = "Successfully created new Event!"
        redirect_to show_event_path(@event)
     else
       render 'new'

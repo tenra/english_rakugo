@@ -23,8 +23,9 @@ Rails.application.routes.draw do
         resources :timetables
       end
       
-      get "organizer/events" => "users#organizer", as: "organizer"
-      get "organizer/blogs" => "users#blogs", as: "blogs"
+      resources :blogs, except: [:show, :index]
+      
+      get "organizer/blogs" => "users#blogs", as: "postblog"
       get "organizer/else" => "users#elses", as: "else"
       
       scope :admin do

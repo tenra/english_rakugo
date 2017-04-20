@@ -27,7 +27,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    "no-avatar.png"
+    "noimage.gif"
   end
 
    process :resize_to_limit => [700, 700]
