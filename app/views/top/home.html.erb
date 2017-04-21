@@ -1,7 +1,7 @@
 <div class="event-side">
             　<div>Blogs</div>
                <% @blogs.each_with_index do |blog| %>
-                  <div><%= link_to blog.title, blog_path(blog) %></div>
+                  <div><%= link_to blog.title, show_blog_path(blog) %></div>
                <% end %>
 </div>
 

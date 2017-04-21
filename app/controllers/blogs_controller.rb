@@ -2,8 +2,8 @@ class BlogsController < ApplicationController
     before_action :organizer_check, except: [:show]
     
   def show
-    @blog = Blog.find(params[:id])
-    @user = User.find(params[:id])
+    @blog = Blog.find(params[:blog_id])
+    @user = User.find(params[:blog_id])
     @user = @blog.user
   end
     
