@@ -31,7 +31,7 @@
         　　<tr>
         　　    <th>Events</th>
         　　    <td><% @user.events.each_with_index do |event| %>
-                 <div><%= link_to event.title, "" %></div>
+                 <div><%= link_to event.title, show_event_path(event) %></div>
         　　    <% end %>
         　　    </td>
         　　</tr>
