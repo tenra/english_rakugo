@@ -24,9 +24,16 @@
             　<th>Blogs</th>
             　<td>
                <% @user.blogs.each_with_index do |blog| %>
-                  <%= blog.title %>
+                  <div><%= link_to blog.title, blog_path(blog) %></div>
                <% end %>
             　</td>
+        　　</tr>
+        　　<tr>
+        　　    <th>Events</th>
+        　　    <td><% @user.events.each_with_index do |event| %>
+                 <div><%= link_to event.title, "" %></div>
+        　　    <% end %>
+        　　    </td>
         　　</tr>
       </table>
 </div>
