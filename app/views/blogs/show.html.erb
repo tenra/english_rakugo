@@ -6,19 +6,19 @@
          <div class="my_profiles"><%= t '.Organizer' %></div>
       <table class="table">
             <div class="text-center">
-              <%# if @event.user.photo? %>
-                <%#= image_tag(@event.user.photo.thumb.url, :class => "organizer_photo") %>
-              <%# else %>
+              <% if @blog.user.photo? %>
+                <%= image_tag(@blog.user.photo.thumb.url, :class => "organizer_photo") %>
+              <% else %>
                 <%= image_tag 'noimage.gif', width: 200, :class => "organizer_photo"%>
-              <%# end %>
+              <% end %>
             </div>
             <tr>
             　<th>Name</th>
-            　<td><%#= @event.user.organizername %></td>
+            　<td><%= @blog.user.organizername %></td>
           　</tr>
           　<tr>
             　<th>Introduction</th>
-            　<td><%#= @event.user.sentence %></td>
+            　<td><%= @blog.user.sentence %></td>
         　　</tr>
         　　<tr>
             　<th>Blogs</th>
@@ -33,13 +33,13 @@
 
 <div class="card card-show-container">
     
-                         <div class="">
+                    <div class="">
                        <% if @blog.photo? %>
                           <%= image_tag @blog.photo.thumb.url, :class => "mypage_event_img" %>
                        <% else %>
                           <%= image_tag 'noimage.gif', :class => "mypage_event_img" %>
                        <% end %>
-                     </div>
+                    </div>
                         <%= @blog.title %>
                         <%= @blog.text %>
     

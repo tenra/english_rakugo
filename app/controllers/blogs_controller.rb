@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
     
     @user = User.find(params[:id])
     #@event = Event.find(params[:id])
-    #@user = @event.user
+    @user = @blog.user
   end
     
   def new
