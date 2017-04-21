@@ -23,7 +23,7 @@ Rails.application.routes.draw do
         resources :timetables
       end
       
-      resources :blogs, except: [:show, :index]
+      resources :blogs, except: [:index]
       
       get "organizer/blogs" => "users#blogs", as: "postblog"
       get "organizer/else" => "users#elses", as: "else"

@@ -1,0 +1,46 @@
+<%  @page_title = "Blog" %>
+
+<div class="inquiry-header"><%= @blog.title %></div>
+
+<div class="event-side">
+         <div class="my_profiles"><%= t '.Organizer' %></div>
+      <table class="table">
+            <div class="text-center">
+              <%# if @event.user.photo? %>
+                <%#= image_tag(@event.user.photo.thumb.url, :class => "organizer_photo") %>
+              <%# else %>
+                <%= image_tag 'noimage.gif', width: 200, :class => "organizer_photo"%>
+              <%# end %>
+            </div>
+            <tr>
+            　<th>Name</th>
+            　<td><%#= @event.user.organizername %></td>
+          　</tr>
+          　<tr>
+            　<th>Introduction</th>
+            　<td><%#= @event.user.sentence %></td>
+        　　</tr>
+        　　<tr>
+            　<th>Blogs</th>
+            　<td>
+               <% @user.blogs.each_with_index do |blog| %>
+                  <%= blog.title %>
+               <% end %>
+            　</td>
+        　　</tr>
+      </table>
+</div>
+
+<div class="card card-show-container">
+    
+                         <div class="">
+                       <% if @blog.photo? %>
+                          <%= image_tag @blog.photo.thumb.url, :class => "mypage_event_img" %>
+                       <% else %>
+                          <%= image_tag 'noimage.gif', :class => "mypage_event_img" %>
+                       <% end %>
+                     </div>
+                        <%= @blog.title %>
+                        <%= @blog.text %>
+    
+</div><!-- /card-container -->

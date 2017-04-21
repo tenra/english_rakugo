@@ -1,5 +1,13 @@
 class BlogsController < ApplicationController
-    before_action :organizer_check
+    before_action :organizer_check, except: [:show]
+    
+  def show
+    @blog = Blog.find(params[:id])
+    
+    @user = User.find(params[:id])
+    #@event = Event.find(params[:id])
+    #@user = @event.user
+  end
     
   def new
     @blog = Blog.new

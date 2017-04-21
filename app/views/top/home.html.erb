@@ -1,14 +1,8 @@
 <div class="event-side">
-      <table class="table">
-            <div class="text-center">
-            　<th>Blogs</th>
-            　<td>
-               <% @blogs.each_with_index do |b| %>
-                  <%= b.title %>
+            　<div>Blogs</div>
+               <% @blogs.each_with_index do |blog| %>
+                  <div><%= link_to blog.title, blog_path(blog) %></div>
                <% end %>
-            　</td>
-        　　</tr>
-      </table>
 </div>
 
 <div class="top-events-right">

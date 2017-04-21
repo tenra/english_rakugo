@@ -12,7 +12,7 @@
             </div>
             <tr>
             　<th>Name</th>
-            　<td><%= @event.user.name %></td>
+            　<td><%= @event.user.organizername %></td>
           　</tr>
           　<tr>
             　<th>Introduction</th>
@@ -22,7 +22,7 @@
             　<th>Blogs</th>
             　<td>
                <% @user.blogs.each_with_index do |blog| %>
-                  <%= blog.title %>
+                  <%= link_to blog.title, blog_path(@event) %>
                <% end %>
             　</td>
         　　</tr>
