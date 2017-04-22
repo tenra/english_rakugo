@@ -122,7 +122,6 @@
 
 .venue {
   float: right;
-  padding: 20px 300px 20px 0px;
   font-size: 1.5em;
   color: #535353;
   font-weight: normal;
@@ -132,7 +131,6 @@
   float: right;
   font-size: 1.5em;
   color: #535353;
-  padding: 5px 300px 20px 0px;
   clear: both;
 }
 
@@ -153,7 +151,7 @@
 }
 
 .timetable {
-  padding: 0px 300px;
+  padding: 0px 150px;
   color: #666;
 }
 .time {
@@ -163,8 +161,7 @@
 }
 .venue-map {
     float: right;
-    padding-bottom: 5px;
-    padding-right: 180px;
+    padding-bottom: 10px;
     font-size: 1.2em;
     color: #535353;
     font-weight: normal;
@@ -181,7 +178,6 @@
 }
 .right {
   text-align: right;
-  padding: 20px 300px 20px 0px;
   font-size: 1.2em;
   color: #666;
 }
@@ -194,7 +190,6 @@
 
 .event-text2 {
   font-family: "myriad-pro",sans-serif;
-  padding: 5px 240px 15px;
   color: #808080;
   font-size: 0.8em;
   font-style: normal;
@@ -233,7 +228,7 @@
 }
 
 .social {
- margin: 20px 0px 0px 250px; 
+ margin: 0; 
 }
 .social-share-button .ssb-icon {
   background-position: center center;
@@ -242,6 +237,7 @@
   display: inline-block;
   height: 40px;
   width: 40px;
+  border-radius: 50%;
 }
 
 .table > thead > tr > th.active, .table > thead > tr.active > td, .table > thead > tr.active > th {
