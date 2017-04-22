@@ -1,19 +1,19 @@
 <div class="top-organizer-show">
-    <h1>Organizer</h1>
+    <div class="upcoming">Organizer</div>
     <div class="top-vertical"><%= image_tag 'no-avatar.png', :class => "top-organizer-img" %><p>test</p></div>
     <div class="top-vertical"><%= image_tag 'no-avatar.png', :class => "top-organizer-img" %><p>test</p></div>
     <div class="top-vertical"><%= image_tag 'no-avatar.png', :class => "top-organizer-img" %><p>test</p></div>
 </div>
 
-<div class="event-side">
-    　<div>Blogs</div>
-       <% @blogs.each_with_index do |blog| %>
-          <div><%= link_to blog.title, show_blog_path(blog) %></div>
-       <% end %>
-</div>
-
+<div class="row-left">
+  <div class="upcoming">Blogs</div>
+           <% @blogs.each_with_index do |blog| %>
+              <div><%= link_to blog.title, show_blog_path(blog) %></div>
+           <% end %>
+</div><!-- row -->
+    
 <div class="top-events-right">
-        
+   <div class="upcoming">Upcoming events</div>
       <% @events.order('id').each do |event| %>
     
     <div class="row">
