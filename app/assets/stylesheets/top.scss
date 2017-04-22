@@ -124,8 +124,11 @@
 .row-right {
     display: inline-block;
     width: 25%;
-    margin: 0 10px;
     font-size: 1.2em;
+}
+
+.row-right > ul {
+    margin-left: 50px;
 }
 
 .trim {

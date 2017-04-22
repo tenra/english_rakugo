@@ -53,7 +53,9 @@
 <div class="row-right">
   <div class="upcoming">Blogs</div>
            <% @blogs.each_with_index do |blog| %>
-              <div>・<%= link_to blog.title, show_blog_path(blog) %></div>
+           <ul>
+              <li><%= link_to blog.title, show_blog_path(blog) %></li>
+           </ul>
            <% end %>
 </div><!-- row-right -->
     
