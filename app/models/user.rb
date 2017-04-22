@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
   has_many :blogs, foreign_key: "user_id", dependent: :destroy
   
   mount_uploader :avatar, AvatarUploader
-  mount_uploader :photo, PhotoUploader
 
   def booking(event)
     bookings.find_or_create_by(event_id: event.id)

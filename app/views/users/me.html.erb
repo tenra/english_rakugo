@@ -6,11 +6,9 @@
 
 <div class="inquiry-header"><%= @page_title %></div>
 
-<% if current_user.organizer? %>
-
-        <div class="card card-mypage-container">
+<div class="card card-mypage-container">
         
-        <%= render 'organizer_side' %>
+        <%= render 'me_side' %>
               
           <div class="me-right">
              <% if current_user.organizer? %>
@@ -50,17 +48,4 @@
                 
              <% end %>  
           </div><!-- /me-right -->
-        </div><!-- /card-container -->
-
-<% end %>
-        
-        <div class="card card-mypage-container">
-        
-             <%= render 'me_side' %>
-              
-          <div class="me-right">
-             
-             <%= render 'my_events' %>
-                
-          </div><!-- /me-right -->
-        </div><!-- /card-container -->
+</div><!-- /card-container -->

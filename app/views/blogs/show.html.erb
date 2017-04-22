@@ -6,14 +6,14 @@
          <div class="my_profiles"><%= t '.Organizer' %></div>
       <table class="table">
             <div class="text-center">
-              <% if @blog.user.photo? %>
-                <%= image_tag(@blog.user.photo.thumb.url, :class => "organizer_photo") %>
+              <% if @blog.user.avatar? %>
+                <%= image_tag(@blog.user.avatar.thumb.url, :class => "mypage_img") %>
               <% else %>
-                <%= image_tag 'noimage.gif', width: 200, :class => "organizer_photo"%>
+                <%= image_tag 'no-avatar.png', width: 200, :class => "mypage_img"%>
               <% end %>
             </div>
             <tr>
-            　<th>Name</th>
+            　<th>Organizer name</th>
             　<td><%= @blog.user.organizername %></td>
           　</tr>
           　<tr>

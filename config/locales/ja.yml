@@ -50,8 +50,10 @@ ja:
   users:
     me:
       User_name: "名前"
+      Organizer_name: "主催者名"
       Email_address: "メールアドレス"
-      My_profiles: "プロフィール"
+      My_profile: "プロフィール"
+      Organizer_profile: "主催者プロフィール"
       My_Booking_Events: "参加イベント"
       Profile-Image_status: "ユーザー画像表示"
       Public: "公開"

@@ -1,5 +1,11 @@
   <aside class="me-aside">
-    <div class="my_profiles"><%= t '.My_profiles' %></div>
+      <div class="my_profiles">
+          <% if current_user.organizer? %>
+             <%= t '.Organizer_profile' %>
+          <% else %>
+             <%= t '.My_profile' %>
+          <% end %>
+      </div>
       <table class="table">
             <div class="text-center">
               <% if current_user.avatar? %>
@@ -11,7 +17,11 @@
         <div align="right"><%= link_to 'Edit', edit_user_registration_path %></div>
         
           <tr>
-            <th><%= t '.User_name' %></th>
+            <% if current_user.organizer? %>
+              <th><%= t '.Organizer_name' %></th>
+            <% else %>
+              <th><%= t '.User_name' %></th>
+            <% end %>
             <td><%= current_user.name %></td>
           </tr>
           <tr>
@@ -29,6 +39,12 @@
                 <%= t '.Private' %>
               <% end %>
             </td>
+          </tr>
+       <% end %>
+       <% if current_user.organizer? %>
+          <tr>
+            <th><%= t '.Sentence' %></th>
+            <td><%= current_user.sentence %></td>
           </tr>
        <% end %>
           <tr><th><td></td></th></tr>
