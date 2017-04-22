@@ -204,9 +204,11 @@ margin-right: 2px
 }
 
 .img-circle_h {
+    padding: 1px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-    width:  25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     background-position: center center;
     margin-right: -7px;
 }

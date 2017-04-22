@@ -67,8 +67,7 @@
 }
 
 .dropdown-menu {
-  margin:-4px;
-  padding:0 12px;
+  padding: 0 12px;
   background: rgba(255,255,255,.7);
   border-radius: 2px;
 }
@@ -107,6 +106,7 @@
 }
 #global-nav ul li {
     float: left;
+    bottom: 8px;
 }
 #global-nav ul li a {
     padding: 0 30px;
