@@ -76,7 +76,8 @@
  .event-contents {
    display: inline-block;
    width: 450px;
-   float:right
+   float: right;
+   padding: 0 5px;
  }
  
 .container_top_layout {
@@ -110,9 +111,9 @@
 }
 
 .wrap {   /* shadows and rounded borders */
+  margin-right: 5px;
   background-color: #FFFFFF;
   min-height: 400px;
-  padding: 10px 5px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
