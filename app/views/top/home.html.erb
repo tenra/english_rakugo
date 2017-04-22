@@ -1,8 +1,12 @@
+<div class="top-organizer-show">
+    <%= image_tag 'no-avatar.png', width: 200, :class => "top-organizer-img"%>
+</div>
+
 <div class="event-side">
-            　<div>Blogs</div>
-               <% @blogs.each_with_index do |blog| %>
-                  <div><%= link_to blog.title, show_blog_path(blog) %></div>
-               <% end %>
+        　<div>Blogs</div>
+           <% @blogs.each_with_index do |blog| %>
+              <div><%= link_to blog.title, show_blog_path(blog) %></div>
+           <% end %>
 </div>
 
 <div class="top-events-right">

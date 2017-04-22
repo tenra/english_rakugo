@@ -47,6 +47,23 @@
   display: none;
 }
 
+.top-organizer-show {
+    background-color: #FFFAFA;
+    text-align: center;
+    height: 150px;
+    margin: -25px 0 10px;
+}
+
+.top-organizer-img {
+    padding: 2px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    background-position: center center;
+    margin: 15px;
+}
+
 .left-image {
    width: 645px;
    display: inline-block;
